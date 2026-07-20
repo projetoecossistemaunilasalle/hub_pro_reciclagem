@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUB Pró-Reciclagem - Acesso do Administrador</title> 
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Entrar</h2>
+        <form action="#" method="post">
+            <div class="input-field">
+                <input type="text" name="email" id="email-login" placeholder="Digite o e-mail">
+                <label >E-mail: </label>
+            </div>
+            <div class="input-field">
+                <input type="password" name="senha" id="senha-login" placeholder="Digite a senha">
+                <label >Senha: </label>
+            </div>
+            <div class="center">
+                <button type="button" value="entrar" id="entrar" onclick="login()">Entrar</button>
+            </div>
+        </form>
+
+        <!--
+        <div class="links">
+            <a href="./edicao/principal.html"><p>Esqueceu a senha? Clique Aqui.</p></a>
+        </div>
+        -->
+        
+    </div>
+    <script src="./main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+    <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyCrD9EseZsh22tyBfx96QD9ej3r3VDr_RA",
+    authDomain: "hub-reciclagem.firebaseapp.com",
+    projectId: "hub-reciclagem",
+    storageBucket: "hub-reciclagem.appspot.com",
+    messagingSenderId: "438134009337",
+    appId: "1:438134009337:web:087580e71086834f8e6128"
+    };
+
+        const app = firebase.initializeApp(firebaseConfig);
+    
+        function login(){
+        const email = document.getElementById('email-login').value
+        const password = document.getElementById('senha-login').value
+    
+        app.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log('Logado com sucesso');
+          pagina_logado();
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log('Algo deu errado');
+          erro();
+        });
+        };
+    </script>
+</body>
+</html>

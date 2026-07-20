@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUB Pró-Reciclagem</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="container nav__container">
+      <a href="#"><img style="width: 36%;" class="nav__logo" src="./images/logo_hub.png" alt="Logo HUB Pró-Reciclagem"/></a>
+      <ul class="nav__menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="about.html">Cooperativas</a></li>
+        <li><a href="courses.html">Glossário</a></li>
+        <li><a href="./calculadora/inicio.html">Cálculo Reciclável</a></li>
+        <li><a href="news.html">Notícias</a></li>
+      </ul>
+      <button id="open-menu-btn"><i class="fa fa-reorder"></i></button>
+      <button id="close-menu-btn"><i class="fa fa-close"></i></button>
+    </div>
+  </nav>
+
+  <!-- ================================= END OF NAVBAR ==================================-->
+
+  <header>
+    <div class="container header__container">
+      <div class="header__left">
+        <h1>Como você está na sua Pegada Ambiental?</h1>
+        <p>Conheça as ações que são realizadas por cooperativas, da cidade de Canoas, para colaborar com a reciclagem, e saiba mais sobre materiais recicláveis e não recicláveis e cresca no seu engajamento sustentável.
+        </p>
+      </div>
+      <div class="header__right">
+        <div class="header__right-image">
+          <img src="./images/image_inicio.png">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================= END OF HEADER ==================================-->
+
+  <section class="categories">
+    <div class="container categories__container">
+      <div class="categories__left">
+        <h1>Você sabe o que são cooperativas?</h1>
+        <p>Cooperativa é toda e qualquer associação autônoma de pessoas que se unem, voluntariamente, para
+          satisfazer aspirações e necessidades econômicas, sociais e culturais comuns, por meio de uma empresa
+          de propriedade coletiva e democraticamente gerida.
+        </p>
+        <a href="about.html" class="btn">Saiba Mais</a>
+      </div>
+      <div class="categories__right">
+        <article class="category">
+          <span class="category__icon"><ion-icon name="chatbubbles" style="font-size: 19px"></ion-icon></span>
+          <h5>Gestão democrática</h5>
+          <p>Todos os membros participam da formulação de políticas e decisões na empresa.</p>
+        </article>
+        <article class="category">
+          <span class="category__icon"><i class="	fa fa-thumbs-o-up" style="font-size: 19px"></i></span>
+          <h5>Participação econômica</h5>
+          <p>É dever de todo associado contribuir para o patrimônio da cooperativa.</p>
+        </article>
+        <article class="category">
+          <span class="category__icon"><i class="	fa fa-handshake-o" style="font-size: 19px"></i></span>
+          <h5>Autonomia e independência</h5>
+          <p>Cooperativa deve manter-se autônoma, mesmo que realize parcerias ou recorra a capital externo.</p>
+        </article>
+        <article class="category">
+          <span class="category__icon"><ion-icon name="megaphone-outline" style="font-size: 19px"></ion-icon></span>
+          <h5>Educação, formação e informação</h5>
+          <p>Contribuir para a educação, formação e informação de associados e sociedade em geral.</p>
+        </article>
+        <article class="category">
+          <span class="category__icon"><ion-icon name="extension-puzzle" style="font-size: 19px"></ion-icon></span>
+          <h5>Intercooperação</h5>
+          <p>Cooperativas devem trabalhar em conjunto para fortalecer seu movimento nos níveis local ao internacional.</p>
+        </article>
+        <article class="category">
+          <span class="category__icon"><ion-icon name="business" style="font-size: 19px"></ion-icon></span>
+          <h5>Interesse pela comunidade</h5>
+          <p>Devem ser realizadas políticas para o desenvolvimento da comunidade em que a cooperativa está inserida.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================= END OF CATEGORIES ==================================-->
+
+  <section class="courses">
+    <h2>Glossário</h2>
+    <div class="container courses__container">
+      <article class="course">
+        <div class="course__image">
+          <img src="./images/eletronico.jpg">
+        </div>
+        <div class="course__info">
+          <h4>Eletrônico</h4>
+          <p>
+            Por serem feitos com alta
+            tecnologia, esses resíduos podem conter substâncias tóxicas e metais pesados, como o
+            chumbo, mercúrio, cromo e cádmio por exemplo, capazes de contaminar o solo, a água e
+            os alimentos.
+          </p>
+          <a href="./glossario/eletronico.html" class="btn btn-primary">Saiba Mais</a>
+        </div>
+      </article>
+      <article class="course">
+        <div class="course__image">
+          <img src="./images/plastico.jpg">
+        </div>
+        <div class="course__info">
+          <h4>Plástico</h4>
+          <p>
+            Em termos de
+            embalagens, o plástico é imbatível, pois apresenta boas características com relação à
+            higiene, além de resistência ao ataque de animais e manutenção da qualidade do produto
+            nela contido.
+          </p>
+          <a href="./glossario/plastico.html" class="btn btn-primary">Saiba Mais</a>
+        </div>
+      </article>
+      <article class="course">
+        <div class="course__image">
+          <img src="./images/papel.jpg">
+        </div>
+        <div class="course__info">
+          <h4>Papel</h4>
+          <p>
+            Atualmente, a maior parte dos papéis (95%)
+            é feita a partir do tronco de árvores cultivadas. No Brasil o eucalipto é a espécie mais
+            utilizada, por seu rápido crescimento, atingindo em torno de 30 m de altura em 7 anos.
+          </p>
+          <a href="./glossario/papel.html" class="btn btn-primary">Saiba Mais</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================================= END OF COURSES ==================================-->
+
+  <section class="faqs">
+    <h2>Perguntas Frequentes</h2>
+    <div class="container faqs__container">
+      <article class="faq">
+        <div class="faq__icon"><i class="fa fa-plus"></i></div>
+        <div class="question__answer">
+          <h4>Qual o objetivo do HUB?</h4>
+          <p>Promover um espaço como um repositório memorial de mudança comportamental pró-reciclagem, e
+            proporcionar o conhecimento das pessoas acerca de ações voltadas para a educação ambiental.
+          </p>
+        </div>
+      </article>
+      <article class="faq">
+        <div class="faq__icon"><i class="fa fa-plus"></i></div>
+        <div class="question__answer">
+          <h4>Como posso visualizar os trajetos das Cooperativas?</h4>
+          <p>Na sessão 'Cooperativas', cada cooperativa possui um espaço com informações gerais, no qual
+            há uma sessão específica apenas para a exibição das rotas realizadas pela cooperativa em cada
+            dia da semana.
+          </p>
+        </div>
+      </article>
+      <article class="faq">
+        <div class="faq__icon"><i class="fa fa-plus"></i></div>
+        <div class="question__answer">
+          <h4>Como posso entrar em contato com uma Cooperativa?</h4>
+          <p>Na sessão 'Cooperativas' é possível visualizar as suas pricipais formas de contato pelas redes sociais.
+            E no espaço dedicado a cada cooperativa, separadamente, as formas de contato também estão disponíveis,
+            bem como uma sessão para o envio de e-mails diretamente para a cooperativa.
+          </p>
+        </div>
+      </article>
+      <article class="faq">
+        <div class="faq__icon"><i class="fa fa-plus"></i></div>
+        <div class="question__answer">
+          <h4>Os dados informados pelas Cooperativas são atualizados?</h4>
+          <p>Sim. Conforme as cooperativas possuem novas metas, realizam projetos e alcançam seus objetivos, todas essas informações
+            são atualizadas e, posteriormente, disponibilizadas aos usuários.
+          </p>
+        </div>
+      </article>
+      <!--<article class="faq">
+            <div class="faq__icon"><i class="fa fa-plus"></i></div>
+            <div class="question__answer">
+              <h4>Qual a função do 'Cálculo Reciclável'?</h4>
+              <p>O objetivo está em promover aos usuários um conhecimento acerca de quanto poderia ser economizado, tanto
+                de materiais recicláveis quanto recursos naturais, como água e eletricidade, quando se praticam atitudes sustentáveis.
+              </p>
+            </div>
+          </article>
+          <article class="faq">
+            <div class="faq__icon"><i class="fa fa-plus"></i></div>
+            <div class="question__answer">
+              <h4>Como utilizar a calculadora reciclável?</h4>
+              <p>É necessário escolher por uma categoria que se deseja ter uma ideia de quanto poderia economizar
+                e, depois, apenas inserir os dados requisitados para realizar o cálculo. Os dados variam 
+                de uma categoria para a outra, mas todas seguem a mesma lógica de funcionamento.
+              </p>
+            </div>
+          </article>-->
+      <article class="faq">
+        <div class="faq__icon"><i class="fa fa-plus"></i></div>
+        <div class="question__answer">
+          <h4>As notícias disponibilizadas são atuais?</h4>
+          <p>Sim. Conforme eventos, ações sociais e metas são alcançadas pelas cooperativas, novas notícias são disponibilizadas no HUB
+            e são atualizadas sempre que necessário.
+          </p>
+        </div>
+      </article>
+      <article class="faq">
+        <div class="faq__icon"><i class="fa fa-plus"></i></div>
+        <div class="question__answer">
+          <h4>É necessário realizar cadastro no HUB?</h4>
+          <p>Não. Os usuários são capazes de acessar todas as páginas e informações disponibilizadas pelo HUB sem a necessidade
+            de cadastro e login.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================================= END OF FAQS ==================================-->
+  <!--
+      <section class="container testimonials__container mySwiper">
+        <h2>O que dizem nossos usuários?</h2>
+        <div class="swiper-wrapper">
+          <article class="testimonial swiper-slide">
+            <div class="avatar">
+              <img src="./images/image_inicio.png">
+            </div>
+            <div class="testimonial__info">
+              <h5>Diana Ayi</h5>
+              <small>Student</small>
+            </div>
+            <div class="testimonial__body">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur distinctio ex animi 
+                voluptates est repudiandae esse eos fuga sequi, saepe accusantium incidunt doloribus, ut 
+                deserunt facilis modi! Ipsa, qui cupiditate?
+              </p>
+            </div>
+          </article>
+          <article class="testimonial swiper-slide">
+            <div class="avatar">
+              <img src="./images/image_inicio.png">
+            </div>
+            <div class="testimonial__info">
+              <h5>Diana Ayi</h5>
+              <small>Student</small>
+            </div>
+            <div class="testimonial__body">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur distinctio ex animi 
+                voluptates est repudiandae esse eos fuga sequi, saepe accusantium incidunt doloribus, ut 
+                deserunt facilis modi! Ipsa, qui cupiditate?
+              </p>
+            </div>
+          </article>
+          <article class="testimonial swiper-slide">
+            <div class="avatar">
+              <img src="./images/image_inicio.png">
+            </div>
+            <div class="testimonial__info">
+              <h5>Diana Ayi</h5>
+              <small>Student</small>
+            </div>
+            <div class="testimonial__body">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur distinctio ex animi 
+                voluptates est repudiandae esse eos fuga sequi, saepe accusantium incidunt doloribus, ut 
+                deserunt facilis modi! Ipsa, qui cupiditate?
+              </p>
+            </div>
+          </article>
+          <article class="testimonial swiper-slide">
+            <div class="avatar">
+              <img src="./images/image_inicio.png">
+            </div>
+            <div class="testimonial__info">
+              <h5>Diana Ayi</h5>
+              <small>Student</small>
+            </div>
+            <div class="testimonial__body">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur distinctio ex animi 
+                voluptates est repudiandae esse eos fuga sequi, saepe accusantium incidunt doloribus, ut 
+                deserunt facilis modi! Ipsa, qui cupiditate?
+              </p>
+            </div>
+          </article>
+          <article class="testimonial swiper-slide">
+            <div class="avatar">
+              <img src="./images/image_inicio.png">
+            </div>
+            <div class="testimonial__info">
+              <h5>Diana Ayi</h5>
+              <small>Student</small>
+            </div>
+            <div class="testimonial__body">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur distinctio ex animi 
+                voluptates est repudiandae esse eos fuga sequi, saepe accusantium incidunt doloribus, ut 
+                deserunt facilis modi! Ipsa, qui cupiditate?
+              </p>
+            </div>
+          </article>
+          <article class="testimonial swiper-slide">
+            <div class="avatar">
+              <img src="./images/image_inicio.png">
+            </div>
+            <div class="testimonial__info">
+              <h5>Diana Ayi</h5>
+              <small>Student</small>
+            </div>
+            <div class="testimonial__body">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur distinctio ex animi 
+                voluptates est repudiandae esse eos fuga sequi, saepe accusantium incidunt doloribus, ut 
+                deserunt facilis modi! Ipsa, qui cupiditate?
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="swiper-pagination"></div>
+      </section>
+    -->
+  <!-- ================================= END OF FAQS ==================================-->
+
+  <footer>
+    <div class="container footer__container">
+      <div class="footer__1">
+        <a href="index.html" class="footer__logo">
+          <h4>HUB Pró-Reciclagem</h4>
+        </a>
+        <p>Repositório memorial em favor da reciclagem como ferramenta de impacto social e econômico para cooperativas de catadores.</p>
+      </div>
+      <div class="footer__2">
+        <h4>Links</h4>
+        <ul class="permalinks">
+          <li><a href="publicacoes.html">Publicações</a></li>
+          <li><a href="login.html" target="_blank">Acesso do Administrador</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+        </ul>
+      </div>
+      <div class="footer__3">
+        <h4>Sobre</h4>
+        <ul class="privacy">
+          <li><a href="sobre.html">Sobre o HUB</a></li>
+          <li><a href="recicla.html">Canoas Recicla com a Gente</a></li>
+          <li><a href="politicas.html">Políticas Públicas</a></li>
+        </ul>
+      </div>
+      <div class="footer__4">
+        <h4>Fale Conosco</h4>
+        <div>
+          <p>hub.pro.reciclagem@unilasalle.edu.br</p>
+          <p>escritoriodeprojetos@unilasalle.edu.br</p>
+        </div>
+        <div>
+          <ul class="footer__socials">
+            <li>
+              <a href="https://pt-br.facebook.com/unilasallebr/" target="_blank"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/unilasallebr/" target="_blank"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="https://mobile.twitter.com/unilasallebr" target="_blank"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="https://br.linkedin.com/school/unilasallebr/" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copyright">
+      <small>Copyright &copy 2022; Hub Pró-Reciclagem</small>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="./main.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      // When window width is >= 600px
+      breakpoints: {
+        600: {
+          slidesPerView: 2
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>
