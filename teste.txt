@@ -1,2 +1,2 @@
-Este eh um teste para o Github
-20/7/26
+Este eh um arquivo para o Github.
+20/7/2026
