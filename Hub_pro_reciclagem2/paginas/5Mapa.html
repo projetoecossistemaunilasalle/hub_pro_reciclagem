@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/5Mapa.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Mapa da Coleta - HUB Pró-Reciclagem</title>
+</head>
+
+<body>
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <div class="menu">
+
+                <!-- LOGO -->
+
+                <img class="nav__logo"
+                    src="../imagens/logo.png"
+                    alt="Logo HUB Pró-Reciclagem">
+
+
+                <!-- MENU -->
+
+                <ul class="menu__lista">
+
+                    <li>
+                        <a href="1inicial.html">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="2reciclagem.html">
+                            Reciclagem
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="3educacao_ambiental.html">
+                            Educação Ambiental
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="4Cooperativas.html">
+                            Cooperativas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="5Mapa.html" class="ativo">
+                            Mapa da Coleta
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="6calculadora.html">
+                            Calculadora da Reciclagem
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="7noticias.html">
+                            Notícias
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="8contato.html">
+                            Contato
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <!-- ACESSO ADMINISTRATIVO -->
+
+                <a href="adm.html" class="menu__admin">
+                    Acesso Administrativo
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main>
+
+
+        <!-- =========================
+             TÍTULO DA PÁGINA
+        ========================== -->
+
+        <section class="mapa-hero">
+
+            <div class="mapa-hero__texto">
+
+                <span class="subtitulo">
+                    ♻ MAPA DA COLETA
+                </span>
+
+                <h1>
+                    Encontre um ponto de coleta
+                </h1>
+
+                <p>
+                    Consulte os locais de coleta e cooperativas disponíveis
+                    para encontrar a melhor opção para destinar seus
+                    materiais recicláveis.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MAPA E FILTROS
+        ========================== -->
+
+        <section class="mapa-section">
+
+            <div class="mapa-container">
+
+
+                <!-- FILTROS -->
+
+                <aside class="filtros">
+
+                    <div class="filtros__titulo">
+
+                        <i class="fa-solid fa-filter"></i>
+
+                        <div>
+
+                            <h2>
+                                Encontre um local
+                            </h2>
+
+                            <p>
+                                Filtre os pontos de coleta
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CIDADE -->
+
+                    <label for="cidade">
+                        Cidade
+                    </label>
+
+                    <select id="cidade">
+
+                        <option value="">
+                            Todas as cidades
+                        </option>
+
+                        <option value="canoas">
+                            Canoas
+                        </option>
+
+                    </select>
+
+
+                    <!-- BAIRRO -->
+
+                    <label for="bairro">
+                        Bairro
+                    </label>
+
+                    <select id="bairro">
+
+                        <option value="">
+                            Todos os bairros
+                        </option>
+
+                        <option>
+                            Guajuviras
+                        </option>
+
+                        <option>
+                            Mathias Velho
+                        </option>
+
+                        <option>
+                            Niterói
+                        </option>
+
+                        <option>
+                            Rio Branco
+                        </option>
+
+                        <option>
+                            Fátima
+                        </option>
+
+                        <option>
+                            Harmonia
+                        </option>
+
+                    </select>
+
+
+                    <!-- TIPO -->
+
+                    <label for="tipo">
+                        Tipo de local
+                    </label>
+
+                    <select id="tipo">
+
+                        <option value="">
+                            Todos
+                        </option>
+
+                        <option>
+                            Cooperativa
+                        </option>
+
+                        <option>
+                            Ponto de coleta
+                        </option>
+
+                    </select>
+
+
+                    <!-- MATERIAL -->
+
+                    <label for="material">
+                        Material
+                    </label>
+
+                    <select id="material">
+
+                        <option value="">
+                            Todos os materiais
+                        </option>
+
+                        <option>
+                            Papel e papelão
+                        </option>
+
+                        <option>
+                            Plástico
+                        </option>
+
+                        <option>
+                            Vidro
+                        </option>
+
+                        <option>
+                            Metais
+                        </option>
+
+                        <option>
+                            Eletrônicos
+                        </option>
+
+                    </select>
+
+
+                    <!-- BOTÃO -->
+
+                    <button class="btn-filtrar">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        Buscar locais
+
+                    </button>
+
+
+                    <button class="btn-limpar">
+
+                        Limpar filtros
+
+                    </button>
+
+                </aside>
+
+
+                <!-- =========================
+                     MAPA
+                ========================== -->
+
+                <div class="mapa-area">
+
+
+                    <div class="mapa-topo">
+
+                        <div>
+
+                            <span class="resultado-label">
+                                LOCAIS ENCONTRADOS
+                            </span>
+
+                            <h2>
+                                Coleta seletiva em Canoas
+                            </h2>
+
+                        </div>
+
+
+                        <button class="btn-localizacao">
+
+                            <i class="fa-solid fa-location-crosshairs"></i>
+
+                            Usar minha localização
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- MAPA -->
+
+                    <div class="mapa">
+
+                        <div class="mapa-fundo">
+
+
+                            <!-- RUAS -->
+
+                            <div class="rua rua-1"></div>
+
+                            <div class="rua rua-2"></div>
+
+                            <div class="rua rua-3"></div>
+
+                            <div class="rua rua-4"></div>
+
+
+                            <!-- MARCADOR 1 -->
+
+                            <div class="marcador marcador-1">
+
+                                <i class="fa-solid fa-recycle"></i>
+
+                                <span>
+                                    Cooperativa Cooarlas
+                                </span>
+
+                            </div>
+
+
+                            <!-- MARCADOR 2 -->
+
+                            <div class="marcador marcador-2">
+
+                                <i class="fa-solid fa-recycle"></i>
+
+                                <span>
+                                    Coopcamate
+                                </span>
+
+                            </div>
+
+
+                            <!-- MARCADOR 3 -->
+
+                            <div class="marcador marcador-3">
+
+                                <i class="fa-solid fa-recycle"></i>
+
+                                <span>
+                                    Coopermag
+                                </span>
+
+                            </div>
+
+
+                            <!-- MARCADOR 4 -->
+
+                            <div class="marcador marcador-4">
+
+                                <i class="fa-solid fa-recycle"></i>
+
+                                <span>
+                                    Coopersol
+                                </span>
+
+                            </div>
+
+
+                            <!-- LEGENDA -->
+
+                            <div class="mapa-legenda">
+
+                                <strong>
+                                    Legenda
+                                </strong>
+
+                                <span>
+
+                                    <i class="fa-solid fa-location-dot"></i>
+
+                                    Cooperativa
+
+                                </span>
+
+                                <span>
+
+                                    <i class="fa-solid fa-house"></i>
+
+                                    Ponto de coleta
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LOCAIS DE COLETA
+        ========================== -->
+
+        <section class="locais">
+
+            <div class="section-title">
+
+                <span></span>
+
+                <h2>
+                    Locais de coleta
+                </h2>
+
+                <span></span>
+
+            </div>
+
+
+            <p class="section-subtitle">
+
+                Confira alguns locais onde os materiais
+                podem ser destinados.
+
+            </p>
+
+
+            <div class="locais-grid">
+
+
+                <!-- LOCAL 1 -->
+
+                <article class="local-card">
+
+                    <div class="local-icon">
+
+                        <i class="fa-solid fa-recycle"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span class="local-tipo">
+                            COOPERATIVA
+                        </span>
+
+                        <h3>
+                            Cooarlas
+                        </h3>
+
+                        <p>
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            Guajuviras, Canoas - RS
+
+                        </p>
+
+                        <a href="#">
+                            Ver no mapa →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- LOCAL 2 -->
+
+                <article class="local-card">
+
+                    <div class="local-icon">
+
+                        <i class="fa-solid fa-recycle"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span class="local-tipo">
+                            COOPERATIVA
+                        </span>
+
+                        <h3>
+                            Coopcamate
+                        </h3>
+
+                        <p>
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            Mathias Velho, Canoas - RS
+
+                        </p>
+
+                        <a href="#">
+                            Ver no mapa →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- LOCAL 3 -->
+
+                <article class="local-card">
+
+                    <div class="local-icon">
+
+                        <i class="fa-solid fa-recycle"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span class="local-tipo">
+                            COOPERATIVA
+                        </span>
+
+                        <h3>
+                            Coopermag
+                        </h3>
+
+                        <p>
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            Canoas - RS
+
+                        </p>
+
+                        <a href="#">
+                            Ver no mapa →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- LOCAL 4 -->
+
+                <article class="local-card">
+
+                    <div class="local-icon">
+
+                        <i class="fa-solid fa-recycle"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span class="local-tipo">
+                            COOPERATIVA
+                        </span>
+
+                        <h3>
+                            Coopersol
+                        </h3>
+
+                        <p>
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            Niterói, Canoas - RS
+
+                        </p>
+
+                        <a href="#">
+                            Ver no mapa →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             AVISO
+        ========================== -->
+
+        <section class="aviso">
+
+            <div class="aviso-icon">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+            </div>
+
+            <div>
+
+                <h2>
+                    Antes de levar seus materiais
+                </h2>
+
+                <p>
+
+                    Verifique se os materiais estão limpos,
+                    secos e separados. Alguns locais podem
+                    aceitar materiais específicos. Consulte
+                    as informações do ponto antes de realizar
+                    a entrega.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+
+                    <div class="footer-logo-icon">
+                        ♻
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            HUB
+                        </strong>
+
+                        <span>
+                            Pró-Reciclagem
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    Informação que transforma atitudes em ações
+                    para um futuro mais sustentável.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Navegação
+                </h3>
+
+                <a href="1inicial.html">
+                    Início
+                </a>
+
+                <a href="2reciclagem.html">
+                    Reciclagem
+                </a>
+
+                <a href="4Cooperativas.html">
+                    Cooperativas
+                </a>
+
+                <a href="5Mapa.html">
+                    Mapa da Coleta
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Recursos
+                </h3>
+
+                <a href="6calculadora.html">
+                    Calculadora da Reciclagem
+                </a>
+
+                <a href="3educacao_ambiental.html">
+                    Educação Ambiental
+                </a>
+
+                <a href="7noticias.html">
+                    Notícias
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contato
+                </h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Canoas - RS
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    hubproreciclagem@unilasalle.edu.br
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 HUB Pró-Reciclagem.
+            Todos os direitos reservados.
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

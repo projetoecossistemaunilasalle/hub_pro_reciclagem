@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/6calculadora.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Calculadora da Reciclagem - HUB Pró-Reciclagem</title>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     CABEÇALHO
+========================================= -->
+
+<header>
+
+    <nav>
+
+        <div class="menu">
+
+
+            <!-- LOGO -->
+
+            <img
+                class="nav__logo"
+                src="../imagens/logo.png"
+                alt="Logo HUB Pró-Reciclagem"
+            >
+
+
+            <!-- MENU -->
+
+            <ul class="menu__lista">
+
+                <li>
+                    <a href="1inicial.html">
+                        Início
+                    </a>
+                </li>
+
+                <li>
+                    <a href="2reciclagem.html">
+                        Reciclagem
+                    </a>
+                </li>
+
+                <li>
+                    <a href="3educacao_ambiental.html">
+                        Educação Ambiental
+                    </a>
+                </li>
+
+                <li>
+                    <a href="4Cooperativas.html">
+                        Cooperativas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="5Mapa.html">
+                        Mapa da Coleta
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="6calculadora.html"
+                        class="ativo"
+                    >
+                        Calculadora da Reciclagem
+                    </a>
+                </li>
+
+                <li>
+                    <a href="7noticias.html">
+                        Notícias
+                    </a>
+                </li>
+
+                <li>
+                    <a href="8contato.html">
+                        Contato
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- ACESSO ADMINISTRATIVO -->
+
+            <a
+                href="adm.html"
+                class="menu__admin"
+            >
+                Acesso Administrativo
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================
+     CONTEÚDO PRINCIPAL
+========================================= -->
+
+<main>
+
+
+    <!-- =====================================
+         HERO DA CALCULADORA
+    ====================================== -->
+
+    <section class="calculadora__hero">
+
+
+        <div class="calculadora__hero__conteudo">
+
+            <span class="hero__etiqueta">
+                ♻ CALCULADORA DA RECICLAGEM
+            </span>
+
+
+            <h1>
+                Descubra o impacto
+                da sua reciclagem
+            </h1>
+
+
+            <div class="linha_amarela"></div>
+
+
+            <p>
+                Informe a quantidade de materiais que você
+                recicla e descubra como pequenas atitudes
+                podem contribuir para um futuro mais sustentável.
+            </p>
+
+        </div>
+
+
+        <div class="calculadora__hero__icone">
+
+            <i class="fa-solid fa-recycle"></i>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CALCULADORA
+    ====================================== -->
+
+    <section class="calculadora__secao">
+
+
+        <div class="calculadora__container">
+
+
+            <!-- =================================
+                 FORMULÁRIO
+            ================================== -->
+
+            <div class="calculadora__card">
+
+
+                <div class="calculadora__titulo">
+
+                    <div class="calculadora__icone">
+
+                        <i class="fa-solid fa-calculator"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            CALCULE SEU IMPACTO
+                        </span>
+
+                        <h2>
+                            Quanto você recicla?
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <p class="calculadora__descricao">
+
+                    Informe aproximadamente quantos quilos
+                    de cada material você encaminha para
+                    reciclagem por mês.
+
+                </p>
+
+
+
+                <!-- PAPEL -->
+
+                <div class="material__input">
+
+                    <div class="material__nome">
+
+                        <div class="material__icone papel">
+
+                            <i class="fa-solid fa-newspaper"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Papel e papelão
+                            </strong>
+
+                            <small>
+                                kg por mês
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <input
+                        type="number"
+                        id="papel"
+                        min="0"
+                        step="0.1"
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+
+                <!-- PLÁSTICO -->
+
+                <div class="material__input">
+
+                    <div class="material__nome">
+
+                        <div class="material__icone plastico">
+
+                            <i class="fa-solid fa-bottle-water"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Plástico
+                            </strong>
+
+                            <small>
+                                kg por mês
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <input
+                        type="number"
+                        id="plastico"
+                        min="0"
+                        step="0.1"
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+
+                <!-- VIDRO -->
+
+                <div class="material__input">
+
+                    <div class="material__nome">
+
+                        <div class="material__icone vidro">
+
+                            <i class="fa-solid fa-wine-bottle"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Vidro
+                            </strong>
+
+                            <small>
+                                kg por mês
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <input
+                        type="number"
+                        id="vidro"
+                        min="0"
+                        step="0.1"
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+
+                <!-- METAL -->
+
+                <div class="material__input">
+
+                    <div class="material__nome">
+
+                        <div class="material__icone metal">
+
+                            <i class="fa-solid fa-can-food"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Metais
+                            </strong>
+
+                            <small>
+                                kg por mês
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <input
+                        type="number"
+                        id="metal"
+                        min="0"
+                        step="0.1"
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+
+                <!-- ELETRÔNICOS -->
+
+                <div class="material__input">
+
+                    <div class="material__nome">
+
+                        <div class="material__icone eletronico">
+
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Eletrônicos
+                            </strong>
+
+                            <small>
+                                kg por mês
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <input
+                        type="number"
+                        id="eletronicos"
+                        min="0"
+                        step="0.1"
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    class="btn__calcular"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-calculator"></i>
+
+                    Calcular meu impacto
+
+                </button>
+
+
+                <button
+                    class="btn__limpar"
+                    type="button"
+                >
+
+                    Limpar valores
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 RESULTADO
+            ================================== -->
+
+            <div class="resultado__card">
+
+
+                <div class="resultado__topo">
+
+                    <span>
+                        SEU RESULTADO
+                    </span>
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                </div>
+
+
+                <div class="resultado__principal">
+
+                    <small>
+                        Total reciclado
+                    </small>
+
+
+                    <strong>
+                        0 kg
+                    </strong>
+
+
+                    <p>
+                        por mês
+                    </p>
+
+                </div>
+
+
+
+                <!-- RESULTADOS -->
+
+                <div class="resultado__itens">
+
+
+                    <div class="resultado__item">
+
+                        <div class="resultado__item__icone">
+
+                            <i class="fa-solid fa-recycle"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Materiais reciclados
+                            </strong>
+
+                            <span>
+                                0 kg
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="resultado__item">
+
+                        <div class="resultado__item__icone">
+
+                            <i class="fa-solid fa-tree"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Recursos preservados
+                            </strong>
+
+                            <span>
+                                Calculando...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="resultado__item">
+
+                        <div class="resultado__item__icone">
+
+                            <i class="fa-solid fa-cloud"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Impacto ambiental
+                            </strong>
+
+                            <span>
+                                Calculando...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MENSAGEM -->
+
+                <div class="resultado__mensagem">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                    <p>
+
+                        Cada quilo reciclado faz diferença.
+                        Continue separando seus materiais e
+                        contribuindo para um futuro mais sustentável!
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         COMO FUNCIONA
+    ====================================== -->
+
+    <section class="como__funciona">
+
+
+        <div class="titulo__secao">
+
+            <h2>
+                Como funciona?
+            </h2>
+
+            <div class="linha_amarela"></div>
+
+        </div>
+
+
+        <div class="passos">
+
+
+            <!-- PASSO 1 -->
+
+            <div class="passo">
+
+                <div class="passo__numero">
+                    1
+                </div>
+
+                <div class="passo__icone">
+
+                    <i class="fa-solid fa-scale-balanced"></i>
+
+                </div>
+
+                <h3>
+                    Informe os materiais
+                </h3>
+
+                <p>
+                    Digite aproximadamente quantos quilos
+                    de cada material você recicla por mês.
+                </p>
+
+            </div>
+
+
+            <div class="passo__seta">
+                →
+            </div>
+
+
+            <!-- PASSO 2 -->
+
+            <div class="passo">
+
+                <div class="passo__numero">
+                    2
+                </div>
+
+                <div class="passo__icone">
+
+                    <i class="fa-solid fa-calculator"></i>
+
+                </div>
+
+                <h3>
+                    Faça o cálculo
+                </h3>
+
+                <p>
+                    A calculadora soma os materiais e
+                    apresenta o resultado da sua reciclagem.
+                </p>
+
+            </div>
+
+
+            <div class="passo__seta">
+                →
+            </div>
+
+
+            <!-- PASSO 3 -->
+
+            <div class="passo">
+
+                <div class="passo__numero">
+                    3
+                </div>
+
+                <div class="passo__icone">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                </div>
+
+                <h3>
+                    Veja seu impacto
+                </h3>
+
+                <p>
+                    Descubra como sua participação contribui
+                    para a preservação do meio ambiente.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FRASE FINAL
+    ====================================== -->
+
+    <section class="calculadora__cta">
+
+
+        <div class="cta__icone">
+
+            <i class="fa-solid fa-seedling"></i>
+
+        </div>
+
+
+        <div class="cta__texto">
+
+            <h2>
+                Reciclar hoje transforma o amanhã.
+            </h2>
+
+            <p>
+                Separe seus materiais, encontre um ponto
+                de coleta e faça parte dessa transformação.
+            </p>
+
+        </div>
+
+
+        <a
+            href="5Mapa.html"
+            class="cta__botao"
+        >
+
+            Encontrar ponto de coleta →
+
+        </a>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     RODAPÉ
+========================================= -->
+
+<footer class="site-footer">
+
+
+    <div class="footer-container">
+
+
+        <!-- IDENTIDADE -->
+
+        <div class="footer-brand">
+
+
+            <div class="footer-logo">
+
+                <div class="footer-logo-icon">
+                    ♻
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        HUB
+                    </strong>
+
+                    <span>
+                        Pró-Reciclagem
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                Informação que transforma atitudes
+                em ações para um futuro mais sustentável.
+
+            </p>
+
+
+            <div class="footer-social">
+
+                <a href="#">
+                    f
+                </a>
+
+                <a href="#">
+                    ◎
+                </a>
+
+                <a href="#">
+                    ▶
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVEGAÇÃO -->
+
+        <div class="footer-column">
+
+            <h3>
+                Navegação
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="1inicial.html">
+                        Início
+                    </a>
+                </li>
+
+                <li>
+                    <a href="2reciclagem.html">
+                        Reciclagem
+                    </a>
+                </li>
+
+                <li>
+                    <a href="4Cooperativas.html">
+                        Cooperativas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="5Mapa.html">
+                        Mapa da Coleta
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- RECURSOS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Recursos
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="6calculadora.html">
+                        Calculadora da Reciclagem
+                    </a>
+                </li>
+
+                <li>
+                    <a href="3educacao_ambiental.html">
+                        Educação Ambiental
+                    </a>
+                </li>
+
+                <li>
+                    <a href="7noticias.html">
+                        Notícias
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- CONTATO -->
+
+        <div class="footer-column footer-contact">
+
+            <h3>
+                Contato
+            </h3>
+
+
+            <div class="contact-item">
+
+                <span class="contact-icon">
+                    📍
+                </span>
+
+                <p>
+                    Canoas - RS<br>
+                    Brasil
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span class="contact-icon">
+                    ✉
+                </span>
+
+                <a href="mailto:hubproreciclagem@unilasalle.edu.br">
+                    hubproreciclagem@unilasalle.edu.br
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- PARTE INFERIOR -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 HUB Pró-Reciclagem.
+            Todos os direitos reservados.
+        </p>
+
+    </div>
+
+
+</footer>
+
+
+</body>
+
+</html>
