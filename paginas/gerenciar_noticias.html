@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Gerenciar Notícias | HUB Pró-Reciclagem</title>
+
+
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================
+         FONT AWESOME
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =========================
+         ESTILO
+    ========================== -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #f5faf6;
+            color: #075c35;
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           CABEÇALHO
+        ========================== */
+
+        .header {
+
+            height: 78px;
+
+            background: #ffffff;
+
+            border-bottom: 1px solid #e3ebe5;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+        }
+
+
+        .logo img {
+
+            width: 145px;
+
+            display: block;
+
+        }
+
+
+        .header-direita {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+        }
+
+
+        .usuario {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #075c35;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+        }
+
+
+        .usuario i {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            background: #e8f5eb;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #08723f;
+
+        }
+
+
+        .btn-sair {
+
+            border: 1px solid #08723f;
+
+            background: transparent;
+
+            color: #08723f;
+
+            padding: 10px 18px;
+
+            border-radius: 25px;
+
+            font-family: inherit;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+        }
+
+
+        .btn-sair:hover {
+
+            background: #08723f;
+
+            color: #ffffff;
+
+        }
+
+
+        /* =========================
+           LAYOUT
+        ========================== */
+
+        .layout {
+
+            display: flex;
+
+            min-height: calc(100vh - 78px);
+
+        }
+
+
+        /* =========================
+           MENU LATERAL
+        ========================== */
+
+        .sidebar {
+
+            width: 250px;
+
+            background: #ffffff;
+
+            border-right: 1px solid #e3ebe5;
+
+            padding: 30px 18px;
+
+        }
+
+
+        .sidebar-titulo {
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            color: #8a9a91;
+
+            margin: 0 12px 15px;
+
+        }
+
+
+        .menu {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 6px;
+
+        }
+
+
+        .menu a {
+
+            text-decoration: none;
+
+            color: #567065;
+
+            padding: 13px 15px;
+
+            border-radius: 10px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+        }
+
+
+        .menu a i {
+
+            width: 20px;
+
+            text-align: center;
+
+        }
+
+
+        .menu a:hover {
+
+            background: #eef8f0;
+
+            color: #08723f;
+
+        }
+
+
+        .menu a.ativo {
+
+            background: #e5f5e9;
+
+            color: #08723f;
+
+        }
+
+
+        /* =========================
+           CONTEÚDO
+        ========================== */
+
+        .conteudo {
+
+            flex: 1;
+
+            padding: 40px 5%;
+
+            max-width: 1400px;
+
+        }
+
+
+        .topo-conteudo {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            justify-content: space-between;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .topo-conteudo h1 {
+
+            font-family: 'Quicksand', sans-serif;
+
+            font-size: 32px;
+
+            color: #075c35;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .topo-conteudo p {
+
+            color: #6d7f76;
+
+            font-size: 15px;
+
+        }
+
+
+        .btn-nova {
+
+            border: none;
+
+            background: #08723f;
+
+            color: #ffffff;
+
+            padding: 13px 22px;
+
+            border-radius: 10px;
+
+            font-family: inherit;
+
+            font-weight: 800;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+        }
+
+
+        .btn-nova:hover {
+
+            background: #065c33;
+
+        }
+
+
+        /* =========================
+           ESTATÍSTICAS
+        ========================== */
+
+        .estatisticas {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 18px;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .estatistica {
+
+            background: #ffffff;
+
+            border: 1px solid #e4ebe6;
+
+            border-radius: 14px;
+
+            padding: 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+        }
+
+
+        .estatistica-icone {
+
+            width: 48px;
+
+            height: 48px;
+
+            border-radius: 12px;
+
+            background: #e8f5eb;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #08723f;
+
+            font-size: 20px;
+
+        }
+
+
+        .estatistica strong {
+
+            display: block;
+
+            font-size: 24px;
+
+            color: #075c35;
+
+        }
+
+
+        .estatistica span {
+
+            font-size: 13px;
+
+            color: #7a8b83;
+
+        }
+
+
+        /* =========================
+           LISTA DE NOTÍCIAS
+        ========================== */
+
+        .secao-titulo {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .secao-titulo h2 {
+
+            font-family: 'Quicksand', sans-serif;
+
+            font-size: 22px;
+
+            color: #075c35;
+
+        }
+
+
+        .filtro {
+
+            border: 1px solid #d9e4dc;
+
+            background: #ffffff;
+
+            padding: 10px 14px;
+
+            border-radius: 8px;
+
+            font-family: inherit;
+
+            color: #567065;
+
+        }
+
+
+        .noticias {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+
+        }
+
+
+        .noticia {
+
+            background: #ffffff;
+
+            border: 1px solid #e2ebe5;
+
+            border-radius: 14px;
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+        }
+
+
+        .noticia-imagem {
+
+            width: 120px;
+
+            height: 90px;
+
+            border-radius: 10px;
+
+            background: #e9f3e5;
+
+            overflow: hidden;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .noticia-imagem img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+        .noticia-info {
+
+            flex: 1;
+
+        }
+
+
+        .noticia-info h3 {
+
+            color: #075c35;
+
+            font-size: 17px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .noticia-info p {
+
+            color: #75857d;
+
+            font-size: 13px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .noticia-meta {
+
+            display: flex;
+
+            gap: 15px;
+
+            align-items: center;
+
+            font-size: 12px;
+
+            color: #8a9991;
+
+        }
+
+
+        .status {
+
+            padding: 5px 9px;
+
+            border-radius: 15px;
+
+            font-weight: 800;
+
+            font-size: 11px;
+
+        }
+
+
+        .status-publicada {
+
+            background: #e5f5e9;
+
+            color: #08723f;
+
+        }
+
+
+        .status-pendente {
+
+            background: #fff4d8;
+
+            color: #9b7200;
+
+        }
+
+
+        .acoes {
+
+            display: flex;
+
+            gap: 8px;
+
+        }
+
+
+        .btn-acao {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 8px;
+
+            border: 1px solid #dce6df;
+
+            background: #ffffff;
+
+            cursor: pointer;
+
+            color: #5e7167;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .btn-acao:hover {
+
+            background: #eef8f0;
+
+            color: #08723f;
+
+        }
+
+
+        .btn-excluir:hover {
+
+            background: #fff0f0;
+
+            color: #c0392b;
+
+        }
+
+
+        /* =========================
+           FORMULÁRIO
+        ========================== */
+
+        .formulario {
+
+            display: none;
+
+            background: #ffffff;
+
+            border: 1px solid #e2ebe5;
+
+            border-radius: 16px;
+
+            padding: 30px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .formulario.mostrar {
+
+            display: block;
+
+        }
+
+
+        .formulario h2 {
+
+            font-family: 'Quicksand', sans-serif;
+
+            color: #075c35;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .campo-form {
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .campo-form label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            color: #36584a;
+
+        }
+
+
+        .campo-form input,
+
+        .campo-form textarea,
+
+        .campo-form select {
+
+            width: 100%;
+
+            border: 1px solid #d7e3db;
+
+            border-radius: 9px;
+
+            padding: 12px 14px;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            outline: none;
+
+        }
+
+
+        .campo-form input:focus,
+
+        .campo-form textarea:focus,
+
+        .campo-form select:focus {
+
+            border-color: #08723f;
+
+        }
+
+
+        .campo-form textarea {
+
+            min-height: 150px;
+
+            resize: vertical;
+
+        }
+
+
+        .linha-form {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+
+        }
+
+
+        .botoes-form {
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            gap: 12px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .btn-cancelar {
+
+            border: 1px solid #ccd9d1;
+
+            background: #ffffff;
+
+            color: #63766c;
+
+            padding: 12px 22px;
+
+            border-radius: 9px;
+
+            font-family: inherit;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+        }
+
+
+        .btn-publicar {
+
+            border: none;
+
+            background: #08723f;
+
+            color: #ffffff;
+
+            padding: 12px 25px;
+
+            border-radius: 9px;
+
+            font-family: inherit;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+        }
+
+
+        .btn-publicar:hover {
+
+            background: #065c33;
+
+        }
+
+
+        .btn-publicar:disabled {
+
+            opacity: 0.7;
+
+            cursor: not-allowed;
+
+        }
+
+
+        /* =========================
+           RESPONSIVO
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+
+                width: 210px;
+
+            }
+
+            .estatisticas {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .header {
+
+                padding: 0 20px;
+
+            }
+
+            .sidebar {
+
+                display: none;
+
+            }
+
+            .conteudo {
+
+                padding: 30px 20px;
+
+            }
+
+            .topo-conteudo {
+
+                flex-direction: column;
+
+                gap: 20px;
+
+            }
+
+            .linha-form {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .noticia {
+
+                flex-wrap: wrap;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <a href="1inicial.html">
+
+                <img
+                    src="../imagens/logo.png"
+                    alt="HUB Pró-Reciclagem"
+                >
+
+            </a>
+
+        </div>
+
+
+        <div class="header-direita">
+
+            <div class="usuario">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span id="usuarioNome">
+                    Usuário
+                </span>
+
+            </div>
+
+
+            <button
+                class="btn-sair"
+                id="btnSair"
+                type="button"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Sair
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         LAYOUT
+    ========================== -->
+
+    <div class="layout">
+
+
+        <!-- =========================
+             MENU LATERAL
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-titulo">
+                Gerenciamento
+            </div>
+
+
+            <nav class="menu">
+
+                <a
+                    href="#"
+                    class="ativo"
+                >
+
+                    <i class="fa-solid fa-newspaper"></i>
+
+                    Notícias
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                    Cooperativas
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-map-location-dot"></i>
+
+                    Mapa da Coleta
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    Materiais
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Configurações
+
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- =========================
+             CONTEÚDO PRINCIPAL
+        ========================== -->
+
+        <main class="conteudo">
+
+
+            <!-- TOPO -->
+
+            <div class="topo-conteudo">
+
+                <div>
+
+                    <h1>
+                        Gerenciar notícias
+                    </h1>
+
+                    <p>
+                        Crie, edite e atualize as notícias do HUB Pró-Reciclagem.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="btn-nova"
+                    id="btnNovaNoticia"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Nova publicação
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =========================
+                 FORMULÁRIO
+            ========================== -->
+
+            <section
+                class="formulario"
+                id="formulario"
+            >
+
+                <h2>
+                    Nova publicação
+                </h2>
+
+
+                <!-- TÍTULO -->
+
+                <div class="campo-form">
+
+                    <label for="titulo">
+                        Título da notícia
+                    </label>
+
+                    <input
+                        type="text"
+                        id="titulo"
+                        placeholder="Digite o título da notícia"
+                    >
+
+                </div>
+
+
+                <!-- RESUMO -->
+
+                <div class="campo-form">
+
+                    <label for="resumo">
+                        Resumo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="resumo"
+                        placeholder="Digite um breve resumo"
+                    >
+
+                </div>
+
+
+                <!-- CATEGORIA + IMAGEM -->
+
+                <div class="linha-form">
+
+
+                    <div class="campo-form">
+
+                        <label for="categoria">
+                            Categoria
+                        </label>
+
+
+                        <select id="categoria">
+
+                            <option value="">
+                                Selecione uma categoria
+                            </option>
+
+                            <option value="reciclagem">
+                                Reciclagem
+                            </option>
+
+                            <option value="sustentabilidade">
+                                Sustentabilidade
+                            </option>
+
+                            <option value="cooperativas">
+                                Cooperativas
+                            </option>
+
+                            <option value="educacao">
+                                Educação ambiental
+                            </option>
+
+                            <option value="comunidade">
+                                Comunidade
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="campo-form">
+
+                        <label for="imagem">
+                            Imagem
+                        </label>
+
+                        <input
+                            type="file"
+                            id="imagem"
+                            accept="image/*"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTEÚDO -->
+
+                <div class="campo-form">
+
+                    <label for="conteudoNoticia">
+                        Conteúdo da notícia
+                    </label>
+
+
+                    <textarea
+                        id="conteudoNoticia"
+                        placeholder="Digite o conteúdo completo da notícia..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- BOTÕES -->
+
+                <div class="botoes-form">
+
+
+                    <button
+                        type="button"
+                        class="btn-cancelar"
+                        id="btnCancelar"
+                    >
+
+                        Cancelar
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="btn-publicar"
+                        id="btnPublicar"
+                    >
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        Publicar notícia
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 ESTATÍSTICAS
+            ========================== -->
+
+            <section class="estatisticas">
+
+
+                <div class="estatistica">
+
+                    <div class="estatistica-icone">
+
+                        <i class="fa-solid fa-newspaper"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="totalNoticias">
+                            12
+                        </strong>
+
+                        <span>
+                            Total de notícias
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="estatistica">
+
+                    <div class="estatistica-icone">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="totalPublicadas">
+                            10
+                        </strong>
+
+                        <span>
+                            Publicadas
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="estatistica">
+
+                    <div class="estatistica-icone">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="totalPendentes">
+                            2
+                        </strong>
+
+                        <span>
+                            Pendentes
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 PUBLICAÇÕES
+            ========================== -->
+
+            <section>
+
+
+                <div class="secao-titulo">
+
+                    <h2>
+                        Publicações
+                    </h2>
+
+
+                    <select class="filtro">
+
+                        <option value="todas">
+                            Todas
+                        </option>
+
+                        <option value="publicadas">
+                            Publicadas
+                        </option>
+
+                        <option value="pendentes">
+                            Pendentes
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div
+                    class="noticias"
+                    id="listaNoticias"
+                >
+
+
+                    <!-- NOTÍCIA DE EXEMPLO 1 -->
+
+                    <article class="noticia">
+
+
+                        <div class="noticia-imagem">
+
+                            <img
+                                src="../imagens/reciclagem_carrossel.png"
+                                alt="Reciclagem"
+                            >
+
+                        </div>
+
+
+                        <div class="noticia-info">
+
+                            <h3>
+                                Reciclagem e sustentabilidade:
+                                pequenas atitudes fazem a diferença
+                            </h3>
+
+
+                            <p>
+                                A separação correta dos materiais recicláveis
+                                contribui para a preservação do meio ambiente.
+                            </p>
+
+
+                            <div class="noticia-meta">
+
+                                <span class="status status-publicada">
+                                    Publicada
+                                </span>
+
+                                <span>
+                                    25/08/2026
+                                </span>
+
+                                <span>
+                                    Administrador
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="acoes">
+
+
+                            <button
+                                class="btn-acao"
+                                type="button"
+                                title="Editar"
+                            >
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </button>
+
+
+                            <button
+                                class="btn-acao btn-excluir"
+                                type="button"
+                                title="Excluir"
+                            >
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- NOTÍCIA DE EXEMPLO 2 -->
+
+                    <article class="noticia">
+
+
+                        <div class="noticia-imagem">
+
+                            <img
+                                src="../imagens/organico.png"
+                                alt="Coleta"
+                            >
+
+                        </div>
+
+
+                        <div class="noticia-info">
+
+                            <h3>
+                                A importância da separação correta dos resíduos
+                            </h3>
+
+
+                            <p>
+                                Saiba como separar os resíduos corretamente
+                                e contribuir com a reciclagem.
+                            </p>
+
+
+                            <div class="noticia-meta">
+
+                                <span class="status status-pendente">
+                                    Pendente
+                                </span>
+
+                                <span>
+                                    20/08/2026
+                                </span>
+
+                                <span>
+                                    Cooperativa
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="acoes">
+
+
+                            <button
+                                class="btn-acao"
+                                type="button"
+                                title="Editar"
+                            >
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </button>
+
+
+                            <button
+                                class="btn-acao btn-excluir"
+                                type="button"
+                                title="Excluir"
+                            >
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT DA INTERFACE
+    ========================== -->
+
+    <script>
+
+        const btnNovaNoticia =
+            document.getElementById("btnNovaNoticia");
+
+        const formulario =
+            document.getElementById("formulario");
+
+        const btnCancelar =
+            document.getElementById("btnCancelar");
+
+
+        /*
+         * Abrir formulário
+         */
+
+        btnNovaNoticia.addEventListener(
+            "click",
+            function () {
+
+                formulario.classList.add("mostrar");
+
+                formulario.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+        /*
+         * Cancelar
+         */
+
+        btnCancelar.addEventListener(
+            "click",
+            function () {
+
+                formulario.classList.remove("mostrar");
+
+            }
+        );
+
+
+        /*
+         * Sair
+         */
+
+        document
+            .getElementById("btnSair")
+            .addEventListener(
+                "click",
+                function () {
+
+                    window.location.href = "adm.html";
+
+                }
+            );
+
+    </script>
+
+
+
+    <!-- =========================
+         FIREBASE / NOTÍCIAS
+    ========================== -->
+
+    <script
+        type="module"
+        src="../js/noticias.js"
+    ></script>
+
+
+</body>
+
+</html>

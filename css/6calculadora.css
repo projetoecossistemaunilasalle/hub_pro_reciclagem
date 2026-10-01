@@ -1,0 +1,1346 @@
+/* =====================================================
+   HUB PRÓ-RECICLAGEM
+   CALCULADORA
+===================================================== */
+
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    width: 100%;
+
+    overflow-x: hidden;
+
+}
+
+
+body {
+
+    font-family: "Nunito", sans-serif;
+
+    color: #173f32;
+
+    background: #f7faf8;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.menu {
+
+    width: 100%;
+
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    background: #ffffff;
+
+    position: relative;
+
+    z-index: 100;
+
+    border-top: 8px solid #ffffff;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    box-shadow:
+        0 4px 18px rgba(0,0,0,.10);
+
+}
+
+
+.nav__logo {
+
+    width: 195px;
+
+    min-width: 195px;
+
+    height: 92px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 5px 15px;
+
+    border-right: 3px solid #e5e5e5;
+
+}
+
+
+.nav__logo img {
+
+    width: 165px;
+
+    height: auto;
+
+    max-height: 200px;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+
+.menu__nav {
+
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.menu__lista {
+
+    width: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 34px;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+.menu__lista a {
+
+    min-width: 78px;
+
+    min-height: 70px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+
+    position: relative;
+
+    padding: 7px 4px;
+
+    text-decoration: none;
+
+    color: #075c32;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    line-height: 1.1;
+
+    white-space: nowrap;
+
+    transition: .25s;
+
+}
+
+
+.menu__lista a i {
+
+    width: 28px;
+
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+}
+
+
+.menu__lista a:hover {
+
+    color: #f5c400;
+
+}
+
+
+.menu__lista a.ativo {
+
+    color: #f5c400;
+
+}
+
+
+.menu__lista a.ativo::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 22.5%;
+
+    width: 55%;
+
+    height: 3px;
+
+    border-radius: 5px;
+
+    background: #f5c400;
+
+}
+
+
+.menu__admin {
+
+    min-width: 235px;
+
+    margin: 0 28px 0 25px;
+
+    padding: 13px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border: 1.5px solid #075c32;
+
+    border-radius: 28px;
+
+    background: #ffffff;
+
+    color: #075c32;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    transition: .25s;
+
+}
+
+
+.menu__admin:hover {
+
+    background: #075c32;
+
+    color: #ffffff;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.calc-hero {
+
+    min-height: 360px;
+
+    padding: 65px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            120deg,
+            #eef8f1,
+            #ffffff
+        );
+
+}
+
+
+.calc-hero-conteudo {
+
+    max-width: 760px;
+
+}
+
+
+.etiqueta {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 16px;
+
+    border-radius: 25px;
+
+    background: #e2f3e7;
+
+    color: #075c32;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: .7px;
+
+}
+
+
+.calc-hero h1 {
+
+    margin-top: 20px;
+
+    font-family: "Quicksand", sans-serif;
+
+    font-size: 48px;
+
+    line-height: 1.1;
+
+    color: #075c32;
+
+}
+
+
+.calc-hero h1 strong {
+
+    color: #2fa24a;
+
+}
+
+
+.calc-hero p {
+
+    max-width: 680px;
+
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #587067;
+
+}
+
+
+.hero-icone {
+
+    width: 190px;
+
+    height: 190px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #075c32;
+
+    color: #ffffff;
+
+    font-size: 75px;
+
+    box-shadow:
+        0 18px 40px rgba(7,92,50,.18);
+
+}
+
+
+/* =====================================================
+   TÍTULOS
+===================================================== */
+
+.secao-titulo {
+
+    max-width: 760px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+
+}
+
+
+.secao-titulo span {
+
+    color: #2fa24a;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.secao-titulo h2 {
+
+    margin-top: 8px;
+
+    font-family: "Quicksand", sans-serif;
+
+    font-size: 36px;
+
+    color: #075c32;
+
+}
+
+
+.secao-titulo p {
+
+    margin-top: 15px;
+
+    font-size: 16px;
+
+    line-height: 1.65;
+
+    color: #657b72;
+
+}
+
+
+/* =====================================================
+   POR QUE
+===================================================== */
+
+.por-que {
+
+    padding: 80px 7%;
+
+    background: #ffffff;
+
+}
+
+
+.beneficios {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+
+}
+
+
+.beneficio {
+
+    padding: 30px 22px;
+
+    border: 1px solid #e1ebe5;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    text-align: center;
+
+    transition: .25s;
+
+}
+
+
+.beneficio:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(7,92,50,.08);
+
+}
+
+
+.beneficio-icone {
+
+    width: 58px;
+
+    height: 58px;
+
+    margin: auto;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e6f5ea;
+
+    color: #2fa24a;
+
+    font-size: 23px;
+
+}
+
+
+.beneficio h3 {
+
+    margin-top: 17px;
+
+    color: #075c32;
+
+    font-size: 18px;
+
+}
+
+
+.beneficio p {
+
+    margin-top: 9px;
+
+    color: #71847c;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+}
+
+
+/* =====================================================
+   COMO FUNCIONA
+===================================================== */
+
+.como-funciona {
+
+    padding: 80px 7%;
+
+    background: #f4f8f5;
+
+}
+
+
+.passos {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.passo {
+
+    text-align: center;
+
+    position: relative;
+
+}
+
+
+.numero {
+
+    width: 40px;
+
+    height: 40px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f5c400;
+
+    color: #075c32;
+
+    font-weight: 900;
+
+}
+
+
+.passo > i {
+
+    color: #2fa24a;
+
+    font-size: 28px;
+
+}
+
+
+.passo h3 {
+
+    margin-top: 12px;
+
+    color: #075c32;
+
+    font-size: 17px;
+
+}
+
+
+.passo p {
+
+    margin-top: 7px;
+
+    color: #71847c;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   ÁREA DA CALCULADORA
+===================================================== */
+
+.calculadora-area {
+
+    padding: 90px 6%;
+
+    background: #ffffff;
+
+}
+
+
+.calculadora-intro {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    text-align: center;
+
+}
+
+
+.calculadora-intro > span {
+
+    color: #2fa24a;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.calculadora-intro h2 {
+
+    margin-top: 8px;
+
+    font-family: "Quicksand", sans-serif;
+
+    font-size: 38px;
+
+    color: #075c32;
+
+}
+
+
+.calculadora-intro p {
+
+    margin-top: 12px;
+
+    color: #71847c;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+
+.calculadora-layout {
+
+    max-width: 1100px;
+
+    margin: 50px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 400px 1fr;
+
+    gap: 40px;
+
+    align-items: start;
+
+}
+
+
+/* =====================================================
+   CALCULADORA FÍSICA
+===================================================== */
+
+.calculator {
+
+    padding: 22px;
+
+    border-radius: 25px;
+
+    background: #173f32;
+
+    box-shadow:
+        0 20px 45px rgba(7,92,50,.20);
+
+}
+
+
+/* DISPLAY */
+
+.calculator-top {
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background: #0e2c23;
+
+    text-align: right;
+
+}
+
+
+.calculator-top span {
+
+    display: block;
+
+    color: #82a698;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+}
+
+
+#display {
+
+    min-height: 55px;
+
+    margin-top: 3px;
+
+    color: #ffffff;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+}
+
+
+.calculator-top small {
+
+    color: #82a698;
+
+    font-size: 11px;
+
+}
+
+
+/* MATERIAL */
+
+.material-box {
+
+    margin: 18px 0;
+
+}
+
+
+.material-box label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #d7e8df;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.material-box select {
+
+    width: 100%;
+
+    height: 45px;
+
+    padding: 0 12px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #173f32;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+/* TECLADO */
+
+.teclado {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.tecla {
+
+    height: 62px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    color: #173f32;
+
+    cursor: pointer;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    transition: .15s;
+
+}
+
+
+.tecla:hover {
+
+    transform: translateY(-2px);
+
+    background: #eaf5ed;
+
+}
+
+
+.tecla:active {
+
+    transform: scale(.95);
+
+}
+
+
+.tecla-funcao {
+
+    background: #dfeee4;
+
+    color: #075c32;
+
+}
+
+
+.tecla-operador {
+
+    background: #f5c400;
+
+    color: #173f32;
+
+}
+
+
+.tecla-igual {
+
+    grid-row: span 2;
+
+    height: 134px;
+
+    background: #2fa24a;
+
+    color: #ffffff;
+
+}
+
+
+.tecla-zero {
+
+    grid-column: span 2;
+
+}
+
+
+/* =====================================================
+   RESULTADO
+===================================================== */
+
+.resultado {
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e1ebe5;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 35px rgba(7,92,50,.07);
+
+}
+
+
+.resultado-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #edf1ee;
+
+}
+
+
+.resultado-header span {
+
+    color: #2fa24a;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.resultado-header h3 {
+
+    margin-top: 4px;
+
+    color: #075c32;
+
+    font-size: 21px;
+
+}
+
+
+.resultado-quantidade {
+
+    text-align: right;
+
+}
+
+
+.resultado-quantidade strong {
+
+    display: block;
+
+    color: #2fa24a;
+
+    font-size: 25px;
+
+}
+
+
+.resultado-quantidade small {
+
+    color: #84958e;
+
+    font-size: 11px;
+
+}
+
+
+/* MÉTRICAS */
+
+.metricas {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 13px;
+
+    margin-top: 23px;
+
+}
+
+
+.metrica {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    border-radius: 13px;
+
+    background: #f6faf7;
+
+}
+
+
+.metrica-icone {
+
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e5f4e9;
+
+    color: #2fa24a;
+
+}
+
+
+.metrica span {
+
+    display: block;
+
+    color: #819189;
+
+    font-size: 11px;
+
+}
+
+
+.metrica strong {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #075c32;
+
+    font-size: 15px;
+
+}
+
+
+/* OBSERVAÇÃO */
+
+.observacao {
+
+    margin-top: 20px;
+
+    padding: 14px;
+
+    display: flex;
+
+    gap: 10px;
+
+    border-radius: 12px;
+
+    background: #fff9dc;
+
+    color: #776515;
+
+}
+
+
+.observacao i {
+
+    margin-top: 2px;
+
+}
+
+
+.observacao p {
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   DADOS
+===================================================== */
+
+.dados {
+
+    padding: 80px 7%;
+
+    background: #f4f8f5;
+
+}
+
+
+.dados-box {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.dados-box > div {
+
+    display: flex;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    background: #ffffff;
+
+    border-radius: 13px;
+
+    border: 1px solid #e1ebe5;
+
+}
+
+
+.dados-box i {
+
+    color: #2fa24a;
+
+    margin-top: 3px;
+
+}
+
+
+.dados-box p {
+
+    color: #60756c;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .menu {
+
+        min-width: 1050px;
+
+    }
+
+
+    .menu__lista {
+
+        gap: 20px;
+
+    }
+
+
+    .menu__lista a {
+
+        font-size: 15px;
+
+    }
+
+
+    .menu__admin {
+
+        min-width: 190px;
+
+        margin-right: 15px;
+
+    }
+
+
+    .beneficios,
+    .passos {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .calculadora-layout {
+
+        grid-template-columns: 360px 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .calc-hero {
+
+        padding: 55px 25px;
+
+    }
+
+
+    .hero-icone {
+
+        display: none;
+
+    }
+
+
+    .calc-hero h1 {
+
+        font-size: 39px;
+
+    }
+
+
+    .calculadora-layout {
+
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+
+    }
+
+
+    .calculator {
+
+        width: 100%;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .beneficios,
+    .passos,
+    .dados-box {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .secao-titulo h2,
+    .calculadora-intro h2 {
+
+        font-size: 29px;
+
+    }
+
+
+    .metricas {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .resultado {
+
+        padding: 22px;
+
+    }
+
+}
