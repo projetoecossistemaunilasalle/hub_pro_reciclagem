@@ -1,1633 +1,1090 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciar Notícias | HUB Pró-Reciclagem</title>
 
+    <link rel="stylesheet" href="../css/1inicial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- =========================
-         GOOGLE FONTS
-    ========================== -->
-
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-
-    <!-- =========================
-         FONT AWESOME
-    ========================== -->
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
-
-    <!-- =========================
-         ESTILO
-    ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --verde-escuro: #075c32;
+            --verde: #087a42;
+            --verde-claro: #e8f5ec;
+            --fundo: #f2f8f4;
+            --amarelo: #f5c400;
+            --texto: #173f30;
+            --cinza: #60766a;
+            --borda: #dce9e0;
+            --branco: #ffffff;
+        }
 
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
-
         body {
-            font-family: 'Nunito', sans-serif;
-            background: #f5faf6;
-            color: #075c35;
+            margin: 0;
             min-height: 100vh;
+            background: var(--fundo);
+            color: var(--texto);
+            font-family: "Nunito", sans-serif;
         }
 
-
-        /* =========================
-           CABEÇALHO
-        ========================== */
-
-        .header {
-
-            height: 78px;
-
-            background: #ffffff;
-
-            border-bottom: 1px solid #e3ebe5;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            padding: 0 5%;
-
-            position: sticky;
-
-            top: 0;
-
-            z-index: 100;
-
+        button, input, textarea {
+            font: inherit;
         }
 
-
-        .logo img {
-
-            width: 145px;
-
-            display: block;
-
-        }
-
-
-        .header-direita {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 20px;
-
-        }
-
-
-        .usuario {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            color: #075c35;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-        }
-
-
-        .usuario i {
-
-            width: 38px;
-
-            height: 38px;
-
-            border-radius: 50%;
-
-            background: #e8f5eb;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: #08723f;
-
-        }
-
-
-        .btn-sair {
-
-            border: 1px solid #08723f;
-
-            background: transparent;
-
-            color: #08723f;
-
-            padding: 10px 18px;
-
-            border-radius: 25px;
-
-            font-family: inherit;
-
-            font-weight: 700;
-
-            cursor: pointer;
-
-        }
-
-
-        .btn-sair:hover {
-
-            background: #08723f;
-
-            color: #ffffff;
-
-        }
-
-
-        /* =========================
-           LAYOUT
-        ========================== */
-
-        .layout {
-
-            display: flex;
-
-            min-height: calc(100vh - 78px);
-
-        }
-
-
-        /* =========================
-           MENU LATERAL
-        ========================== */
-
-        .sidebar {
-
-            width: 250px;
-
-            background: #ffffff;
-
-            border-right: 1px solid #e3ebe5;
-
-            padding: 30px 18px;
-
-        }
-
-
-        .sidebar-titulo {
-
-            font-size: 12px;
-
-            font-weight: 800;
-
-            text-transform: uppercase;
-
-            color: #8a9a91;
-
-            margin: 0 12px 15px;
-
-        }
-
-
-        .menu {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 6px;
-
-        }
-
-
-        .menu a {
-
-            text-decoration: none;
-
-            color: #567065;
-
-            padding: 13px 15px;
-
-            border-radius: 10px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 13px;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-        }
-
-
-        .menu a i {
-
-            width: 20px;
-
-            text-align: center;
-
-        }
-
-
-        .menu a:hover {
-
-            background: #eef8f0;
-
-            color: #08723f;
-
-        }
-
-
-        .menu a.ativo {
-
-            background: #e5f5e9;
-
-            color: #08723f;
-
-        }
-
-
-        /* =========================
-           CONTEÚDO
-        ========================== */
-
-        .conteudo {
-
-            flex: 1;
-
-            padding: 40px 5%;
-
-            max-width: 1400px;
-
-        }
-
-
-        .topo-conteudo {
-
-            display: flex;
-
-            align-items: flex-start;
-
-            justify-content: space-between;
-
-            margin-bottom: 35px;
-
-        }
-
-
-        .topo-conteudo h1 {
-
-            font-family: 'Quicksand', sans-serif;
-
-            font-size: 32px;
-
-            color: #075c35;
-
-            margin-bottom: 8px;
-
-        }
-
-
-        .topo-conteudo p {
-
-            color: #6d7f76;
-
-            font-size: 15px;
-
-        }
-
-
-        .btn-nova {
-
-            border: none;
-
-            background: #08723f;
-
-            color: #ffffff;
-
-            padding: 13px 22px;
-
-            border-radius: 10px;
-
-            font-family: inherit;
-
-            font-weight: 800;
-
-            font-size: 14px;
-
-            cursor: pointer;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 9px;
-
-        }
-
-
-        .btn-nova:hover {
-
-            background: #065c33;
-
-        }
-
-
-        /* =========================
-           ESTATÍSTICAS
-        ========================== */
-
-        .estatisticas {
-
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 18px;
-
-            margin-bottom: 35px;
-
-        }
-
-
-        .estatistica {
-
-            background: #ffffff;
-
-            border: 1px solid #e4ebe6;
-
-            border-radius: 14px;
-
-            padding: 22px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 15px;
-
-        }
-
-
-        .estatistica-icone {
-
-            width: 48px;
-
-            height: 48px;
-
-            border-radius: 12px;
-
-            background: #e8f5eb;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: #08723f;
-
-            font-size: 20px;
-
-        }
-
-
-        .estatistica strong {
-
-            display: block;
-
-            font-size: 24px;
-
-            color: #075c35;
-
-        }
-
-
-        .estatistica span {
-
-            font-size: 13px;
-
-            color: #7a8b83;
-
-        }
-
-
-        /* =========================
-           LISTA DE NOTÍCIAS
-        ========================== */
-
-        .secao-titulo {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            margin-bottom: 18px;
-
-        }
-
-
-        .secao-titulo h2 {
-
-            font-family: 'Quicksand', sans-serif;
-
-            font-size: 22px;
-
-            color: #075c35;
-
-        }
-
-
-        .filtro {
-
-            border: 1px solid #d9e4dc;
-
-            background: #ffffff;
-
-            padding: 10px 14px;
-
-            border-radius: 8px;
-
-            font-family: inherit;
-
-            color: #567065;
-
-        }
-
-
-        .noticias {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 15px;
-
-        }
-
-
-        .noticia {
-
-            background: #ffffff;
-
-            border: 1px solid #e2ebe5;
-
-            border-radius: 14px;
-
-            padding: 20px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 20px;
-
-        }
-
-
-        .noticia-imagem {
-
-            width: 120px;
-
-            height: 90px;
-
-            border-radius: 10px;
-
-            background: #e9f3e5;
-
-            overflow: hidden;
-
-            flex-shrink: 0;
-
-        }
-
-
-        .noticia-imagem img {
-
+        /* CABEÇALHO */
+
+        .cabecalho-noticias {
+            position: relative;
+            z-index: 10;
             width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
+            background: var(--branco);
+            box-shadow: 0 4px 18px rgba(20, 60, 40, 0.08);
         }
 
-
-        .noticia-info {
-
-            flex: 1;
-
-        }
-
-
-        .noticia-info h3 {
-
-            color: #075c35;
-
-            font-size: 17px;
-
-            margin-bottom: 7px;
-
-        }
-
-
-        .noticia-info p {
-
-            color: #75857d;
-
-            font-size: 13px;
-
-            margin-bottom: 10px;
-
-        }
-
-
-        .noticia-meta {
-
+        .cabecalho-conteudo {
             display: flex;
-
-            gap: 15px;
-
             align-items: center;
-
-            font-size: 12px;
-
-            color: #8a9991;
-
+            justify-content: space-between;
+            gap: 20px;
+            min-height: 70px;
+            padding: 10px 5.2%;
         }
 
-
-        .status {
-
-            padding: 5px 9px;
-
-            border-radius: 15px;
-
-            font-weight: 800;
-
-            font-size: 11px;
-
-        }
-
-
-        .status-publicada {
-
-            background: #e5f5e9;
-
-            color: #08723f;
-
-        }
-
-
-        .status-pendente {
-
-            background: #fff4d8;
-
-            color: #9b7200;
-
-        }
-
-
-        .acoes {
-
+        .logo-site {
             display: flex;
-
-            gap: 8px;
-
-        }
-
-
-        .btn-acao {
-
-            width: 38px;
-
-            height: 38px;
-
-            border-radius: 8px;
-
-            border: 1px solid #dce6df;
-
-            background: #ffffff;
-
-            cursor: pointer;
-
-            color: #5e7167;
-
-            display: flex;
-
             align-items: center;
+            text-decoration: none;
+        }
 
+        .logo-site img {
+            display: block;
+            width: 145px;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .botao-voltar {
+            display: inline-flex;
+            align-items: center;
             justify-content: center;
-
+            gap: 9px;
+            min-height: 42px;
+            padding: 0 18px;
+            border: 1px solid var(--verde-escuro);
+            border-radius: 30px;
+            background: var(--branco);
+            color: var(--verde-escuro);
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background .2s, color .2s;
         }
 
-
-        .btn-acao:hover {
-
-            background: #eef8f0;
-
-            color: #08723f;
-
+        .botao-voltar:hover {
+            background: var(--verde-escuro);
+            color: var(--branco);
         }
 
+        /* CONTEÚDO */
 
-        .btn-excluir:hover {
-
-            background: #fff0f0;
-
-            color: #c0392b;
-
+        .pagina {
+            width: min(1200px, 100%);
+            margin: 0 auto;
+            padding: 46px 28px 65px;
         }
 
+        .pagina-topo {
+            margin-bottom: 28px;
+        }
 
-        /* =========================
-           FORMULÁRIO
-        ========================== */
+        .etiqueta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 30px;
+            background: #e2f3e7;
+            color: var(--verde-escuro);
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: .6px;
+            text-transform: uppercase;
+        }
+
+        .pagina-topo h1 {
+            margin: 15px 0 8px;
+            color: var(--verde-escuro);
+            font-size: clamp(30px, 4vw, 40px);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .pagina-topo h1 span {
+            color: #15964d;
+        }
+
+        .pagina-topo p {
+            max-width: 750px;
+            margin: 0;
+            color: var(--cinza);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .linha-amarela {
+            display: block;
+            width: 49px;
+            height: 3px;
+            margin-top: 19px;
+            border-radius: 10px;
+            background: var(--amarelo);
+        }
+
+        /* PAINEL DO FORMULÁRIO */
+
+        .painel {
+            overflow: hidden;
+            border: 1px solid var(--borda);
+            border-radius: 19px;
+            background: var(--branco);
+            box-shadow: 0 12px 35px rgba(22, 75, 47, .06);
+        }
+
+        .painel-cabecalho {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 22px 25px;
+            border-bottom: 1px solid var(--borda);
+            background: #fcfefc;
+        }
+
+        .painel-icone {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            background: var(--verde-claro);
+            color: var(--verde);
+            font-size: 19px;
+        }
+
+        .painel-cabecalho h2 {
+            margin: 0 0 4px;
+            color: var(--verde-escuro);
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+        .painel-cabecalho p {
+            margin: 0;
+            color: var(--cinza);
+            font-size: 12px;
+        }
 
         .formulario {
-
-            display: none;
-
-            background: #ffffff;
-
-            border: 1px solid #e2ebe5;
-
-            border-radius: 16px;
-
-            padding: 30px;
-
-            margin-bottom: 30px;
-
+            padding: 26px;
         }
 
-
-        .formulario.mostrar {
-
-            display: block;
-
-        }
-
-
-        .formulario h2 {
-
-            font-family: 'Quicksand', sans-serif;
-
-            color: #075c35;
-
-            margin-bottom: 25px;
-
-        }
-
-
-        .campo-form {
-
-            margin-bottom: 20px;
-
-        }
-
-
-        .campo-form label {
-
-            display: block;
-
-            margin-bottom: 7px;
-
-            font-size: 13px;
-
-            font-weight: 800;
-
-            color: #36584a;
-
-        }
-
-
-        .campo-form input,
-
-        .campo-form textarea,
-
-        .campo-form select {
-
-            width: 100%;
-
-            border: 1px solid #d7e3db;
-
-            border-radius: 9px;
-
-            padding: 12px 14px;
-
-            font-family: inherit;
-
-            font-size: 14px;
-
-            outline: none;
-
-        }
-
-
-        .campo-form input:focus,
-
-        .campo-form textarea:focus,
-
-        .campo-form select:focus {
-
-            border-color: #08723f;
-
-        }
-
-
-        .campo-form textarea {
-
-            min-height: 150px;
-
-            resize: vertical;
-
-        }
-
-
-        .linha-form {
-
+        .campos-grid {
             display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 20px;
-
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px 20px;
         }
 
-
-        .botoes-form {
-
+        .campo {
             display: flex;
-
-            justify-content: flex-end;
-
-            gap: 12px;
-
-            margin-top: 25px;
-
+            flex-direction: column;
+            gap: 9px;
+            min-width: 0;
         }
 
-
-        .btn-cancelar {
-
-            border: 1px solid #ccd9d1;
-
-            background: #ffffff;
-
-            color: #63766c;
-
-            padding: 12px 22px;
-
-            border-radius: 9px;
-
-            font-family: inherit;
-
-            font-weight: 700;
-
-            cursor: pointer;
-
+        .campo-completo {
+            grid-column: 1 / -1;
         }
 
-
-        .btn-publicar {
-
-            border: none;
-
-            background: #08723f;
-
-            color: #ffffff;
-
-            padding: 12px 25px;
-
-            border-radius: 9px;
-
-            font-family: inherit;
-
+        .campo label {
+            color: var(--texto);
+            font-size: 13px;
             font-weight: 800;
+        }
 
+        .obrigatorio {
+            color: #c43d3d;
+        }
+
+        .campo input,
+        .campo textarea {
+            width: 100%;
+            border: 1px solid #d6e4da;
+            border-radius: 10px;
+            outline: none;
+            background: #fcfefc;
+            color: var(--texto);
+            font-size: 13px;
+            transition: border-color .2s, box-shadow .2s;
+        }
+
+        .campo input {
+            min-height: 42px;
+            padding: 10px 13px;
+        }
+
+        .campo textarea {
+            min-height: 210px;
+            padding: 13px;
+            line-height: 1.7;
+            resize: vertical;
+        }
+
+        .campo input:focus,
+        .campo textarea:focus {
+            border-color: var(--verde);
+            box-shadow: 0 0 0 3px rgba(8, 122, 66, .09);
+        }
+
+        .campo input::placeholder,
+        .campo textarea::placeholder {
+            color: #95a69b;
+        }
+
+        .ajuda {
+            color: #75877c;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .contador {
+            display: flex;
+            justify-content: flex-end;
+            color: #75877c;
+            font-size: 11px;
+        }
+
+        /* BOTÕES */
+
+        .acoes {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e7eee9;
+        }
+
+        .botao {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 43px;
+            padding: 0 19px;
+            border: 1px solid transparent;
+            border-radius: 30px;
             cursor: pointer;
-
+            font-size: 12px;
+            font-weight: 800;
+            transition: background .2s, transform .2s;
         }
 
-
-        .btn-publicar:hover {
-
-            background: #065c33;
-
+        .botao:hover {
+            transform: translateY(-1px);
         }
 
-
-        .btn-publicar:disabled {
-
-            opacity: 0.7;
-
-            cursor: not-allowed;
-
+        .botao-principal {
+            background: var(--verde-escuro);
+            color: var(--branco);
         }
 
-
-        /* =========================
-           RESPONSIVO
-        ========================== */
-
-        @media (max-width: 900px) {
-
-            .sidebar {
-
-                width: 210px;
-
-            }
-
-            .estatisticas {
-
-                grid-template-columns: 1fr;
-
-            }
-
+        .botao-principal:hover {
+            background: #064725;
         }
 
+        .botao-secundario {
+            border-color: #cbded0;
+            background: var(--branco);
+            color: var(--verde-escuro);
+        }
+
+        .botao-secundario:hover {
+            background: var(--verde-claro);
+        }
+
+        .botao-excluir {
+            border-color: #f0d2d2;
+            background: var(--branco);
+            color: #b33434;
+        }
+
+        .botao-excluir:hover {
+            background: #fff1f1;
+        }
+
+        /* MENSAGENS */
+
+        .mensagem {
+            display: none;
+            margin-bottom: 20px;
+            padding: 13px 16px;
+            border: 1px solid #b8dfc4;
+            border-radius: 10px;
+            background: #eaf8ee;
+            color: var(--verde-escuro);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .mensagem.visivel {
+            display: block;
+        }
+
+        /* PUBLICAÇÕES CADASTRADAS */
+
+        .lista-secao {
+            margin-top: 36px;
+        }
+
+        .lista-topo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 17px;
+        }
+
+        .lista-topo h2 {
+            margin: 0;
+            color: var(--verde-escuro);
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .quantidade {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 30px;
+            height: 29px;
+            padding: 0 10px;
+            border-radius: 20px;
+            background: #e0f2e5;
+            color: var(--verde-escuro);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .lista-noticias {
+            display: grid;
+            gap: 14px;
+        }
+
+        .estado-vazio {
+            padding: 38px 20px;
+            border: 1px dashed #cbded0;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, .7);
+            color: var(--cinza);
+            text-align: center;
+        }
+
+        .estado-vazio i {
+            display: block;
+            margin-bottom: 12px;
+            color: #8aaa96;
+            font-size: 30px;
+        }
+
+        .estado-vazio p {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .noticia-card {
+            padding: 22px;
+            border: 1px solid var(--borda);
+            border-radius: 15px;
+            background: var(--branco);
+            box-shadow: 0 5px 18px rgba(22, 75, 47, .04);
+        }
+
+        .noticia-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 11px;
+            color: var(--cinza);
+            font-size: 12px;
+        }
+
+        .noticia-cooperativa {
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: var(--verde-claro);
+            color: var(--verde-escuro);
+            font-weight: 800;
+        }
+
+        .noticia-card h3 {
+            margin: 0 0 10px;
+            color: var(--verde-escuro);
+            font-size: 19px;
+            overflow-wrap: anywhere;
+        }
+
+        .noticia-texto {
+            color: #526b60;
+            font-size: 13px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        .noticia-acoes {
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 17px;
+            padding-top: 15px;
+            border-top: 1px solid #edf2ee;
+        }
+
+        .botao-pequeno {
+            min-height: 35px;
+            padding: 0 13px;
+            font-size: 11px;
+        }
+
+        /* RODAPÉ */
+
+        .rodape {
+            padding: 18px 5.2%;
+            border-top: 1px solid #e0eae3;
+            background: var(--branco);
+            color: var(--cinza);
+            font-size: 11px;
+        }
+
+        .rodape-conteudo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .rodape strong {
+            color: var(--verde-escuro);
+        }
+
+        /* RESPONSIVIDADE */
 
         @media (max-width: 700px) {
-
-            .header {
-
-                padding: 0 20px;
-
+            .cabecalho-conteudo {
+                min-height: 65px;
+                padding: 10px 16px;
             }
 
-            .sidebar {
-
-                display: none;
-
+            .logo-site img {
+                width: 125px;
             }
 
-            .conteudo {
-
-                padding: 30px 20px;
-
+            .botao-voltar {
+                min-height: 38px;
+                padding: 0 12px;
+                font-size: 12px;
             }
 
-            .topo-conteudo {
-
-                flex-direction: column;
-
-                gap: 20px;
-
+            .pagina {
+                padding: 30px 14px 45px;
             }
 
-            .linha-form {
+            .pagina-topo h1 {
+                font-size: 30px;
+            }
 
+            .campos-grid {
                 grid-template-columns: 1fr;
-
+                gap: 19px;
             }
 
-            .noticia {
-
-                flex-wrap: wrap;
-
+            .campo-completo {
+                grid-column: auto;
             }
 
+            .painel-cabecalho {
+                padding: 18px;
+            }
+
+            .formulario {
+                padding: 18px;
+            }
+
+            .acoes {
+                align-items: stretch;
+            }
+
+            .acoes > .botao,
+            .acoes-direita,
+            .acoes-direita .botao {
+                flex: 1;
+            }
+
+            .acoes-direita {
+                display: flex;
+            }
+
+            .noticia-card {
+                padding: 17px;
+            }
         }
 
+        @media (max-width: 380px) {
+            .logo-site img {
+                width: 105px;
+            }
+
+            .botao-voltar {
+                gap: 5px;
+                padding: 0 9px;
+                font-size: 11px;
+            }
+
+            .painel-cabecalho h2 {
+                font-size: 16px;
+            }
+        }
     </style>
-
 </head>
-
 
 <body>
 
+    <!-- CABEÇALHO: LOGO E BOTÃO VOLTAR AO SITE -->
 
-    <!-- =========================
-         CABEÇALHO
-    ========================== -->
+    <header class="cabecalho-noticias">
+        <div class="cabecalho-conteudo">
 
-    <header class="header">
+            <a href="1inicial.html" class="logo-site" aria-label="Voltar à página inicial">
+                <img src="../imagens/logo.png" alt="HUB Pró-Reciclagem">
+            </a>
 
-        <div class="logo">
-
-            <a href="1inicial.html">
-
-                <img
-                    src="../imagens/logo.png"
-                    alt="HUB Pró-Reciclagem"
-                >
-
+            <a href="1inicial.html" class="botao-voltar">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                <span>Voltar ao site</span>
             </a>
 
         </div>
-
-
-        <div class="header-direita">
-
-            <div class="usuario">
-
-                <i class="fa-solid fa-user"></i>
-
-                <span id="usuarioNome">
-                    Usuário
-                </span>
-
-            </div>
-
-
-            <button
-                class="btn-sair"
-                id="btnSair"
-                type="button"
-            >
-
-                <i class="fa-solid fa-right-from-bracket"></i>
-
-                Sair
-
-            </button>
-
-        </div>
-
     </header>
 
+    <!-- CONTEÚDO PRINCIPAL -->
 
+    <main class="pagina">
 
-    <!-- =========================
-         LAYOUT
-    ========================== -->
-
-    <div class="layout">
-
-
-        <!-- =========================
-             MENU LATERAL
-        ========================== -->
-
-        <aside class="sidebar">
-
-            <div class="sidebar-titulo">
-                Gerenciamento
+        <section class="pagina-topo">
+            <div class="etiqueta">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                Área administrativa
             </div>
 
+            <h1>Gerenciar <span>notícias e avisos</span></h1>
 
-            <nav class="menu">
+            <p>
+                Cadastre e organize comunicados, avisos e notícias
+                relacionados às cooperativas e à reciclagem.
+            </p>
 
-                <a
-                    href="#"
-                    class="ativo"
-                >
+            <span class="linha-amarela"></span>
+        </section>
 
-                    <i class="fa-solid fa-newspaper"></i>
+        <div id="mensagem" class="mensagem" role="status" aria-live="polite"></div>
 
-                    Notícias
+        <!-- FORMULÁRIO -->
 
-                </a>
+        <section class="painel">
 
-
-                <a href="#">
-
-                    <i class="fa-solid fa-people-group"></i>
-
-                    Cooperativas
-
-                </a>
-
-
-                <a href="#">
-
-                    <i class="fa-solid fa-map-location-dot"></i>
-
-                    Mapa da Coleta
-
-                </a>
-
-
-                <a href="#">
-
-                    <i class="fa-solid fa-book-open"></i>
-
-                    Materiais
-
-                </a>
-
-
-                <a href="#">
-
-                    <i class="fa-solid fa-gear"></i>
-
-                    Configurações
-
-                </a>
-
-            </nav>
-
-        </aside>
-
-
-
-        <!-- =========================
-             CONTEÚDO PRINCIPAL
-        ========================== -->
-
-        <main class="conteudo">
-
-
-            <!-- TOPO -->
-
-            <div class="topo-conteudo">
+            <div class="painel-cabecalho">
+                <div class="painel-icone">
+                    <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                </div>
 
                 <div>
-
-                    <h1>
-                        Gerenciar notícias
-                    </h1>
-
-                    <p>
-                        Crie, edite e atualize as notícias do HUB Pró-Reciclagem.
-                    </p>
-
+                    <h2 id="tituloFormulario">Cadastrar publicação</h2>
+                    <p>Preencha os campos para registrar uma nova publicação.</p>
                 </div>
-
-
-                <button
-                    class="btn-nova"
-                    id="btnNovaNoticia"
-                    type="button"
-                >
-
-                    <i class="fa-solid fa-plus"></i>
-
-                    Nova publicação
-
-                </button>
-
             </div>
 
+            <form class="formulario" id="formularioNoticia">
 
+                <input type="hidden" id="noticiaId">
 
-            <!-- =========================
-                 FORMULÁRIO
-            ========================== -->
+                <div class="campos-grid">
 
-            <section
-                class="formulario"
-                id="formulario"
-            >
-
-                <h2>
-                    Nova publicação
-                </h2>
-
-
-                <!-- TÍTULO -->
-
-                <div class="campo-form">
-
-                    <label for="titulo">
-                        Título da notícia
-                    </label>
-
-                    <input
-                        type="text"
-                        id="titulo"
-                        placeholder="Digite o título da notícia"
-                    >
-
-                </div>
-
-
-                <!-- RESUMO -->
-
-                <div class="campo-form">
-
-                    <label for="resumo">
-                        Resumo
-                    </label>
-
-                    <input
-                        type="text"
-                        id="resumo"
-                        placeholder="Digite um breve resumo"
-                    >
-
-                </div>
-
-
-                <!-- CATEGORIA + IMAGEM -->
-
-                <div class="linha-form">
-
-
-                    <div class="campo-form">
-
-                        <label for="categoria">
-                            Categoria
-                        </label>
-
-
-                        <select id="categoria">
-
-                            <option value="">
-                                Selecione uma categoria
-                            </option>
-
-                            <option value="reciclagem">
-                                Reciclagem
-                            </option>
-
-                            <option value="sustentabilidade">
-                                Sustentabilidade
-                            </option>
-
-                            <option value="cooperativas">
-                                Cooperativas
-                            </option>
-
-                            <option value="educacao">
-                                Educação ambiental
-                            </option>
-
-                            <option value="comunidade">
-                                Comunidade
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-
-                    <div class="campo-form">
-
-                        <label for="imagem">
-                            Imagem
+                    <div class="campo campo-completo">
+                        <label for="titulo">
+                            Título da publicação <span class="obrigatorio">*</span>
                         </label>
 
                         <input
-                            type="file"
-                            id="imagem"
-                            accept="image/*"
+                            type="text"
+                            id="titulo"
+                            maxlength="150"
+                            placeholder="Digite o título"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="cooperativa">Nome da cooperativa</label>
+
+                        <input
+                            type="text"
+                            id="cooperativa"
+                            maxlength="120"
+                            placeholder="Digite o nome da cooperativa"
                         >
 
+                        <span class="ajuda">
+                            Se o aviso não for específico de uma cooperativa,
+                            deixe este campo vazio.
+                        </span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="data">
+                            Data da publicação <span class="obrigatorio">*</span>
+                        </label>
+
+                        <input type="date" id="data" required>
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="texto">
+                            Texto da publicação <span class="obrigatorio">*</span>
+                        </label>
+
+                        <textarea
+                            id="texto"
+                            maxlength="10000"
+                            placeholder="Escreva o conteúdo completo do aviso ou da notícia..."
+                            required
+                        ></textarea>
+
+                        <div class="contador">
+                            <span id="contadorTexto">0</span>&nbsp;/ 10000 caracteres
+                        </div>
                     </div>
 
                 </div>
 
+                <div class="acoes">
 
-                <!-- CONTEÚDO -->
-
-                <div class="campo-form">
-
-                    <label for="conteudoNoticia">
-                        Conteúdo da notícia
-                    </label>
-
-
-                    <textarea
-                        id="conteudoNoticia"
-                        placeholder="Digite o conteúdo completo da notícia..."
-                    ></textarea>
-
-                </div>
-
-
-                <!-- BOTÕES -->
-
-                <div class="botoes-form">
-
-
-                    <button
-                        type="button"
-                        class="btn-cancelar"
-                        id="btnCancelar"
-                    >
-
-                        Cancelar
-
+                    <button type="button" class="botao botao-secundario" id="limparFormulario">
+                        <i class="fa-solid fa-eraser" aria-hidden="true"></i>
+                        Limpar campos
                     </button>
 
-
-                    <button
-                        type="button"
-                        class="btn-publicar"
-                        id="btnPublicar"
-                    >
-
-                        <i class="fa-solid fa-paper-plane"></i>
-
-                        Publicar notícia
-
-                    </button>
-
-                </div>
-
-            </section>
-
-
-
-            <!-- =========================
-                 ESTATÍSTICAS
-            ========================== -->
-
-            <section class="estatisticas">
-
-
-                <div class="estatistica">
-
-                    <div class="estatistica-icone">
-
-                        <i class="fa-solid fa-newspaper"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong id="totalNoticias">
-                            12
-                        </strong>
-
-                        <span>
-                            Total de notícias
-                        </span>
-
+                    <div class="acoes-direita">
+                        <button type="submit" class="botao botao-principal">
+                            <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>
+                            <span id="textoBotaoSalvar">Salvar publicação</span>
+                        </button>
                     </div>
 
                 </div>
+            </form>
+        </section>
 
+        <!-- LISTA DE PUBLICAÇÕES -->
 
+        <section class="lista-secao">
 
-                <div class="estatistica">
+            <div class="lista-topo">
+                <h2>Publicações cadastradas</h2>
+                <span class="quantidade" id="quantidadeNoticias">0</span>
+            </div>
 
-                    <div class="estatistica-icone">
-
-                        <i class="fa-solid fa-circle-check"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong id="totalPublicadas">
-                            10
-                        </strong>
-
-                        <span>
-                            Publicadas
-                        </span>
-
-                    </div>
-
+            <div class="lista-noticias" id="listaNoticias">
+                <div class="estado-vazio">
+                    <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
+                    <p>Nenhuma publicação cadastrada neste navegador.</p>
                 </div>
-
-
-
-                <div class="estatistica">
-
-                    <div class="estatistica-icone">
-
-                        <i class="fa-solid fa-clock"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong id="totalPendentes">
-                            2
-                        </strong>
-
-                        <span>
-                            Pendentes
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-
-            <!-- =========================
-                 PUBLICAÇÕES
-            ========================== -->
-
-            <section>
-
-
-                <div class="secao-titulo">
-
-                    <h2>
-                        Publicações
-                    </h2>
-
-
-                    <select class="filtro">
-
-                        <option value="todas">
-                            Todas
-                        </option>
-
-                        <option value="publicadas">
-                            Publicadas
-                        </option>
-
-                        <option value="pendentes">
-                            Pendentes
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-
-                <div
-                    class="noticias"
-                    id="listaNoticias"
-                >
-
-
-                    <!-- NOTÍCIA DE EXEMPLO 1 -->
-
-                    <article class="noticia">
-
-
-                        <div class="noticia-imagem">
-
-                            <img
-                                src="../imagens/reciclagem_carrossel.png"
-                                alt="Reciclagem"
-                            >
-
-                        </div>
-
-
-                        <div class="noticia-info">
-
-                            <h3>
-                                Reciclagem e sustentabilidade:
-                                pequenas atitudes fazem a diferença
-                            </h3>
-
-
-                            <p>
-                                A separação correta dos materiais recicláveis
-                                contribui para a preservação do meio ambiente.
-                            </p>
-
-
-                            <div class="noticia-meta">
-
-                                <span class="status status-publicada">
-                                    Publicada
-                                </span>
-
-                                <span>
-                                    25/08/2026
-                                </span>
-
-                                <span>
-                                    Administrador
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="acoes">
-
-
-                            <button
-                                class="btn-acao"
-                                type="button"
-                                title="Editar"
-                            >
-
-                                <i class="fa-solid fa-pen"></i>
-
-                            </button>
-
-
-                            <button
-                                class="btn-acao btn-excluir"
-                                type="button"
-                                title="Excluir"
-                            >
-
-                                <i class="fa-solid fa-trash"></i>
-
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- NOTÍCIA DE EXEMPLO 2 -->
-
-                    <article class="noticia">
-
-
-                        <div class="noticia-imagem">
-
-                            <img
-                                src="../imagens/organico.png"
-                                alt="Coleta"
-                            >
-
-                        </div>
-
-
-                        <div class="noticia-info">
-
-                            <h3>
-                                A importância da separação correta dos resíduos
-                            </h3>
-
-
-                            <p>
-                                Saiba como separar os resíduos corretamente
-                                e contribuir com a reciclagem.
-                            </p>
-
-
-                            <div class="noticia-meta">
-
-                                <span class="status status-pendente">
-                                    Pendente
-                                </span>
-
-                                <span>
-                                    20/08/2026
-                                </span>
-
-                                <span>
-                                    Cooperativa
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="acoes">
-
-
-                            <button
-                                class="btn-acao"
-                                type="button"
-                                title="Editar"
-                            >
-
-                                <i class="fa-solid fa-pen"></i>
-
-                            </button>
-
-
-                            <button
-                                class="btn-acao btn-excluir"
-                                type="button"
-                                title="Excluir"
-                            >
-
-                                <i class="fa-solid fa-trash"></i>
-
-                            </button>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </section>
-
-        </main>
-
-    </div>
-
-
-
-    <!-- =========================
-         JAVASCRIPT DA INTERFACE
-    ========================== -->
-
-    <script>
-
-        const btnNovaNoticia =
-            document.getElementById("btnNovaNoticia");
-
-        const formulario =
-            document.getElementById("formulario");
-
-        const btnCancelar =
-            document.getElementById("btnCancelar");
-
-
-        /*
-         * Abrir formulário
-         */
-
-        btnNovaNoticia.addEventListener(
-            "click",
-            function () {
-
-                formulario.classList.add("mostrar");
-
-                formulario.scrollIntoView({
-                    behavior: "smooth"
-                });
-
-            }
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+
+    <footer class="rodape">
+        <div class="rodape-conteudo">
+            <span>© 2026 HUB Pró-Reciclagem</span>
+            <strong>Área Administrativa</strong>
+        </div>
+    </footer>
+
+    <!-- FUNCIONALIDADES DO FORMULÁRIO -->
+
+    
+<script type="module">
+import { auth, db } from "../js/firebase-config.js";
+
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+import {
+    collection,
+    query,
+    where,
+    getDocs,
+    addDoc,
+    updateDoc,
+    deleteDoc,
+    doc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const formulario = document.getElementById("formularioNoticia");
+const campoId = document.getElementById("noticiaId");
+const campoTitulo = document.getElementById("titulo");
+const campoCooperativa = document.getElementById("cooperativa");
+const campoData = document.getElementById("data");
+const campoTexto = document.getElementById("texto");
+const contadorTexto = document.getElementById("contadorTexto");
+const listaNoticias = document.getElementById("listaNoticias");
+const quantidadeNoticias = document.getElementById("quantidadeNoticias");
+const mensagem = document.getElementById("mensagem");
+const tituloFormulario = document.getElementById("tituloFormulario");
+const textoBotaoSalvar = document.getElementById("textoBotaoSalvar");
+const botaoSalvar = formulario.querySelector('button[type="submit"]');
+
+let usuarioAtual = null;
+let noticias = [];
+
+function mostrarMensagem(texto, erro = false) {
+    mensagem.textContent = texto;
+    mensagem.classList.add("visivel");
+    mensagem.style.background = erro ? "#fff1f1" : "#eaf8ee";
+    mensagem.style.borderColor = erro ? "#efc4c4" : "#b8dfc4";
+    mensagem.style.color = erro ? "#a52c2c" : "#075c32";
+}
+
+function formatarData(data) {
+    if (!data) return "";
+
+    const partes = data.split("-");
+    if (partes.length !== 3) return data;
+
+    return `${partes[2]}/${partes[1]}/${partes[0]}`;
+}
+
+function criarElemento(tag, classe, texto) {
+    const elemento = document.createElement(tag);
+
+    if (classe) elemento.className = classe;
+    if (texto !== undefined) elemento.textContent = texto;
+
+    return elemento;
+}
+
+function limparFormulario() {
+    formulario.reset();
+    campoId.value = "";
+    contadorTexto.textContent = "0";
+    tituloFormulario.textContent = "Cadastrar publicação";
+    textoBotaoSalvar.textContent = "Salvar publicação";
+}
+
+async function carregarNoticias() {
+    if (!usuarioAtual) return;
+
+    listaNoticias.replaceChildren();
+    listaNoticias.appendChild(
+        criarElemento("div", "estado-vazio", "Carregando suas publicações...")
+    );
+
+    try {
+        const consulta = query(
+            collection(db, "noticias"),
+            where("autorId", "==", usuarioAtual.uid)
         );
 
+        const resultado = await getDocs(consulta);
 
-        /*
-         * Cancelar
-         */
+        noticias = resultado.docs.map(documento => ({
+            id: documento.id,
+            ...documento.data()
+        }));
 
-        btnCancelar.addEventListener(
-            "click",
-            function () {
-
-                formulario.classList.remove("mostrar");
-
-            }
+        noticias.sort((a, b) =>
+            (b.data || "").localeCompare(a.data || "")
         );
 
+        renderizarNoticias();
+    } catch (erro) {
+        console.error("Erro ao carregar publicações:", erro);
 
-        /*
-         * Sair
-         */
+        listaNoticias.replaceChildren();
+        listaNoticias.appendChild(
+            criarElemento(
+                "div",
+                "estado-vazio",
+                "Não foi possível carregar suas publicações. Verifique a conexão e as regras do Firestore."
+            )
+        );
 
-        document
-            .getElementById("btnSair")
-            .addEventListener(
-                "click",
-                function () {
+        mostrarMensagem("Erro ao carregar publicações.", true);
+    }
+}
 
-                    window.location.href = "adm.html";
+function renderizarNoticias() {
+    listaNoticias.replaceChildren();
+    quantidadeNoticias.textContent = noticias.length;
 
-                }
+    if (noticias.length === 0) {
+        const vazio = criarElemento("div", "estado-vazio");
+        const icone = criarElemento("i", "fa-regular fa-newspaper");
+        icone.setAttribute("aria-hidden", "true");
+
+        const texto = criarElemento(
+            "p",
+            "",
+            "Você ainda não possui publicações cadastradas."
+        );
+
+        vazio.append(icone, texto);
+        listaNoticias.appendChild(vazio);
+        return;
+    }
+
+    noticias.forEach(noticia => {
+        const card = criarElemento("article", "noticia-card");
+        const meta = criarElemento("div", "noticia-meta");
+
+        meta.appendChild(
+            criarElemento("span", "", "Data: " + formatarData(noticia.data))
+        );
+
+        if (noticia.cooperativa) {
+            meta.appendChild(
+                criarElemento(
+                    "span",
+                    "noticia-cooperativa",
+                    noticia.cooperativa
+                )
+            );
+        }
+
+        const titulo = criarElemento("h3", "", noticia.titulo || "");
+        const texto = criarElemento(
+            "div",
+            "noticia-texto",
+            noticia.conteudo || noticia.texto || ""
+        );
+
+        const acoes = criarElemento("div", "noticia-acoes");
+
+        const editar = criarElemento(
+            "button",
+            "botao botao-secundario botao-pequeno"
+        );
+
+        editar.type = "button";
+        editar.innerHTML = '<i class="fa-solid fa-pen"></i> Editar';
+        editar.addEventListener("click", () => editarNoticia(noticia.id));
+
+        const excluir = criarElemento(
+            "button",
+            "botao botao-excluir botao-pequeno"
+        );
+
+        excluir.type = "button";
+        excluir.innerHTML = '<i class="fa-solid fa-trash"></i> Excluir';
+        excluir.addEventListener("click", () => excluirNoticia(noticia.id));
+
+        acoes.append(editar, excluir);
+        card.append(meta, titulo, texto, acoes);
+        listaNoticias.appendChild(card);
+    });
+}
+
+function editarNoticia(id) {
+    const noticia = noticias.find(item => item.id === id);
+
+    if (!noticia || noticia.autorId !== usuarioAtual?.uid) return;
+
+    campoId.value = noticia.id;
+    campoTitulo.value = noticia.titulo || "";
+    campoCooperativa.value = noticia.cooperativa || "";
+    campoData.value = noticia.data || "";
+    campoTexto.value = noticia.conteudo || noticia.texto || "";
+
+    contadorTexto.textContent = campoTexto.value.length;
+    tituloFormulario.textContent = "Editar publicação";
+    textoBotaoSalvar.textContent = "Salvar alterações";
+
+    formulario.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    campoTitulo.focus();
+}
+
+formulario.addEventListener("submit", async evento => {
+    evento.preventDefault();
+
+    if (!usuarioAtual) {
+        mostrarMensagem("Entre com sua conta antes de publicar.", true);
+        return;
+    }
+
+    const titulo = campoTitulo.value.trim();
+    const cooperativa = campoCooperativa.value.trim();
+    const data = campoData.value;
+    const conteudo = campoTexto.value.trim();
+    const idExistente = campoId.value;
+
+    if (!titulo || !data || !conteudo) {
+        mostrarMensagem("Preencha todos os campos obrigatórios.", true);
+        return;
+    }
+
+    const resumo = conteudo.length > 180
+        ? conteudo.slice(0, 177) + "..."
+        : conteudo;
+
+    const dadosPublicacao = {
+        titulo,
+        cooperativa,
+        data,
+        conteudo,
+        texto: conteudo,
+        resumo,
+        categoria: cooperativa ? "Cooperativas" : "Sustentabilidade",
+        status: "publicada"
+    };
+
+    botaoSalvar.disabled = true;
+
+    try {
+        if (idExistente) {
+            const noticia = noticias.find(item => item.id === idExistente);
+
+            if (!noticia || noticia.autorId !== usuarioAtual.uid) {
+                mostrarMensagem(
+                    "Você só pode editar suas próprias publicações.",
+                    true
+                );
+                return;
+            }
+
+            await updateDoc(
+                doc(db, "noticias", idExistente),
+                dadosPublicacao
             );
 
-    </script>
+            mostrarMensagem("Publicação atualizada com sucesso!");
+        } else {
+            await addDoc(collection(db, "noticias"), {
+                ...dadosPublicacao,
+                autorId: usuarioAtual.uid,
+                criadoEm: serverTimestamp()
+            });
 
+            mostrarMensagem("Publicação salva no Firebase com sucesso!");
+        }
 
+        limparFormulario();
+        await carregarNoticias();
+    } catch (erro) {
+        console.error("Erro ao salvar publicação:", erro);
+        mostrarMensagem(
+            "Não foi possível salvar. Verifique as regras do Firestore.",
+            true
+        );
+    } finally {
+        botaoSalvar.disabled = false;
+    }
+});
 
-    <!-- =========================
-         FIREBASE / NOTÍCIAS
-    ========================== -->
+async function excluirNoticia(id) {
+    const noticia = noticias.find(item => item.id === id);
 
-    <script
-        type="module"
-        src="../js/noticias.js"
-    ></script>
+    if (!noticia || !usuarioAtual) return;
+
+    if (noticia.autorId !== usuarioAtual.uid) {
+        mostrarMensagem(
+            "Você só pode excluir suas próprias publicações.",
+            true
+        );
+        return;
+    }
+
+    if (!confirm("Deseja realmente excluir esta publicação?")) return;
+
+    try {
+        await deleteDoc(doc(db, "noticias", id));
+
+        if (campoId.value === id) {
+            limparFormulario();
+        }
+
+        await carregarNoticias();
+        mostrarMensagem("Publicação excluída com sucesso!");
+    } catch (erro) {
+        console.error("Erro ao excluir publicação:", erro);
+        mostrarMensagem("Não foi possível excluir a publicação.", true);
+    }
+}
+
+document.getElementById("limparFormulario").addEventListener("click", () => {
+    limparFormulario();
+    mensagem.classList.remove("visivel");
+});
+
+campoTexto.addEventListener("input", () => {
+    contadorTexto.textContent = campoTexto.value.length;
+});
+
+onAuthStateChanged(auth, async usuario => {
+    if (!usuario) {
+        mostrarMensagem(
+            "Você precisa entrar com sua conta. Redirecionando para o login...",
+            true
+        );
+
+        setTimeout(() => {
+            window.location.href = "adm.html";
+        }, 1800);
+
+        return;
+    }
+
+    usuarioAtual = usuario;
+    await carregarNoticias();
+});
+</script>
 
 
 </body>
-
 </html>

@@ -1,1708 +1,610 @@
 
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora da Reciclagem | HUB Pró-Reciclagem</title>
+  <link rel="stylesheet" href="../css/1inicial.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <meta charset="UTF-8">
+  <style>
+    :root {
+      --verde: #08643b;
+      --verde-escuro: #123f30;
+      --verde-claro: #eaf6ed;
+      --amarelo: #f5c400;
+      --texto: #284b3b;
+      --borda: #dce9df;
+    }
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--texto); font-family: Arial, sans-serif; background: #fff; }
 
-    <title>Calculadora da Reciclagem | HUB Pró-Reciclagem</title>
+    /* Abertura com imagem ocupando principalmente a metade direita */
+    .calc-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 75px clamp(22px, 8vw, 140px);
+      background: #f5fbf6;
+      isolation: isolate;
+    }
+    .calc-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-color: #ffff;
+      background-image: url("../imagens/calculadora_fundo.png");
+      background-size: auto 100%;
+      background-position: right center;
+      background-repeat: no-repeat;
+    }
+    .calc-hero__content { max-width: 720px; }
+    .etiqueta {
+      display: inline-block; padding: 10px 15px; border-radius: 30px;
+      background: #e1f3e7; color: #168047; font-size: 12px;
+      font-weight: bold; letter-spacing: 1px;
+    }
+    .calc-hero h1 {
+      margin: 22px 0 16px; color: var(--verde-escuro);
+      font-size: clamp(36px, 4.5vw, 58px); line-height: 1.12;
+    }
+    .calc-hero h1 span { color: #28a653; }
+    .calc-hero p { max-width: 650px; color: #526f62; font-size: 17px; line-height: 1.8; }
+    .hero-destaque { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+    .hero-destaque span {
+      padding: 10px 13px; border: 1px solid #deebe1; border-radius: 12px;
+      background: rgba(255,255,255,.88); color: #23613f; font-size: 13px; font-weight: bold;
+    }
+    .hero-destaque i { margin-right: 5px; color: #1b9b4e; }
 
-    <!-- FONTES -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    .calculadora-layout {
+      max-width: 1400px; margin: 55px auto 65px; padding: 0 28px;
+      display: grid; grid-template-columns: minmax(300px,.9fr) minmax(0,1.1fr);
+      align-items: stretch; gap: 30px;
+    }
+    .calculadora {
+      padding: 28px; border-radius: 25px; background: #174333; color: #fff;
+      box-shadow: 0 20px 42px #173d2c20; align-self: start;
+    }
+    .calculadora-topo { margin-bottom: 28px; }
+    .calculadora-topo .icone {
+      width: 54px; height: 54px; display: grid; place-items: center;
+      margin-bottom: 18px; border-radius: 16px; background: #28664c;
+      color: #d8f4df; font-size: 25px;
+    }
+    .calculadora-topo h2 { margin: 0 0 10px; font-size: 27px; }
+    .calculadora-topo p { margin: 0; color: #c6dfd0; font-size: 14px; line-height: 1.7; }
+    .calculadora label { display: block; margin: 19px 0 9px; font-size: 14px; font-weight: bold; }
+    .calculadora select, .calculadora input {
+      width: 100%; min-height: 52px; padding: 0 15px; border: 1px solid #dce9df;
+      border-radius: 12px; outline: none; background: #fff; color: #173d2c; font-size: 15px;
+    }
+    .calculadora select:focus, .calculadora input:focus {
+      border-color: #55cf7b; box-shadow: 0 0 0 3px #55cf7b35;
+    }
+    .campo-ajuda { display: block; margin-top: 8px; color: #c6dfd0; font-size: 12px; }
+    .btn-calcular {
+      width: 100%; min-height: 54px; margin-top: 25px; padding: 14px 20px;
+      border: none; border-radius: 13px; background: #f5c400; color: #163b2b;
+      font-size: 16px; font-weight: bold; cursor: pointer; transition: .2s;
+    }
+    .btn-calcular:hover { background: #ffda35; transform: translateY(-2px); }
+    .calculadora-nota { margin: 17px 0 0; color: #c6dfd0; font-size: 12px; line-height: 1.6; }
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    .resultados {
+      padding: clamp(24px,3vw,38px); border: 1px solid var(--borda);
+      border-radius: 25px; background: #fff; box-shadow: 0 12px 35px #164c2d0b;
+    }
+    .subtitulo { color: #168047; font-size: 12px; font-weight: bold; letter-spacing: 1.3px; }
+    .resultados h2 { margin: 14px 0; color: var(--verde-escuro); font-size: clamp(25px,3vw,35px); }
+    .descricao { color: #637a70; line-height: 1.7; }
+    .mensagem-inicial { margin: 24px 0; padding: 20px; border-radius: 16px; background: #eef8f0; color: #456653; line-height: 1.7; }
+    .mensagem-inicial i { margin-right: 7px; color: #168047; }
+    .grade-resultados { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin-top: 25px; }
+    .cartao-resultado { min-width: 0; padding: 19px; border: 1px solid #e7eee8; border-radius: 17px; background: #fbfdfb; }
+    .icone-resultado {
+      width: 44px; height: 44px; display: grid; place-items: center;
+      border-radius: 13px; background: #e1f3e7; color: #16864a; font-size: 20px;
+    }
+    .energia .icone-resultado { background: #fff4c9; color: #a77a00; }
+    .agua .icone-resultado { background: #e3f3ff; color: #2787d7; }
+    .recurso .icone-resultado { background: #f8ead9; color: #9b6b2b; }
+    .cartao-resultado h3 { margin: 14px 0 8px; color: #305745; font-size: 15px; }
+    .cartao-resultado strong { display: block; color: #087743; font-size: clamp(21px,2.5vw,29px); overflow-wrap: anywhere; }
+    .cartao-resultado p { margin-bottom: 0; color: #718479; font-size: 12px; line-height: 1.7; }
+    .aviso {
+      display: flex; align-items: flex-start; gap: 12px; margin-top: 20px;
+      padding: 15px; border-radius: 13px; background: #fff8dc; color: #806a20;
+      font-size: 12px; line-height: 1.7;
+    }
+    .aviso i { margin-top: 3px; }
 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap"
-          rel="stylesheet">
+    /* Seções e tabelas informativas */
+    .secao, .secao-tabela { max-width: 1400px; margin: 0 auto 65px; padding: 0 28px; }
+    .cabecalho-secao { max-width: 780px; margin: 0 auto 30px; text-align: center; }
+    .cabecalho-secao h2 { color: var(--verde-escuro); font-size: clamp(25px,3vw,35px); }
+    .cabecalho-secao p { color: #637a70; line-height: 1.7; }
+    .indicadores { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+    .cartao-indicador { padding: 22px; border: 1px solid var(--borda); border-radius: 18px; background: #fff; }
+    .cartao-indicador i {
+      display: grid; width: 46px; height: 46px; place-items: center; margin-bottom: 14px;
+      border-radius: 14px; background: #e4f5e9; color: #13834a; font-size: 21px;
+    }
+    .cartao-indicador h3 { color: #164a32; }
+    .cartao-indicador p { color: #5d7668; font-size: 14px; line-height: 1.7; }
+    .cartao-indicador small { color: #168048; font-weight: bold; }
 
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    .bloco-tabela {
+      padding: 32px; border: 1px solid var(--borda); border-radius: 22px;
+      background: #fff; box-shadow: 0 12px 35px #164c2d0b; margin-bottom: 25px;
+    }
+    .bloco-tabela.azul { background: #f6fbff; border-color: #dbeaf5; }
+    .bloco-tabela h2 { color: var(--verde-escuro); font-size: clamp(25px,3vw,34px); }
+    .bloco-tabela > p { color: #637a70; line-height: 1.7; }
+    .explicacao-tabela {
+      margin-top: 18px; padding: 16px; border-radius: 13px;
+      background: #fff8dc; color: #806a20; font-size: 13px; line-height: 1.7;
+    }
+    .tabela-rolagem { margin-top: 22px; overflow-x: auto; border: 1px solid #e2ebe4; border-radius: 13px; }
+    .tabela-reciclagem { width: 100%; min-width: 700px; border-collapse: collapse; font-size: 13px; }
+    .tabela-reciclagem thead { background: #e4f4e9; }
+    .bloco-tabela.azul .tabela-reciclagem thead { background: #e5f2fb; }
+    .tabela-reciclagem th, .tabela-reciclagem td {
+      padding: 14px; border-bottom: 1px solid #e6eee8; text-align: left; vertical-align: middle;
+    }
+    .tabela-reciclagem thead th { color: #164b32; font-size: 12px; }
+    .tabela-reciclagem tbody th { color: #244f3a; }
+    .tabela-reciclagem tbody td { color: #526d5e; }
+    .tabela-reciclagem tbody tr:nth-child(even) { background: #fbfdfb; }
+    .tabela-reciclagem .linha-reciclada { background: #eef8f0; font-weight: bold; }
+    .nota-tabela { margin-top: 18px; color: #718277; font-size: 12px; line-height: 1.7; }
 
-    <!-- CSS -->
-    <link rel="stylesheet"
-          href="../css/6calculadora.css">
+    .impacto-coletivo { padding: 38px 28px; border-radius: 24px; background: #f0f8e9; }
+    .cartoes-coletivos { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+    .cartao-coletivo { padding: 22px; border: 1px solid #e0edd9; border-radius: 17px; background: white; }
+    .cartao-coletivo h3 { color: #164a32; }
+    .cartao-coletivo p { color: #5c7465; font-size: 14px; line-height: 1.7; }
 
+    .site-footer { margin-top: 60px; background: #073b2c; color: #e8f4ec; }
+    .site-footer a { color: inherit; text-decoration: none; }
+    .footer-container {
+      max-width: 1400px; margin: auto; padding: 50px 30px;
+      display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.2fr; gap: 30px;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 10px; }
+    .footer-logo-icon {
+      display: grid; width: 42px; height: 42px; place-items: center;
+      border-radius: 50%; background: white; color: #087443; font-size: 25px;
+    }
+    .footer-logo strong, .footer-logo span { display: block; }
+    .footer-logo strong { font-size: 23px; }
+    .footer-logo span { color: #b7e3c6; font-size: 12px; }
+    .footer-brand p, .footer-column li, .contact-item { color: #c1d9ca; font-size: 13px; line-height: 1.7; }
+    .footer-column h3 { color: white; font-size: 15px; }
+    .footer-column ul { margin: 0; padding: 0; list-style: none; }
+    .footer-column li { margin-bottom: 9px; }
+    .contact-item { overflow-wrap: anywhere; }
+    .footer-bottom { padding: 18px 30px; border-top: 1px solid #285b43; color: #b5d0bf; font-size: 12px; text-align: center; }
+
+    @media (max-width: 1000px) {
+      .calc-hero { padding: 55px 35px; }
+      .calculadora-layout { grid-template-columns: 1fr 1.1fr; }
+      .indicadores { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .footer-container { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 760px) {
+      .calc-hero { padding: 45px 22px; }
+      .calc-hero::before {
+        background-image:
+          linear-gradient(90deg, rgba(255,255,255,.96), rgba(255,255,255,.83)),
+          url("../imagens/fundo-calculadora.jpg");
+      }
+      .calc-hero h1 { font-size: 38px; }
+      .calculadora-layout { grid-template-columns: 1fr; padding: 0 17px; margin-top: 35px; }
+      .calculadora { width: 100%; }
+      .resultados { padding: 23px 18px; }
+      .secao, .secao-tabela { padding: 0 17px; }
+      .bloco-tabela { padding: 22px 16px; }
+      .cartoes-coletivos { grid-template-columns: 1fr; }
+      .footer-container { grid-template-columns: repeat(2,1fr); padding: 35px 20px; }
+    }
+    @media (max-width: 430px) {
+      .calc-hero h1 { font-size: 32px; }
+      .grade-resultados, .indicadores, .footer-container { grid-template-columns: 1fr; }
+      .hero-destaque { display: grid; grid-template-columns: 1fr 1fr; }
+      .calculadora { padding: 21px; }
+    }
+  </style>
 </head>
 
-
 <body>
-
-
-<!-- =====================================================
-     CABEÇALHO
-===================================================== -->
-
-<header>
-
-    <nav class="menu"
-         aria-label="Navegação principal">
-
-        <!-- LOGO -->
-
-        <div class="nav__logo">
-
-            <a href="1inicial.html"
-               aria-label="Página inicial">
-
-                <img src="../imagens/logo.png"
-                     alt="HUB Pró-Reciclagem">
-
-            </a>
-
-        </div>
-
-
-        <!-- MENU -->
-
-        <div class="menu__nav">
-
-            <ul class="menu__lista">
-
-                <li>
-                    <a href="1inicial.html">
-                        <i class="fa-solid fa-house"></i>
-                        <span>Início</span>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="2reciclagem.html">
-                        <i class="fa-solid fa-recycle"></i>
-                        <span>Reciclagem</span>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="3educacao_ambiental.html">
-                        <i class="fa-solid fa-leaf"></i>
-                        <span>Educação Ambiental</span>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="4Cooperativas.html">
-                        <i class="fa-solid fa-people-group"></i>
-                        <span>Cooperativas</span>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="5Mapa.html">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>Mapa da Coleta</span>
-                    </a>
-                </li>
-
-
-                <!-- ATIVO -->
-
-                <li>
-                    <a href="6calculadora.html"
-                       class="ativo">
-
-                        <i class="fa-solid fa-calculator"></i>
-
-                        <span>Calculadora</span>
-
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="7noticias.html">
-                        <i class="fa-solid fa-newspaper"></i>
-                        <span>Notícias</span>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="8contato.html">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>Contato</span>
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <!-- ADMIN -->
-
-        <a href="adm.html"
-           class="menu__admin">
-
-            <i class="fa-solid fa-user-shield"></i>
-
-            <span>Acesso Administrativo</span>
-
+  <!-- CABEÇALHO DO SITE -->
+  <header>
+    <nav class="menu" aria-label="Navegação principal">
+      <div class="nav__logo">
+        <a href="1inicial.html">
+          <img src="../imagens/logo.png" alt="HUB Pró-Reciclagem">
         </a>
-
+      </div>
+      <div class="menu__nav">
+        <ul class="menu__lista">
+          <li><a href="1inicial.html"><i class="fa-solid fa-house"></i><span>Início</span></a></li>
+          <li><a href="2reciclagem.html"><i class="fa-solid fa-recycle"></i><span>Reciclagem</span></a></li>
+          <li><a href="3educacao_ambiental.html"><i class="fa-solid fa-leaf"></i><span>Educação Ambiental</span></a></li>
+          <li><a href="4Cooperativas.html"><i class="fa-solid fa-people-group"></i><span>Cooperativas</span></a></li>
+          <li><a href="5Mapa.html"><i class="fa-solid fa-location-dot"></i><span>Mapa da Coleta</span></a></li>
+          <li><a href="6calculadora.html" class="ativo"><i class="fa-solid fa-calculator"></i><span>Calculadora</span></a></li>
+          <li><a href="7noticias.html"><i class="fa-solid fa-newspaper"></i><span>Notícias</span></a></li>
+          <li><a href="8contato.html"><i class="fa-solid fa-envelope"></i><span>Contato</span></a></li>
+        </ul>
+      </div>
+      <a href="adm.html" class="menu__admin">
+        <i class="fa-solid fa-user-shield"></i><span>Acesso Administrativo</span>
+      </a>
     </nav>
+  </header>
 
-</header>
-
-
-
-<!-- =====================================================
-     CONTEÚDO
-===================================================== -->
-
-<main>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="calc-hero">
-
-    <div class="calc-hero-conteudo">
-
-        <span class="etiqueta">
-            <i class="fa-solid fa-calculator"></i>
-            CALCULADORA DA RECICLAGEM
-        </span>
-
-
-        <h1>
-            Descubra o impacto
-            <strong>da reciclagem</strong>
-        </h1>
-
-
+  <main>
+    <!-- ABERTURA COM IMAGEM DE FUNDO -->
+    <section class="calc-hero">
+      <div class="calc-hero__content">
+        <span class="etiqueta"><i class="fa-solid fa-calculator"></i> CALCULADORA DA RECICLAGEM</span>
+        <h1>Descubra o impacto <span>da reciclagem</span></h1>
         <p>
+          Informe o material e a quantidade reciclada para conhecer estimativas
+          de economia de recursos naturais e impactos ambientais.
+        </p>
+        <div class="hero-destaque">
+          <span><i class="fa-solid fa-leaf"></i> Consciência ambiental</span>
+          <span><i class="fa-solid fa-recycle"></i> Reaproveitamento</span>
+        </div>
+      </div>
+    </section>
 
-            Já imaginou quanto um simples material reciclado
-            pode representar para o meio ambiente?
+    <!-- CALCULADORA SIMPLIFICADA E RESULTADOS -->
+    <section class="calculadora-layout" id="calculadora">
+      <form class="calculadora" id="formCalculadora">
+        <div class="calculadora-topo">
+          <div class="icone"><i class="fa-solid fa-recycle"></i></div>
+          <h2>Faça seu cálculo</h2>
+          <p>Escolha o material, informe a quantidade e veja o impacto estimado da sua reciclagem.</p>
+        </div>
 
-            Nossa calculadora transforma a quantidade de
-            materiais reciclados em estimativas de recursos
-            naturais preservados e impactos evitados.
+        <label for="materialSelect">Material reciclado</label>
+        <select id="materialSelect" required>
+          <option value="pet2">Garrafa PET de 2 L</option>
+          <option value="pet500">Garrafa PET de 500 ml</option>
+          <option value="aluminum">Lata de alumínio de 350 ml</option>
+          <option value="glass">Garrafa de vidro de 750 ml</option>
+        </select>
 
+        <label for="quantidade">Quantidade de unidades</label>
+        <input type="number" id="quantidade" min="1" step="1" placeholder="Ex.: 100" required>
+        <span class="campo-ajuda">Digite quantas unidades você reciclou.</span>
+
+        <button type="submit" class="btn-calcular">
+          <i class="fa-solid fa-calculator"></i> Calcular impacto
+        </button>
+        <p class="calculadora-nota">Os resultados são estimativas educativas e dependem dos fatores ambientais utilizados.</p>
+      </form>
+
+      <section class="resultados" aria-live="polite">
+        <span class="subtitulo">RESULTADO ESTIMADO</span>
+        <h2 id="resultTitle">Sua reciclagem faz diferença!</h2>
+        <p class="descricao" id="resultDescription">
+          Selecione um material, informe a quantidade e clique em “Calcular impacto” para visualizar os resultados.
         </p>
 
-    </div>
+        <div class="mensagem-inicial" id="mensagemInicial">
+          <i class="fa-solid fa-seedling"></i>
+          Cada material reciclado pode contribuir para reduzir o uso de matérias-primas e os impactos da produção.
+        </div>
+
+        <div class="grade-resultados">
+          <article class="cartao-resultado">
+            <div class="icone-resultado"><i class="fa-solid fa-cloud"></i></div>
+            <h3>Redução estimada de CO₂</h3>
+            <strong id="co2Result">—</strong>
+            <p>Estimativa de emissões evitadas na produção.</p>
+          </article>
+          <article class="cartao-resultado energia">
+            <div class="icone-resultado"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Economia de energia</h3>
+            <strong id="energyResult">—</strong>
+            <p>Energia potencialmente economizada.</p>
+          </article>
+          <article class="cartao-resultado agua">
+            <div class="icone-resultado"><i class="fa-solid fa-droplet"></i></div>
+            <h3>Economia de água</h3>
+            <strong id="waterResult">—</strong>
+            <p>Estimativa de água associada ao processo produtivo.</p>
+          </article>
+          <article class="cartao-resultado recurso">
+            <div class="icone-resultado"><i class="fa-solid fa-leaf"></i></div>
+            <h3 id="resourceTitle">Recursos naturais</h3>
+            <strong id="resourceResult">—</strong>
+            <p id="resourceDescription">Recursos naturais que podem ser poupados.</p>
+          </article>
+        </div>
+
+        <div class="aviso">
+          <i class="fa-solid fa-circle-info"></i>
+          <div>Os valores apresentados são estimativas. Confirme os fatores de cálculo no documento técnico do projeto antes de publicar.</div>
+        </div>
+      </section>
+    </section>
+
+    <!-- TABELA 1: PRODUÇÃO COM MATÉRIA-PRIMA VIRGEM -->
+    <section class="secao-tabela">
+      <div class="bloco-tabela">
+        <span class="subtitulo">TABELA 1</span>
+        <h2>Produção com matéria-prima virgem</h2>
+        <p>Referências de recursos associados à fabricação de produtos usando matéria-prima extraída da natureza.</p>
+        <div class="explicacao-tabela">
+          <strong>Como entender:</strong> cada linha apresenta um produto e estimativas de CO₂, energia, água e outros recursos utilizados na produção. O símbolo “—” indica que não há valor apresentado.
+        </div>
+        <div class="tabela-rolagem">
+          <table class="tabela-reciclagem">
+            <thead>
+              <tr>
+                <th>Produto</th><th>CO₂ (kg)</th><th>Energia (MJ)</th><th>Água (L)</th><th>Petróleo (L)</th><th>Outros recursos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th>Garrafa PET de 2 L</th><td>0,11</td><td>3,8</td><td>3,0</td><td>0,09</td><td>—</td></tr>
+              <tr><th>Garrafa PET de 500 ml</th><td>0,04</td><td>1,3</td><td>1,0</td><td>0,03</td><td>—</td></tr>
+              <tr><th>Lata de alumínio de 350 ml</th><td>0,14</td><td>2,6</td><td>1,4</td><td>0,01</td><td>Bauxita</td></tr>
+              <tr><th>Garrafa de vidro de 750 ml</th><td>0,38</td><td>6,5</td><td>1,8</td><td>0,01</td><td>Areia sílica</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="nota-tabela">Atenção: os valores foram mantidos do código anterior como referências ilustrativas. Confirme os dados e as unidades com o documento técnico do projeto antes de publicar.</p>
+      </div>
+    </section>
+
+    <!-- TABELA 2: COMPARATIVO ENTRE PRODUÇÃO VIRGEM E RECICLADA -->
+    <section class="secao-tabela">
+      <div class="bloco-tabela azul">
+        <span class="subtitulo">TABELA 2</span>
+        <h2>Comparativo: produção virgem e reciclada</h2>
+        <p>Compare os valores apresentados para fabricação com matéria-prima virgem e com material reciclado.</p>
+        <div class="explicacao-tabela">
+          <strong>Como entender:</strong> “Virgem” representa matéria-prima extraída da natureza. “Reciclada” representa material reaproveitado. Os resultados podem variar conforme o processo industrial.
+        </div>
+        <div class="tabela-rolagem">
+          <table class="tabela-reciclagem">
+            <thead>
+              <tr><th>Produto</th><th>Produção</th><th>CO₂ (kg)</th><th>Energia (MJ)</th><th>Água (L)</th><th>Redução estimada de CO₂</th></tr>
+            </thead>
+            <tbody>
+              <tr><th rowspan="2">Garrafa PET de 2 L</th><td>Virgem</td><td>0,11</td><td>3,8</td><td>3,0</td><td>—</td></tr>
+              <tr class="linha-reciclada"><td>Reciclada</td><td>0,035</td><td>1,15</td><td>1,2</td><td>≈ 68%</td></tr>
+              <tr><th rowspan="2">Garrafa PET de 500 ml</th><td>Virgem</td><td>0,04</td><td>1,3</td><td>1,0</td><td>—</td></tr>
+              <tr class="linha-reciclada"><td>Reciclada</td><td>0,012</td><td>0,38</td><td>0,4</td><td>≈ 70%</td></tr>
+              <tr><th rowspan="2">Lata de alumínio de 350 ml</th><td>Virgem</td><td>0,14</td><td>2,6</td><td>1,4</td><td>—</td></tr>
+              <tr class="linha-reciclada"><td>Reciclada</td><td>0,01</td><td>0,13</td><td>0,15</td><td>≈ 93%</td></tr>
+              <tr><th rowspan="2">Garrafa de vidro de 750 ml</th><td>Virgem</td><td>0,38</td><td>6,5</td><td>1,8</td><td>—</td></tr>
+              <tr class="linha-reciclada"><td>Reciclada</td><td>0,27</td><td>4,8</td><td>1,1</td><td>≈ 29%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="nota-tabela">Os valores são ilustrativos e precisam ser conferidos com o documento técnico antes da publicação.</p>
+      </div>
+    </section>
 
 
-    <div class="hero-icone">
-
-        <i class="fa-solid fa-recycle"></i>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     POR QUE CALCULAR?
-===================================================== -->
-
-<section class="por-que">
-
-    <div class="secao-titulo">
-
-        <span>ENTENDA</span>
-
-        <h2>
-            Por que saber esses cálculos?
-        </h2>
-
-        <p>
-
-            A reciclagem não representa apenas a destinação
-            correta de um material. Ela também pode reduzir
-            a necessidade de extrair novas matérias-primas
-            e diminuir impactos associados à produção.
-
-        </p>
-
-    </div>
-
-
-    <div class="beneficios">
-
-
-        <article class="beneficio">
-
-            <div class="beneficio-icone">
-
-                <i class="fa-solid fa-cloud"></i>
-
-            </div>
-
-            <h3>
-                Emissões de CO₂
-            </h3>
-
-            <p>
-                Visualize a diferença de emissões associada
-                à produção de materiais reciclados.
-            </p>
-
+    <!-- ENTENDA OS INDICADORES -->
+    <section class="secao">
+      <div class="cabecalho-secao">
+        <span class="subtitulo">ENTENDA OS INDICADORES</span>
+        <h2>O que significam esses dados?</h2>
+        <p>Conheça o significado das siglas e das unidades utilizadas nas tabelas.</p>
+      </div>
+      <div class="indicadores">
+        <article class="cartao-indicador">
+          <i class="fa-solid fa-cloud"></i>
+          <h3>CO₂ — gás carbônico</h3>
+          <p>Gás liberado em atividades como a produção industrial. Reduzir suas emissões ajuda a combater o aquecimento global.</p>
+          <small>kg = quilograma</small>
         </article>
-
-
-
-        <article class="beneficio">
-
-            <div class="beneficio-icone">
-
-                <i class="fa-solid fa-bolt"></i>
-
-            </div>
-
-            <h3>
-                Economia de energia
-            </h3>
-
-            <p>
-                Veja quanta energia pode ser economizada
-                quando determinados materiais são reciclados.
-            </p>
-
+        <article class="cartao-indicador">
+          <i class="fa-solid fa-bolt"></i>
+          <h3>Energia</h3>
+          <p>A reciclagem pode diminuir o consumo de energia em vários processos industriais.</p>
+          <small>MJ = megajoule | kWh = quilowatt-hora</small>
         </article>
-
-
-
-        <article class="beneficio">
-
-            <div class="beneficio-icone">
-
-                <i class="fa-solid fa-droplet"></i>
-
-            </div>
-
-            <h3>
-                Preservação da água
-            </h3>
-
-            <p>
-                Conheça a quantidade estimada de água
-                relacionada aos impactos apresentados.
-            </p>
-
+        <article class="cartao-indicador">
+          <i class="fa-solid fa-droplet"></i>
+          <h3>Água</h3>
+          <p>Quantidade de água associada à fabricação de um material.</p>
+          <small>L = litro</small>
         </article>
-
-
-
-        <article class="beneficio">
-
-            <div class="beneficio-icone">
-
-                <i class="fa-solid fa-mountain"></i>
-
-            </div>
-
-            <h3>
-                Recursos naturais
-            </h3>
-
-            <p>
-                Entenda quais matérias-primas podem deixar
-                de ser extraídas da natureza.
-            </p>
-
+        <article class="cartao-indicador">
+          <i class="fa-solid fa-oil-well"></i>
+          <h3>Petróleo</h3>
+          <p>Matéria-prima utilizada na fabricação de plásticos, incluindo resinas para embalagens.</p>
+          <small>L = litro</small>
         </article>
+        <article class="cartao-indicador">
+          <i class="fa-solid fa-mountain"></i>
+          <h3>Matéria-prima</h3>
+          <p>Recursos extraídos da natureza, como bauxita, areia e minério, utilizados na fabricação.</p>
+          <small>kg = quilograma</small>
+        </article>
+        <article class="cartao-indicador">
+          <i class="fa-solid fa-recycle"></i>
+          <h3>Material reciclado</h3>
+          <p>Material recuperado de resíduos e reaproveitado como matéria-prima para produzir novos itens.</p>
+          <small>Os resultados dependem do processo de reciclagem.</small>
+        </article>
+      </div>
+    </section>
 
+    <!-- IMPACTO COLETIVO -->
+    <section class="secao">
+      <div class="impacto-coletivo">
+        <div class="cabecalho-secao">
+          <span class="subtitulo">IMPACTO EM ESCALA</span>
+          <h2>Quando muitas pessoas reciclam, o resultado cresce</h2>
+          <p>Pequenas atitudes somadas podem contribuir para benefícios ambientais maiores.</p>
+        </div>
+        <div class="cartoes-coletivos">
+          <article class="cartao-coletivo">
+            <h3><i class="fa-solid fa-recycle"></i> Latas de alumínio</h3>
+            <p>A reciclagem de latas pode reduzir a energia necessária para produzir alumínio novo.</p>
+          </article>
+          <article class="cartao-coletivo">
+            <h3><i class="fa-solid fa-bottle-water"></i> Garrafas PET</h3>
+            <p>O encaminhamento correto permite reaproveitar o plástico e reduzir a necessidade de resina virgem.</p>
+          </article>
+          <article class="cartao-coletivo">
+            <h3><i class="fa-solid fa-people-group"></i> Cooperativas</h3>
+            <p>A separação correta valoriza o trabalho das cooperativas e ajuda a reduzir o descarte inadequado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">♻</div>
+          <div>
+            <strong>HUB</strong>
+            <span>Pró-Reciclagem</span>
+          </div>
+        </div>
+        <p>Informação que transforma atitudes em ações para um futuro mais sustentável.</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="1inicial.html">Início</a></li>
+          <li><a href="2reciclagem.html">Reciclagem</a></li>
+          <li><a href="4Cooperativas.html">Cooperativas</a></li>
+          <li><a href="5Mapa.html">Mapa da Coleta</a></li>
+          <li><a href="7noticias.html">Notícias</a></li>
+          <li><a href="8contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="2reciclagem.html">O que posso reciclar?</a></li>
+          <li><a href="6calculadora.html">Calculadora da Reciclagem</a></li>
+          <li><a href="3educacao_ambiental.html">Educação ambiental</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contato</h3>
+        <p class="contact-item">📍 Canoas - RS, Brasil</p>
+        <p class="contact-item">✉ hubproreciclagem@unilasalle.edu.br</p>
+      </div>
     </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     COMO FUNCIONA
-===================================================== -->
-
-<section class="como-funciona">
-
-    <div class="secao-titulo">
-
-        <span>PASSO A PASSO</span>
-
-        <h2>
-            Como funciona?
-        </h2>
-
-    </div>
-
-
-    <div class="passos">
-
-
-        <div class="passo">
-
-            <div class="numero">
-                1
-            </div>
-
-            <i class="fa-solid fa-box"></i>
-
-            <h3>
-                Escolha o material
-            </h3>
-
-            <p>
-                Selecione o tipo de material que deseja
-                calcular.
-            </p>
-
-        </div>
-
-
-
-        <div class="passo">
-
-            <div class="numero">
-                2
-            </div>
-
-            <i class="fa-solid fa-hashtag"></i>
-
-            <h3>
-                Informe a quantidade
-            </h3>
-
-            <p>
-                Digite quantas unidades desse material
-                foram recicladas.
-            </p>
-
-        </div>
-
-
-
-        <div class="passo">
-
-            <div class="numero">
-                3
-            </div>
-
-            <i class="fa-solid fa-calculator"></i>
-
-            <h3>
-                Faça o cálculo
-            </h3>
-
-            <p>
-                Utilize a calculadora para multiplicar
-                o impacto de cada unidade.
-            </p>
-
-        </div>
-
-
-
-        <div class="passo">
-
-            <div class="numero">
-                4
-            </div>
-
-            <i class="fa-solid fa-chart-column"></i>
-
-            <h3>
-                Veja o resultado
-            </h3>
-
-            <p>
-                Confira os impactos ambientais estimados
-                para a quantidade informada.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CALCULADORA
-===================================================== -->
-
-<section class="calculadora-area">
-
-
-    <div class="calculadora-intro">
-
-        <span>
-            <i class="fa-solid fa-leaf"></i>
-            CALCULE AGORA
-        </span>
-
-        <h2>
-            Calculadora de Reciclagem
-        </h2>
-
-        <p>
-
-            Escolha um material e informe a quantidade.
-            Os resultados são calculados a partir dos valores
-            de referência apresentados nesta página.
-
-        </p>
-
-    </div>
-
-
-
-    <div class="calculadora-layout">
-
-
-        <!-- =============================================
-             CALCULADORA VISUAL
-        ============================================== -->
-
-        <div class="calculator">
-
-
-            <div class="calculator-top">
-
-                <span>
-                    QUANTIDADE
-                </span>
-
-                <div id="display">
-                    0
-                </div>
-
-                <small id="unidadeDisplay">
-                    unidades
-                </small>
-
-            </div>
-
-
-
-            <!-- MATERIAL -->
-
-            <div class="material-box">
-
-                <label for="material">
-
-                    Material
-
-                </label>
-
-                <select id="material">
-
-                    <option value="pet2">
-                        Garrafa PET 2L
-                    </option>
-
-                    <option value="pet500">
-                        Garrafa PET 500ml
-                    </option>
-
-                    <option value="vidro">
-                        Garrafa de vidro 750ml
-                    </option>
-
-                    <option value="papel">
-                        Folha de Papel A4
-                    </option>
-
-                    <option value="alu350">
-                        Lata de alumínio 350ml
-                    </option>
-
-                    <option value="alu473">
-                        Lata de alumínio 473ml
-                    </option>
-
-                    <option value="aco">
-                        Lata de aço
-                    </option>
-
-                    <option value="pneu">
-                        Pneu de passeio
-                    </option>
-
-                </select>
-
-            </div>
-
-
-
-            <!-- TECLADO -->
-
-            <div class="teclado">
-
-
-                <button
-                    class="tecla tecla-funcao"
-                    onclick="limpar()">
-
-                    C
-
-                </button>
-
-
-                <button
-                    class="tecla tecla-funcao"
-                    onclick="apagar()">
-
-                    <i class="fa-solid fa-delete-left"></i>
-
-                </button>
-
-
-                <button
-                    class="tecla tecla-operador"
-                    onclick="operador('/')">
-
-                    ÷
-
-                </button>
-
-
-                <button
-                    class="tecla tecla-operador"
-                    onclick="operador('*')">
-
-                    ×
-
-                </button>
-
-
-
-                <button
-                    class="tecla"
-                    onclick="numero('7')">
-
-                    7
-
-                </button>
-
-
-                <button
-                    class="tecla"
-                    onclick="numero('8')">
-
-                    8
-
-                </button>
-
-
-                <button
-                    class="tecla"
-                    onclick="numero('9')">
-
-                    9
-
-                </button>
-
-
-                <button
-                    class="tecla tecla-operador"
-                    onclick="operador('-')">
-
-                    −
-
-                </button>
-
-
-
-                <button
-                    class="tecla"
-                    onclick="numero('4')">
-
-                    4
-
-                </button>
-
-
-                <button
-                    class="tecla"
-                    onclick="numero('5')">
-
-                    5
-
-                </button>
-
-
-                <button
-                    class="tecla"
-                    onclick="numero('6')">
-
-                    6
-
-                </button>
-
-
-                <button
-                    class="tecla tecla-operador"
-                    onclick="operador('+')">
-
-                    +
-
-                </button>
-
-
-
-                <button
-                    class="tecla"
-                    onclick="numero('1')">
-
-                    1
-
-                </button>
-
-
-                <button
-                    class="tecla"
-                    onclick="numero('2')">
-
-                    2
-
-                </button>
-
-
-                <button
-                    class="tecla"
-                    onclick="numero('3')">
-
-                    3
-
-                </button>
-
-
-                <button
-                    class="tecla tecla-igual"
-                    onclick="calcular()">
-
-                    =
-
-                </button>
-
-
-
-                <button
-                    class="tecla tecla-zero"
-                    onclick="numero('0')">
-
-                    0
-
-                </button>
-
-
-                <button
-                    class="tecla"
-                    onclick="numero('.')">
-
-                    .
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =============================================
-             RESULTADOS
-        ============================================== -->
-
-        <div class="resultado">
-
-
-            <div class="resultado-header">
-
-                <div>
-
-                    <span>
-                        RESULTADO
-                    </span>
-
-                    <h3 id="nomeMaterial">
-                        Garrafa PET 2L
-                    </h3>
-
-                </div>
-
-
-                <div class="resultado-quantidade">
-
-                    <strong id="quantidadeResultado">
-                        0
-                    </strong>
-
-                    <small>
-                        unidades
-                    </small>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="metricas">
-
-
-                <div class="metrica">
-
-                    <div class="metrica-icone co2">
-
-                        <i class="fa-solid fa-cloud"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            CO₂
-                        </span>
-
-                        <strong id="co2">
-                            0 kg
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="metrica">
-
-                    <div class="metrica-icone energia">
-
-                        <i class="fa-solid fa-bolt"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Energia
-                        </span>
-
-                        <strong id="energia">
-                            0 MJ
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="metrica">
-
-                    <div class="metrica-icone agua">
-
-                        <i class="fa-solid fa-droplet"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Água
-                        </span>
-
-                        <strong id="agua">
-                            0 L
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="metrica">
-
-                    <div class="metrica-icone petroleo">
-
-                        <i class="fa-solid fa-oil-well"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Petróleo
-                        </span>
-
-                        <strong id="petroleo">
-                            0 L
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="metrica">
-
-                    <div class="metrica-icone areia">
-
-                        <i class="fa-solid fa-mountain"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Areia
-                        </span>
-
-                        <strong id="areia">
-                            0 kg
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="metrica">
-
-                    <div class="metrica-icone arvore">
-
-                        <i class="fa-solid fa-tree"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Árvore
-                        </span>
-
-                        <strong id="arvore">
-                            0
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="metrica">
-
-                    <div class="metrica-icone bauxita">
-
-                        <i class="fa-solid fa-mountain-sun"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Bauxita
-                        </span>
-
-                        <strong id="bauxita">
-                            0 kg
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="metrica">
-
-                    <div class="metrica-icone ferro">
-
-                        <i class="fa-solid fa-industry"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Minério de ferro
-                        </span>
-
-                        <strong id="ferro">
-                            0 kg
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="metrica">
-
-                    <div class="metrica-icone carvao">
-
-                        <i class="fa-solid fa-fire"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Carvão
-                        </span>
-
-                        <strong id="carvao">
-                            0 kg
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="metrica">
-
-                    <div class="metrica-icone calcario">
-
-                        <i class="fa-solid fa-mountain"></i>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Calcário
-                        </span>
-
-                        <strong id="calcario">
-                            0 kg
-                        </strong>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="observacao">
-
-                <i class="fa-solid fa-circle-info"></i>
-
-                <p id="observacaoTexto">
-
-                    Os valores apresentados representam
-                    estimativas calculadas a partir dos valores
-                    de referência por unidade.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     EXPLICAÇÃO DOS DADOS
-===================================================== -->
-
-<section class="dados">
-
-    <div class="secao-titulo">
-
-        <span>REFERÊNCIAS</span>
-
-        <h2>
-            De onde vêm esses números?
-        </h2>
-
-        <p>
-
-            Os valores utilizados pela calculadora são
-            baseados nos dados de referência fornecidos
-            para cada produto e sua respectiva massa.
-
-        </p>
-
-    </div>
-
-
-    <div class="dados-box">
-
-        <div>
-
-            <i class="fa-solid fa-circle-check"></i>
-
-            <p>
-                PET 2L possui massa de referência aproximada
-                de 45 g por unidade.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <i class="fa-solid fa-circle-check"></i>
-
-            <p>
-                PET 500ml possui massa de referência
-                aproximada de 15 g.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <i class="fa-solid fa-circle-check"></i>
-
-            <p>
-                Garrafa de vidro 750ml possui massa
-                aproximada de 450 g.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <i class="fa-solid fa-circle-check"></i>
-
-            <p>
-                Lata de alumínio 350ml possui massa
-                aproximada de 13 g.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <i class="fa-solid fa-circle-check"></i>
-
-            <p>
-                Lata de alumínio 473ml possui massa
-                aproximada de 16 g.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <i class="fa-solid fa-circle-check"></i>
-
-            <p>
-                Lata de aço possui massa aproximada
-                de 50 g.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-const display = document.getElementById("display");
-
-let valorAtual = "0";
-let valorAnterior = null;
-let operadorAtual = null;
-let aguardandoNovoNumero = false;
-
-
-/* =========================================
-   DADOS DA CALCULADORA
-========================================= */
-
-const dados = {
-
-    pet2: {
-
-        nome: "Garrafa PET 2L",
-
-        co2: 0.11,
-        energia: 3.8,
-        petroleo: 0.09,
-        areia: 0,
-        agua: 3,
-        arvore: 0,
-        bauxita: 0,
-        ferro: 0,
-        carvao: 0.02,
-        calcario: 0
-
-    },
-
-
-    pet500: {
-
-        nome: "Garrafa PET 500ml",
-
-        co2: 0.04,
-        energia: 1.3,
-        petroleo: 0.03,
-        areia: 0,
-        agua: 1,
-        arvore: 0,
-        bauxita: 0,
-        ferro: 0,
-        carvao: 0.01,
-        calcario: 0
-
-    },
-
-
-    vidro: {
-
-        nome: "Garrafa de vidro 750ml",
-
-        co2: 0.38,
-        energia: 6.5,
-        petroleo: 0.01,
-        areia: 0.32,
+    <div class="footer-bottom">© 2026 HUB Pró-Reciclagem. Todos os direitos reservados.</div>
+  </footer>
+
+  <script>
+    /*
+      ATENÇÃO: fatores numéricos abaixo são ilustrativos e foram mantidos
+      do código anterior. Confirme-os no documento técnico do projeto.
+    */
+    const fatores = {
+      pet2: {
+        nome: "Garrafa PET de 2 L",
+        co2: 0.075,
+        energia: 2.65,
         agua: 1.8,
-        arvore: 0,
-        bauxita: 0,
-        ferro: 0,
-        carvao: 0.06,
-        calcario: 0.09
+        recursoNome: "Petróleo",
+        recurso: 0.09,
+        unidadeRecurso: "L"
+      },
+      pet500: {
+        nome: "Garrafa PET de 500 ml",
+        co2: 0.028,
+        energia: 0.92,
+        agua: 0.6,
+        recursoNome: "Petróleo",
+        recurso: 0.03,
+        unidadeRecurso: "L"
+      },
+      aluminum: {
+        nome: "Lata de alumínio de 350 ml",
+        co2: 0.13,
+        energia: 2.47,
+        agua: 1.25,
+        recursoNome: "Bauxita",
+        recurso: 0.065,
+        unidadeRecurso: "kg"
+      },
+      glass: {
+        nome: "Garrafa de vidro de 750 ml",
+        co2: 0.11,
+        energia: 1.7,
+        agua: 0.7,
+        recursoNome: "Areia sílica",
+        recurso: 0.32,
+        unidadeRecurso: "kg"
+      }
+    };
 
-    },
+    const formulario = document.getElementById("formCalculadora");
+    const seletor = document.getElementById("materialSelect");
+    const campoQuantidade = document.getElementById("quantidade");
 
-
-    papel: {
-
-        nome: "Folha de Papel A4",
-
-        co2: 0.006,
-        energia: 0.15,
-        petroleo: 0.001,
-        areia: 0,
-        agua: 0.5,
-        arvore: 0.0001,
-        bauxita: 0,
-        ferro: 0,
-        carvao: 0.003,
-        calcario: 0.001
-
-    },
-
-
-    alu350: {
-
-        nome: "Lata de alumínio 350ml",
-
-        co2: 0.14,
-        energia: 2.6,
-        petroleo: 0.01,
-        areia: 0,
-        agua: 1.4,
-        arvore: 0,
-        bauxita: 0.065,
-        ferro: 0,
-        carvao: 0.03,
-        calcario: 0.005
-
-    },
-
-
-    alu473: {
-
-        nome: "Lata de alumínio 473ml",
-
-        co2: 0.17,
-        energia: 3.2,
-        petroleo: 0.01,
-        areia: 0,
-        agua: 1.7,
-        arvore: 0,
-        bauxita: 0.08,
-        ferro: 0,
-        carvao: 0.04,
-        calcario: 0.006
-
-    },
-
-
-    aco: {
-
-        nome: "Lata de aço",
-
-        co2: 0.12,
-        energia: 1.8,
-        petroleo: 0.005,
-        areia: 0,
-        agua: 2.5,
-        arvore: 0,
-        bauxita: 0,
-        ferro: 0.08,
-        carvao: 0.04,
-        calcario: 0.015
-
-    },
-
-
-    pneu: {
-
-        nome: "Pneu de passeio",
-
-        co2: 27,
-        energia: 450,
-        petroleo: 28,
-        areia: 0.8,
-        agua: 120,
-        arvore: 0.02,
-        bauxita: 0,
-        ferro: 1.8,
-        carvao: 4.5,
-        calcario: 0
-
+    function formatar(numero) {
+      return new Intl.NumberFormat("pt-BR", {
+        maximumFractionDigits: 2
+      }).format(numero);
     }
 
-};
+    formulario.addEventListener("submit", function(evento) {
+      evento.preventDefault();
 
+      const quantidade = Number(campoQuantidade.value);
+      const material = fatores[seletor.value];
 
-/* =========================================
-   DIGITAR NÚMERO
-========================================= */
-
-function numero(num) {
-
-    if (aguardandoNovoNumero) {
-
-        valorAtual = num;
-
-        aguardandoNovoNumero = false;
-
-    } else {
-
-        if (num === "." &&
-            valorAtual.includes(".")) {
-
-            return;
-
-        }
-
-        if (valorAtual === "0" && num !== ".") {
-
-            valorAtual = num;
-
-        } else {
-
-            valorAtual += num;
-
-        }
-
-    }
-
-    atualizarDisplay();
-
-}
-
-
-/* =========================================
-   OPERADORES
-========================================= */
-
-function operador(op) {
-
-    const numeroAtual =
-        parseFloat(valorAtual);
-
-    if (valorAnterior !== null &&
-        operadorAtual !== null) {
-
-        const resultado =
-            realizarOperacao(
-                valorAnterior,
-                numeroAtual,
-                operadorAtual
-            );
-
-        valorAtual = String(resultado);
-
-        atualizarDisplay();
-
-    } else {
-
-        valorAnterior = numeroAtual;
-
-    }
-
-    operadorAtual = op;
-
-    aguardandoNovoNumero = true;
-
-}
-
-
-/* =========================================
-   CALCULAR
-========================================= */
-
-function calcular() {
-
-    if (
-        valorAnterior === null ||
-        operadorAtual === null
-    ) {
-
-        atualizarResultado();
-
+      if (!Number.isFinite(quantidade) || quantidade < 1) {
+        alert("Digite uma quantidade válida, maior que zero.");
+        campoQuantidade.focus();
         return;
+      }
 
-    }
+      document.getElementById("resultTitle").textContent =
+        "Veja o impacto da sua reciclagem!";
 
-    const atual =
-        parseFloat(valorAtual);
+      document.getElementById("resultDescription").textContent =
+        `Resultado estimado para ${formatar(quantidade)} unidades de ${material.nome}.`;
 
-    const resultado =
-        realizarOperacao(
-            valorAnterior,
-            atual,
-            operadorAtual
-        );
+      document.getElementById("mensagemInicial").innerHTML =
+        `<i class="fa-solid fa-seedling"></i> Você informou ${formatar(quantidade)} unidades de ${material.nome}. Confira abaixo as estimativas para essa quantidade.`;
 
-    valorAtual = String(resultado);
+      document.getElementById("co2Result").textContent =
+        `${formatar(quantidade * material.co2)} kg`;
 
-    valorAnterior = null;
+      document.getElementById("energyResult").textContent =
+        `${formatar(quantidade * material.energia)} MJ`;
 
-    operadorAtual = null;
+      document.getElementById("waterResult").textContent =
+        `${formatar(quantidade * material.agua)} L`;
 
-    aguardandoNovoNumero = true;
+      document.getElementById("resourceTitle").textContent =
+        `Economia de ${material.recursoNome.toLowerCase()}`;
 
-    atualizarDisplay();
+      document.getElementById("resourceResult").textContent =
+        `${formatar(quantidade * material.recurso)} ${material.unidadeRecurso}`;
 
-    atualizarResultado();
-
-}
-
-
-/* =========================================
-   OPERAÇÃO
-========================================= */
-
-function realizarOperacao(a, b, op) {
-
-    switch (op) {
-
-        case "+":
-            return a + b;
-
-        case "-":
-            return a - b;
-
-        case "*":
-            return a * b;
-
-        case "/":
-            return b === 0 ? 0 : a / b;
-
-        default:
-            return b;
-
-    }
-
-}
-
-
-/* =========================================
-   LIMPAR
-========================================= */
-
-function limpar() {
-
-    valorAtual = "0";
-
-    valorAnterior = null;
-
-    operadorAtual = null;
-
-    aguardandoNovoNumero = false;
-
-    atualizarDisplay();
-
-    atualizarResultado();
-
-}
-
-
-/* =========================================
-   APAGAR
-========================================= */
-
-function apagar() {
-
-    if (
-        valorAtual.length <= 1 ||
-        valorAtual === "0"
-    ) {
-
-        valorAtual = "0";
-
-    } else {
-
-        valorAtual =
-            valorAtual.slice(0, -1);
-
-    }
-
-    atualizarDisplay();
-
-}
-
-
-/* =========================================
-   DISPLAY
-========================================= */
-
-function atualizarDisplay() {
-
-    display.textContent =
-        formatarNumero(
-            parseFloat(valorAtual)
-        );
-
-}
-
-
-/* =========================================
-   RESULTADOS AMBIENTAIS
-========================================= */
-
-function atualizarResultado() {
-
-    const quantidade =
-        parseFloat(valorAtual);
-
-    if (
-        !quantidade ||
-        quantidade <= 0
-    ) {
-
-        document.getElementById(
-            "quantidadeResultado"
-        ).textContent = "0";
-
-        document.getElementById("co2")
-            .textContent = "0 kg";
-
-        document.getElementById("energia")
-            .textContent = "0 MJ";
-
-        document.getElementById("agua")
-            .textContent = "0 L";
-
-        document.getElementById("petroleo")
-            .textContent = "0 L";
-
-        document.getElementById("areia")
-            .textContent = "0 kg";
-
-        document.getElementById("arvore")
-            .textContent = "0";
-
-        document.getElementById("bauxita")
-            .textContent = "0 kg";
-
-        document.getElementById("ferro")
-            .textContent = "0 kg";
-
-        document.getElementById("carvao")
-            .textContent = "0 kg";
-
-        document.getElementById("calcario")
-            .textContent = "0 kg";
-
-        return;
-
-    }
-
-
-    const material =
-        document.getElementById(
-            "material"
-        ).value;
-
-    const dadosMaterial =
-        dados[material];
-
-
-    document.getElementById(
-        "nomeMaterial"
-    ).textContent =
-        dadosMaterial.nome;
-
-
-    document.getElementById(
-        "quantidadeResultado"
-    ).textContent =
-        formatarNumero(quantidade);
-
-
-    document.getElementById("co2")
-        .textContent =
-        formatarResultado(
-            dadosMaterial.co2 * quantidade
-        ) + " kg";
-
-
-    document.getElementById("energia")
-        .textContent =
-        formatarResultado(
-            dadosMaterial.energia * quantidade
-        ) + " MJ";
-
-
-    document.getElementById("agua")
-        .textContent =
-        formatarResultado(
-            dadosMaterial.agua * quantidade
-        ) + " L";
-
-
-    document.getElementById("petroleo")
-        .textContent =
-        formatarResultado(
-            dadosMaterial.petroleo * quantidade
-        ) + " L";
-
-
-    document.getElementById("areia")
-        .textContent =
-        formatarResultado(
-            dadosMaterial.areia * quantidade
-        ) + " kg";
-
-
-    document.getElementById("arvore")
-        .textContent =
-        formatarResultado(
-            dadosMaterial.arvore * quantidade
-        );
-
-
-    document.getElementById("bauxita")
-        .textContent =
-        formatarResultado(
-            dadosMaterial.bauxita * quantidade
-        ) + " kg";
-
-
-    document.getElementById("ferro")
-        .textContent =
-        formatarResultado(
-            dadosMaterial.ferro * quantidade
-        ) + " kg";
-
-
-    document.getElementById("carvao")
-        .textContent =
-        formatarResultado(
-            dadosMaterial.carvao * quantidade
-        ) + " kg";
-
-
-    document.getElementById("calcario")
-        .textContent =
-        formatarResultado(
-            dadosMaterial.calcario * quantidade
-        ) + " kg";
-
-}
-
-
-/* =========================================
-   MUDANÇA DE MATERIAL
-========================================= */
-
-document.getElementById("material")
-    .addEventListener(
-        "change",
-        function() {
-
-            document.getElementById(
-                "nomeMaterial"
-            ).textContent =
-                dados[this.value].nome;
-
-            atualizarResultado();
-
-        }
-    );
-
-
-/* =========================================
-   FORMATAÇÃO
-========================================= */
-
-function formatarNumero(numero) {
-
-    return Number(numero)
-        .toLocaleString(
-            "pt-BR",
-            {
-                maximumFractionDigits: 4
-            }
-        );
-
-}
-
-
-function formatarResultado(numero) {
-
-    return Number(numero)
-        .toLocaleString(
-            "pt-BR",
-            {
-                maximumFractionDigits: 4
-            }
-        );
-
-}
-
-
-/* Inicial */
-
-atualizarResultado();
-
-</script>
-
-
+      document.getElementById("resourceDescription").textContent =
+        `Estimativa de recurso associado à fabricação de ${material.nome}.`;
+    });
+  </script>
 </body>
-
 </html>
-

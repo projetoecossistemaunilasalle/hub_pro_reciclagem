@@ -1,834 +1,251 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="../css/7noticias.css">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <title>Notícias - HUB Pró-Reciclagem</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/7noticias.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <title>Notícias - HUB Pró-Reciclagem</title>
+  <style>
+    .noticias { width: min(100% - 40px, 940px); margin: 0 auto 56px; }
+    .noticias__filtros { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin:26px 0 24px; }
+    .noticias__grid { display:flex !important; flex-direction:column !important; gap:0 !important; width:100%; }
+    .noticias__grid .noticia__card { display:block !important; width:100% !important; max-width:none !important; min-height:0 !important; margin:0 !important; padding:18px 0 !important; border:0 !important; border-bottom:1px solid #dce7de !important; border-radius:0 !important; box-shadow:none !important; background:transparent !important; }
+    .noticias__grid .noticia__imagem { display:none !important; }
+    .noticias__grid .noticia__conteudo { display:grid !important; grid-template-columns:minmax(0,1fr) auto; align-items:center; column-gap:24px; padding:0 !important; width:100%; }
+    .noticias__grid .noticia__data { grid-column:1; grid-row:1; margin:0 0 7px !important; color:#587168; font-family:"Nunito", sans-serif; font-size:13px; }
+    .noticias__grid .noticia__categoria { display:inline-block; width:fit-content; margin-right:10px; color:#075c32; background:#eaf3e3; border-radius:20px; padding:4px 12px; font-family:"Nunito", sans-serif; font-size:11px; font-weight:700; }
+    .noticias__grid .noticia__conteudo h3 { grid-column:1; grid-row:2; margin:0 0 5px !important; color:#075c32; font-family:"Nunito", sans-serif; font-size:21px; font-weight:800; line-height:1.35; }
+    .noticias__grid .noticia__conteudo p { grid-column:1; grid-row:3; margin:0 !important; color:#355f52; font-family:"Nunito", sans-serif; font-size:15px; line-height:1.6; }
+    .noticias__grid .noticia__conteudo a { grid-column:2; grid-row:2 / span 2; align-self:center; white-space:nowrap; color:#075c32; font-family:"Nunito", sans-serif; font-weight:700; text-decoration:none; }
+    .noticias__newsletter { margin-top:48px; }
+    @media(max-width:640px) {
+      .noticias { width:calc(100% - 32px); }
+      .noticias__grid .noticia__conteudo { grid-template-columns:1fr; row-gap:4px; }
+      .noticias__grid .noticia__conteudo h3 { grid-row:2; font-size:18px; }
+      .noticias__grid .noticia__conteudo p { grid-row:3; }
+      .noticias__grid .noticia__conteudo a { grid-column:1; grid-row:4; justify-self:start; margin-top:8px; }
+    }
+  </style>
 </head>
-
-
 <body>
-
-
-<!-- =========================================
-     CABEÇALHO
-========================================= -->
-
 <header>
   <nav class="menu" aria-label="Navegação principal">
-
-    <!-- LOGO -->
-    <div class="nav__logo">
-      <a href="1inicial.html" aria-label="Página inicial">
-        <img src="../imagens/logo.png" alt="HUB Pró-Reciclagem">
-      </a>
-    </div>
-
-    <!-- MENU PRINCIPAL -->
+    <div class="nav__logo"><a href="1inicial.html"><img src="../imagens/logo.png" alt="HUB Pró-Reciclagem"></a></div>
     <div class="menu__nav">
       <ul class="menu__lista">
-
-        <!-- INÍCIO -->
-        <li>
-          <a href="1inicial.html">
-            <i class="fa-solid fa-house"></i>
-            <span>Início</span>
-          </a>
-        </li>
-
-        <!-- RECICLAGEM -->
-        <li>
-          <a href="2reciclagem.html">
-            <i class="fa-solid fa-recycle"></i>
-            <span>Reciclagem</span>
-          </a>
-        </li>
-
-        <!-- EDUCAÇÃO AMBIENTAL -->
-        <li>
-          <a href="3educacao_ambiental.html">
-            <i class="fa-solid fa-leaf"></i>
-            <span>Educação Ambiental</span>
-          </a>
-        </li>
-
-        <!-- COOPERATIVAS -->
-        <li>
-          <a href="4Cooperativas.html">
-            <i class="fa-solid fa-people-group"></i>
-            <span>Cooperativas</span>
-          </a>
-        </li>
-
-        <!-- MAPA DA COLETA -->
-        <li>
-          <a href="5Mapa.html">
-            <i class="fa-solid fa-location-dot"></i>
-            <span>Mapa da Coleta</span>
-          </a>
-        </li>
-
-        <!-- CALCULADORA -->
-        <li>
-          <a href="6calculadora.html">
-            <i class="fa-solid fa-calculator"></i>
-            <span>Calculadora</span>
-          </a>
-        </li>
-
-        <!-- NOTÍCIAS - ATIVO -->
-        <li>
-          <a href="7noticias.html" class="ativo">
-            <i class="fa-solid fa-newspaper"></i>
-            <span>Notícias</span>
-          </a>
-        </li>
-
-        <!-- CONTATO -->
-        <li>
-          <a href="8contato.html">
-            <i class="fa-solid fa-envelope"></i>
-            <span>Contato</span>
-          </a>
-        </li>
-
+        <li><a href="1inicial.html"><i class="fa-solid fa-house"></i><span>Início</span></a></li>
+        <li><a href="2reciclagem.html"><i class="fa-solid fa-recycle"></i><span>Reciclagem</span></a></li>
+        <li><a href="3educacao_ambiental.html"><i class="fa-solid fa-leaf"></i><span>Educação Ambiental</span></a></li>
+        <li><a href="4Cooperativas.html"><i class="fa-solid fa-people-group"></i><span>Cooperativas</span></a></li>
+        <li><a href="5Mapa.html"><i class="fa-solid fa-location-dot"></i><span>Mapa da Coleta</span></a></li>
+        <li><a href="6calculadora.html"><i class="fa-solid fa-calculator"></i><span>Calculadora</span></a></li>
+        <li><a href="7noticias.html" class="ativo"><i class="fa-solid fa-newspaper"></i><span>Notícias</span></a></li>
+        <li><a href="8contato.html"><i class="fa-solid fa-envelope"></i><span>Contato</span></a></li>
       </ul>
     </div>
-
-    <!-- ACESSO ADMINISTRATIVO -->
-    <a href="adm.html" class="menu__admin">
-      <i class="fa-solid fa-user-shield"></i>
-      <span>Acesso Administrativo</span>
-    </a>
-
+    <a href="adm.html" class="menu__admin"><i class="fa-solid fa-user-shield"></i><span>Acesso Administrativo</span></a>
   </nav>
 </header>
-
-
-
-<!-- =========================================
-     CONTEÚDO PRINCIPAL
-========================================= -->
-
+ 
 <main>
-
-
-    <!-- =====================================
-         TÍTULO
-    ====================================== -->
-
-    <section class="noticias__hero">
-
-        <div class="noticias__hero__conteudo">
-
-            <span class="hero__etiqueta">
-                ♻ NOTÍCIAS
-            </span>
-
-
-            <h1>
-                Notícias e novidades
-                sobre reciclagem
-            </h1>
-
-
-            <div class="linha_amarela"></div>
-
-
-            <p>
-                Acompanhe informações, novidades, projetos
-                e ações relacionadas à reciclagem e à
-                sustentabilidade em Canoas e região.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         NOTÍCIA EM DESTAQUE
-    ====================================== -->
-
-    <section class="noticia__destaque">
-
-        <div class="noticia__destaque__imagem">
-
-            <img
-                src="../imagens/noticia-destaque.jpg"
-                alt="Reciclagem e sustentabilidade"
-            >
-
-            <span class="categoria">
-                DESTAQUE
-            </span>
-
-        </div>
-
-
-        <div class="noticia__destaque__texto">
-
-            <span class="data">
-                25 DE AGOSTO DE 2026
-            </span>
-
-
-            <h2>
-                Reciclagem e sustentabilidade:
-                pequenas atitudes fazem a diferença
-            </h2>
-
-
-            <p>
-                A separação correta dos materiais recicláveis
-                é uma das principais formas de contribuir para
-                a preservação do meio ambiente e fortalecer
-                o trabalho das cooperativas de reciclagem.
-            </p>
-
-
-            <a
-                href="#"
-                class="btn__ler"
-            >
-                Ler notícia
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         TODAS AS NOTÍCIAS
-    ====================================== -->
-
-    <section class="noticias">
-
-
-        <div class="titulo__secao">
-
-            <span>
-                INFORMAÇÃO E SUSTENTABILIDADE
-            </span>
-
-            <h2>
-                Últimas notícias
-            </h2>
-
-            <div class="linha_amarela"></div>
-
-        </div>
-
-
-        <!-- FILTROS -->
-
-        <div class="noticias__filtros">
-
-            <button class="filtro ativo">
-                Todas
-            </button>
-
-            <button class="filtro">
-                Reciclagem
-            </button>
-
-            <button class="filtro">
-                Sustentabilidade
-            </button>
-
-            <button class="filtro">
-                Cooperativas
-            </button>
-
-            <button class="filtro">
-                Meio ambiente
-            </button>
-
-        </div>
-
-
-
-        <!-- GRID DE NOTÍCIAS -->
-
-        <div class="noticias__grid">
-
-
-            <!-- NOTÍCIA 1 -->
-
-            <article class="noticia__card">
-
-                <div class="noticia__imagem">
-
-                    <img
-                        src="../imagens/noticia1.jpg"
-                        alt="Materiais recicláveis"
-                    >
-
-                    <span class="noticia__categoria">
-                        RECICLAGEM
-                    </span>
-
-                </div>
-
-
-                <div class="noticia__conteudo">
-
-                    <span class="noticia__data">
-                        22 AGO 2026
-                    </span>
-
-
-                    <h3>
-                        A importância da separação
-                        correta dos materiais recicláveis
-                    </h3>
-
-
-                    <p>
-                        Saiba como separar corretamente os
-                        materiais e facilitar o processo de
-                        reciclagem.
-                    </p>
-
-
-                    <a href="#">
-                        Ler mais
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- NOTÍCIA 2 -->
-
-            <article class="noticia__card">
-
-                <div class="noticia__imagem">
-
-                    <img
-                        src="../imagens/noticia2.jpg"
-                        alt="Cooperativa de reciclagem"
-                    >
-
-                    <span class="noticia__categoria">
-                        COOPERATIVAS
-                    </span>
-
-                </div>
-
-
-                <div class="noticia__conteudo">
-
-                    <span class="noticia__data">
-                        19 AGO 2026
-                    </span>
-
-
-                    <h3>
-                        O trabalho das cooperativas
-                        na reciclagem
-                    </h3>
-
-
-                    <p>
-                        Conheça a importância das cooperativas
-                        para a coleta, separação e destinação
-                        dos materiais recicláveis.
-                    </p>
-
-
-                    <a href="#">
-                        Ler mais
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- NOTÍCIA 3 -->
-
-            <article class="noticia__card">
-
-                <div class="noticia__imagem">
-
-                    <img
-                        src="../imagens/noticia3.jpg"
-                        alt="Sustentabilidade"
-                    >
-
-                    <span class="noticia__categoria">
-                        SUSTENTABILIDADE
-                    </span>
-
-                </div>
-
-
-                <div class="noticia__conteudo">
-
-                    <span class="noticia__data">
-                        15 AGO 2026
-                    </span>
-
-
-                    <h3>
-                        Como reduzir a quantidade
-                        de resíduos produzidos em casa
-                    </h3>
-
-
-                    <p>
-                        Confira algumas atitudes simples que
-                        podem ajudar a diminuir a produção
-                        de resíduos no dia a dia.
-                    </p>
-
-
-                    <a href="#">
-                        Ler mais
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- NOTÍCIA 4 -->
-
-            <article class="noticia__card">
-
-                <div class="noticia__imagem">
-
-                    <img
-                        src="../imagens/noticia4.jpg"
-                        alt="Coleta seletiva"
-                    >
-
-                    <span class="noticia__categoria">
-                        MEIO AMBIENTE
-                    </span>
-
-                </div>
-
-
-                <div class="noticia__conteudo">
-
-                    <span class="noticia__data">
-                        12 AGO 2026
-                    </span>
-
-
-                    <h3>
-                        Coleta seletiva:
-                        por que ela é tão importante?
-                    </h3>
-
-
-                    <p>
-                        Entenda como a coleta seletiva contribui
-                        para a redução dos resíduos enviados
-                        aos aterros sanitários.
-                    </p>
-
-
-                    <a href="#">
-                        Ler mais
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- NOTÍCIA 5 -->
-
-            <article class="noticia__card">
-
-                <div class="noticia__imagem">
-
-                    <img
-                        src="../imagens/noticia5.jpg"
-                        alt="Educação ambiental"
-                    >
-
-                    <span class="noticia__categoria">
-                        EDUCAÇÃO
-                    </span>
-
-                </div>
-
-
-                <div class="noticia__conteudo">
-
-                    <span class="noticia__data">
-                        08 AGO 2026
-                    </span>
-
-
-                    <h3>
-                        Educação ambiental:
-                        informação que transforma
-                    </h3>
-
-
-                    <p>
-                        A educação ambiental ajuda a construir
-                        hábitos mais conscientes e responsáveis.
-                    </p>
-
-
-                    <a href="#">
-                        Ler mais
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- NOTÍCIA 6 -->
-
-            <article class="noticia__card">
-
-                <div class="noticia__imagem">
-
-                    <img
-                        src="../imagens/noticia6.jpg"
-                        alt="Materiais recicláveis"
-                    >
-
-                    <span class="noticia__categoria">
-                        RECICLAGEM
-                    </span>
-
-                </div>
-
-
-                <div class="noticia__conteudo">
-
-                    <span class="noticia__data">
-                        04 AGO 2026
-                    </span>
-
-
-                    <h3>
-                        Quais materiais podem
-                        ser reciclados?
-                    </h3>
-
-
-                    <p>
-                        Veja quais são os principais materiais
-                        recicláveis e como prepará-los para a coleta.
-                    </p>
-
-
-                    <a href="#">
-                        Ler mais
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- PAGINAÇÃO -->
-
-        <div class="paginacao">
-
-            <button class="pagina__seta">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-
-            <button class="pagina ativo">
-                1
-            </button>
-
-            <button class="pagina">
-                2
-            </button>
-
-            <button class="pagina">
-                3
-            </button>
-
-            <button class="pagina__seta">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         NEWSLETTER
-    ====================================== -->
-
-    <section class="noticias__newsletter">
-
-        <div class="newsletter__icone">
-
-            <i class="fa-solid fa-envelope"></i>
-
-        </div>
-
-
-        <div class="newsletter__texto">
-
-            <h2>
-                Fique por dentro das novidades
-            </h2>
-
-            <p>
-                Acompanhe as principais informações sobre
-                reciclagem, sustentabilidade e meio ambiente.
-            </p>
-
-        </div>
-
-
-        <form class="newsletter__form">
-
-            <input
-                type="email"
-                placeholder="Digite seu e-mail"
-                aria-label="Digite seu e-mail"
-            >
-
-            <button type="submit">
-                Inscrever-se
-            </button>
-
-        </form>
-
-    </section>
-
-
+  <section class="noticias__hero">
+    <div class="noticias__hero__conteudo">
+      <span class="hero__etiqueta">♻ NOTÍCIAS</span>
+      <h1>Notícias e novidades<br>sobre reciclagem</h1>
+      <div class="linha_amarela"></div>
+      <p>Acompanhe informações, novidades, projetos e ações relacionadas à reciclagem e à sustentabilidade em Canoas e região.</p>
+    </div>
+  </section>
+ 
+  <section class="noticias">
+    <div class="titulo__secao">
+      <span>INFORMAÇÃO E SUSTENTABILIDADE</span>
+      <h2>Últimas notícias</h2>
+      <div class="linha_amarela"></div>
+    </div>
+    <div class="noticias__filtros" aria-label="Filtrar notícias por categoria">
+      <button type="button" class="filtro ativo">Todas</button>
+      <button type="button" class="filtro">Reciclagem</button>
+      <button type="button" class="filtro">Sustentabilidade</button>
+      <button type="button" class="filtro">Cooperativas</button>
+      <button type="button" class="filtro">Meio ambiente</button>
+    </div>
+    <div class="noticias__grid" id="noticiasGrid">
+      <p>Carregando notícias...</p>
+    </div>
+  </section>
+ 
+  <section class="noticias__newsletter">
+    <div class="newsletter__icone"><i class="fa-solid fa-envelope"></i></div>
+    <div class="newsletter__texto">
+      <h2>Fique por dentro das novidades</h2>
+      <p>Acompanhe as principais informações sobre reciclagem, sustentabilidade e meio ambiente.</p>
+    </div>
+    <form class="newsletter__form">
+      <input type="email" placeholder="Digite seu e-mail" aria-label="Digite seu e-mail">
+      <button type="submit">Inscrever-se</button>
+    </form>
+  </section>
 </main>
-
-
-
-<!-- =========================================
-     RODAPÉ
-========================================= -->
-
+ 
 <footer class="site-footer">
-
-
-    <div class="footer-container">
-
-
-        <!-- IDENTIDADE -->
-
-        <div class="footer-brand">
-
-            <div class="footer-logo">
-
-                <div class="footer-logo-icon">
-                    ♻
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        HUB
-                    </strong>
-
-                    <span>
-                        Pró-Reciclagem
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <p>
-                Informação que transforma atitudes
-                em ações para um futuro mais sustentável.
-            </p>
-
-
-            <div class="footer-social">
-
-                <a href="#">
-                    f
-                </a>
-
-                <a href="#">
-                    ◎
-                </a>
-
-                <a href="#">
-                    ▶
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- NAVEGAÇÃO -->
-
-        <div class="footer-column">
-
-            <h3>
-                Navegação
-            </h3>
-
-            <ul>
-
-                <li>
-                    <a href="1inicial.html">
-                        Início
-                    </a>
-                </li>
-
-                <li>
-                    <a href="2reciclagem.html">
-                        Reciclagem
-                    </a>
-                </li>
-
-                <li>
-                    <a href="4Cooperativas.html">
-                        Cooperativas
-                    </a>
-                </li>
-
-                <li>
-                    <a href="5Mapa.html">
-                        Mapa da Coleta
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-
-
-        <!-- RECURSOS -->
-
-        <div class="footer-column">
-
-            <h3>
-                Recursos
-            </h3>
-
-            <ul>
-
-                <li>
-                    <a href="6calculadora.html">
-                        Calculadora da Reciclagem
-                    </a>
-                </li>
-
-                <li>
-                    <a href="3educacao_ambiental.html">
-                        Educação Ambiental
-                    </a>
-                </li>
-
-                <li>
-                    <a href="7noticias.html">
-                        Notícias
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-
-
-        <!-- CONTATO -->
-
-        <div class="footer-column footer-contact">
-
-            <h3>
-                Contato
-            </h3>
-
-
-            <div class="contact-item">
-
-                <span class="contact-icon">
-                    📍
-                </span>
-
-                <p>
-                    Canoas - RS<br>
-                    Brasil
-                </p>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <span class="contact-icon">
-                    ✉
-                </span>
-
-                <a href="mailto:hubproreciclagem@unilasalle.edu.br">
-                    hubproreciclagem@unilasalle.edu.br
-                </a>
-
-            </div>
-
-        </div>
-
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo"><div class="footer-logo-icon">♻</div><div><strong>HUB</strong><span>Pró-Reciclagem</span></div></div>
+      <p>Informação que transforma atitudes em ações para um futuro mais sustentável.</p>
+      <div class="footer-social"><a href="#">f</a><a href="#">◎</a><a href="#">▶</a></div>
     </div>
-
-
-
-    <div class="footer-bottom">
-
-        <p>
-            © 2026 HUB Pró-Reciclagem.
-            Todos os direitos reservados.
-        </p>
-
+    <div class="footer-column">
+      <h3>Navegação</h3>
+      <ul>
+        <li><a href="1inicial.html">Início</a></li>
+        <li><a href="2reciclagem.html">Reciclagem</a></li>
+        <li><a href="4Cooperativas.html">Cooperativas</a></li>
+        <li><a href="5Mapa.html">Mapa da Coleta</a></li>
+      </ul>
     </div>
-
+    <div class="footer-column">
+      <h3>Recursos</h3>
+      <ul>
+        <li><a href="6calculadora.html">Calculadora da Reciclagem</a></li>
+        <li><a href="3educacao_ambiental.html">Educação Ambiental</a></li>
+        <li><a href="7noticias.html">Notícias</a></li>
+      </ul>
+    </div>
+    <div class="footer-column footer-contact">
+      <h3>Contato</h3>
+      <div class="contact-item"><span class="contact-icon">📍</span><p>Canoas - RS<br>Brasil</p></div>
+      <div class="contact-item"><span class="contact-icon">✉</span><a href="mailto:hubproreciclagem@unilasalle.edu.br">hubproreciclagem@unilasalle.edu.br</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 HUB Pró-Reciclagem. Todos os direitos reservados.</p></div>
 </footer>
-
-
+ 
+<script type="module">
+import { db } from "../js/firebase-config.js";
+import { collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+ 
+const grid = document.getElementById("noticiasGrid");
+const botoesFiltro = document.querySelectorAll(".noticias__filtros .filtro");
+let noticias = [];
+let categoriaSelecionada = "Todas";
+ 
+function criarElemento(tag, classe, texto) {
+  const elemento = document.createElement(tag);
+  if (classe) elemento.className = classe;
+  if (texto !== undefined) elemento.textContent = texto;
+  return elemento;
+}
+ 
+function formatarData(data) {
+  if (!data || typeof data !== "string") return "";
+  const partes = data.split("-");
+  if (partes.length !== 3) return data;
+  return `${partes[2]}/${partes[1]}/${partes[0]}`;
+}
+ 
+function normalizarCategoria(categoria) {
+  return (categoria || "Sustentabilidade").trim().toLocaleLowerCase("pt-BR");
+}
+ 
+function renderizarNoticias() {
+  grid.replaceChildren();
+  const filtradas = categoriaSelecionada === "Todas"
+    ? noticias
+    : noticias.filter(noticia =>
+        normalizarCategoria(noticia.categoria) === normalizarCategoria(categoriaSelecionada)
+      );
+ 
+  if (filtradas.length === 0) {
+    grid.appendChild(criarElemento("p", "", categoriaSelecionada === "Todas"
+      ? "Ainda não há notícias publicadas."
+      : "Não há notícias nesta categoria."));
+    return;
+  }
+ 
+  filtradas.forEach(noticia => {
+    const card = criarElemento("article", "noticia__card");
+    const conteudo = criarElemento("div", "noticia__conteudo");
+    const categoria = criarElemento("span", "noticia__categoria",
+      (noticia.categoria || "Sustentabilidade").toUpperCase());
+    const data = criarElemento("span", "noticia__data", formatarData(noticia.data));
+    data.prepend(categoria);
+    const titulo = criarElemento("h3", "", noticia.titulo || "Sem título");
+    const resumo = criarElemento("p", "", noticia.resumo || noticia.conteudo || noticia.texto || "");
+    const link = criarElemento("a", "", "Ler notícia ");
+    link.href = "#";
+    const icone = document.createElement("i");
+    icone.className = "fa-solid fa-arrow-right";
+    link.appendChild(icone);
+ 
+    link.addEventListener("click", evento => {
+      evento.preventDefault();
+      const modal = document.createElement("div");
+      modal.style.cssText = "position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;padding:20px;";
+      const painel = document.createElement("article");
+      painel.style.cssText = "background:white;color:#173d2c;font-family:'Nunito',sans-serif;padding:28px;border-radius:16px;width:min(760px,100%);max-height:90vh;overflow:auto;";
+      const fechar = criarElemento("button", "", "Fechar ✕");
+      fechar.type = "button";
+      fechar.addEventListener("click", () => modal.remove());
+      painel.appendChild(fechar);
+      const tituloModal = criarElemento("h2", "", noticia.titulo || "Sem título");
+      tituloModal.style.color = "#075c32";
+      painel.appendChild(tituloModal);
+      painel.appendChild(criarElemento("p", "", `${noticia.categoria || "Sustentabilidade"}${noticia.data ? " · " + formatarData(noticia.data) : ""}`));
+      if (noticia.cooperativa) {
+        painel.appendChild(criarElemento("p", "", `Cooperativa: ${noticia.cooperativa}`));
+      }
+      const textoCompleto = criarElemento("p", "", noticia.conteudo || noticia.texto || noticia.resumo || "");
+      textoCompleto.style.whiteSpace = "pre-wrap";
+      textoCompleto.style.lineHeight = "1.8";
+      textoCompleto.style.color = "#355f52";
+      painel.appendChild(textoCompleto);
+      modal.appendChild(painel);
+      modal.addEventListener("click", eventoModal => {
+        if (eventoModal.target === modal) modal.remove();
+      });
+      document.body.appendChild(modal);
+    });
+ 
+    conteudo.append(data, titulo, resumo, link);
+    card.appendChild(conteudo);
+    grid.appendChild(card);
+  });
+}
+ 
+async function carregarNoticias() {
+  try {
+    const consulta = query(collection(db, "noticias"), where("status", "==", "publicada"));
+    const resultado = await getDocs(consulta);
+    noticias = resultado.docs.map(documento => ({
+      id: documento.id,
+      ...documento.data()
+    }));
+    noticias.sort((a, b) => (b.data || "").localeCompare(a.data || ""));
+    renderizarNoticias();
+  } catch (erro) {
+    console.error("Erro ao carregar notícias:", erro);
+    grid.replaceChildren();
+    grid.appendChild(criarElemento("p", "",
+      "Não foi possível carregar as notícias. Verifique sua conexão e as regras do Firestore."));
+  }
+}
+ 
+botoesFiltro.forEach(botao => {
+  botao.addEventListener("click", () => {
+    botoesFiltro.forEach(item => item.classList.remove("ativo"));
+    botao.classList.add("ativo");
+    categoriaSelecionada = botao.textContent.trim();
+    renderizarNoticias();
+  });
+});
+ 
+carregarNoticias();
+</script>
 </body>
-
 </html>
+
+

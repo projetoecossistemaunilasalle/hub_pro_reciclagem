@@ -1,433 +1,653 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cooperativas de Reciclagem de Canoas — Histórias que não se jogam fora</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700;900&family=Nunito:wght@400;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="../css/4cooperativas.css">
-</head>
-<body>
  
-<header class="menu">
-  <div class="nav__logo">
-    <a href="1inicia.html" aria-label="SMA Canoas Recicladores - Início">
-      <img src="../imagens/logo.png" alt="Logo Hun pró Reciclagem">
-    </a>
-  </div>
-
-  
+<head>  <!-- Cabeçalho -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/4cooperativas.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<title>Cooperativas — HUB Pró-Reciclagem</title>
+</head>
+<body> <!--corpo da página -->
+ 
+<header>
+    <!-- CABEÇALHO PRINCIPAL -->
+    <nav class="menu" aria-label="Navegação principal">
+ 
+        <!-- LOGO -->
+        <div class="nav__logo">
+            <a href="1inicial.html" aria-label="Página inicial">
+                <img
+                    src="../imagens/logo.png"
+                    alt="HUB Pró-Reciclagem"
+                >
+            </a>
+        </div>
+ 
         <!-- NAVEGAÇÃO -->
         <div class="menu__nav">
             <ul class="menu__lista">
-
+ 
                 <li>
                     <a href="1inicial.html">
                         <i class="fa-solid fa-house" aria-hidden="true"></i>
                         <span>Início</span>
                     </a>
                 </li>
-
+ 
                 <li>
                     <a href="2reciclagem.html">
                         <i class="fa-solid fa-recycle" aria-hidden="true"></i>
                         <span>Reciclagem</span>
                     </a>
                 </li>
-
+ 
                 <li>
                     <a href="3educacao_ambiental.html">
                         <i class="fa-solid fa-leaf" aria-hidden="true"></i>
                         <span>Educação Ambiental</span>
                     </a>
                 </li>
-
+ 
                 <li>
                     <a href="4Cooperativas.html" class="ativo">
                         <i class="fa-solid fa-people-group" aria-hidden="true"></i>
                         <span>Cooperativas</span>
                     </a>
                 </li>
-
+ 
                 <li>
                     <a href="5Mapa.html">
                         <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                         <span>Mapa da Coleta</span>
                     </a>
                 </li>
-
+ 
                 <li>
                     <a href="6calculadora.html">
                         <i class="fa-solid fa-calculator" aria-hidden="true"></i>
                         <span>Calculadora</span>
                     </a>
                 </li>
-
+ 
                 <li>
                     <a href="7noticias.html">
                         <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
                         <span>Notícias</span>
                     </a>
                 </li>
-
+ 
                 <li>
                     <a href="8contato.html">
                         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                         <span>Contato</span>
                     </a>
                 </li>
-
+ 
             </ul>
         </div>
-
-  <a class="menu__admin" href="adm.html">
-    <i class="fa-solid fa-user-gear"></i>
-    <span>Área Administrativa</span>
-  </a>
-</header>
-
  
-<header class="hero grain">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <p class="kicker">Coleta seletiva de Canoas / RS</p>
-        <h1 class="title">O que a cidade descarta,<br><em>oito cooperativas</em> transformam em trabalho.</h1>
-        <p class="hero-lede">Entre galpões alugados, enchentes, incêndios de telhado e prêmios federais, oito grupos de catadoras e catadores construíram, cada um à sua maneira, décadas de organização, renda e cuidado ambiental em Canoas.</p>
-      </div>
-      <div class="hero-side">
-        <p><strong>1976</strong>ano em que o grupo mais antigo — hoje Cooperativa Renascer — começou a catar materiais no antigo lixão da cidade.</p>
-        <p><strong>~150</strong>famílias, somadas as oito cooperativas, vivem hoje do trabalho com reciclagem.</p>
-        <p><strong>2024</strong>a enchente histórica do Rio Grande do Sul atingiu direta ou indiretamente todas as cooperativas da rede.</p>
-      </div>
-    </div>
-  </div>
+        <!-- ACESSO ADMINISTRATIVO -->
+        <a href="adm.html" class="menu__admin">
+            <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+            <span>Acesso Administrativo</span>
+        </a>
+ 
+    </nav>
 </header>
  
-<section class="shared">
-  <div class="wrap">
-    <div>
-      <h2>Histórias separadas, uma mesma rede</h2>
-      <p>Cada cooperativa tem sua origem — uma igreja, um clube de mães, um lixão a céu aberto, uma remoção de moradores de um dique. Mas de uns anos para cá, seus caminhos passaram a se cruzar: no contrato de coleta seletiva compartilhada com a Prefeitura de Canoas, nas capacitações da Unilasalle e, mais recentemente, em duas frentes que aparecem na história de quase todas elas.</p>
+<!-- ÁREA PRINCIPAL -->
+<section class="hero">
+ 
+    <!-- TEXTO -->
+    <div class="hero__texto">
+ 
+        <p class="etiqueta">Coleta seletiva de Canoas / RS</p>
+ 
+        <h1>
+            <span class="titulo-introducao">O que a cidade descarta,</span>
+            <span class="titulo-principal">oito cooperativas transformam em trabalho.</span>
+        </h1>
+ 
+        <p class="hero__descricao">
+            Entre galpões alugados, enchentes, incêndios de telhado e prêmios federais,
+            oito grupos de catadoras e catadores construíram, cada um à sua maneira,
+            décadas de organização, renda e cuidado ambiental em Canoas.
+        </p>
+ 
     </div>
-    <ul>
-      <li><span class="yr">Canoas Recicla com a Gente</span> — projeto de educação ambiental em parceria com a Apoena Socioambiental e apoio da Unilasalle, do qual a maioria das cooperativas passou a fazer parte a partir de 2022.</li>
-      <li><span class="yr">Conexões Sustentáveis</span> — projeto com fomento da Petrobrás que, a partir de 2025, tem trazido galpões novos, caminhões, prensas, esteiras e cursos de capacitação para reconstruir o que a enchente de 2024 destruiu.</li>
-    </ul>
-  </div>
+ 
+ 
+    <!-- IMAGEM NO FUNDO DIREITO (mesma estrutura do carrossel da página 1) -->
+    <div class="hero__carousel">
+ 
+        <div class="carousel__slides">
+ 
+            <div class="carousel__slide ativa">
+                <img
+                    src="../imagens/cooperativa.png"
+                    alt="Trabalhadores de cooperativas realizando a separação de materiais recicláveis"
+                    fetchpriority="high"
+                    decoding="async"
+                >
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+</section>
+ 
+<!-- ÍNDICE DAS COOPERATIVAS -->
+<nav class="coop-indice" aria-label="Ir para uma cooperativa">
+    <span>Ir para:</span>
+    <a href="#cmgc">CMGC</a>
+    <a href="#cooarlas">Cooarlas</a>
+    <a href="#renascer">Renascer</a>
+    <a href="#coopcamate">Coopcamate</a>
+    <a href="#coopermag">Coopermag</a>
+    <a href="#maosdadas">Mãos Dadas</a>
+    <a href="#coopersol">Coopersol</a>
+    <a href="#coopertec">Coopertec</a>
+</nav>
+ 
+<!-- HISTÓRIAS E PROJETOS -->
+<section class="rede">
+    <div class="rede__grid">
+        <div class="secao-titulo">
+            <p class="etiqueta">Nossa rede</p>
+            <h2>Histórias separadas, uma mesma rede</h2>
+            <p>
+                Cada cooperativa tem sua origem — uma igreja, um clube de mães,
+                um lixão a céu aberto, uma remoção de moradores de um dique.
+                Mas de uns anos para cá, seus caminhos passaram a se cruzar:
+                no contrato de coleta seletiva compartilhada com a Prefeitura de Canoas,
+                nas capacitações da Unilasalle e, mais recentemente, em duas frentes
+                que aparecem na história de quase todas elas.
+            </p>
+            <span class="linha-amarela"></span>
+        </div>
+        <div class="rede__projetos">
+            <article class="projeto-card">
+                <div class="projeto-card__icone">
+                    <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <h3>Canoas Recicla com a Gente</h3>
+                    <p>
+                        Projeto de educação ambiental em parceria com a Apoena Socioambiental
+                        e apoio da Unilasalle, do qual a maioria das cooperativas passou a
+                        fazer parte a partir de 2022.
+                    </p>
+                </div>
+            </article>
+            <article class="projeto-card">
+                <div class="projeto-card__icone">
+                    <i class="fa-solid fa-truck" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <h3>Conexões Sustentáveis</h3>
+                    <p>
+                        Projeto com fomento da Petrobrás que, a partir de 2025, tem trazido
+                        galpões novos, caminhões, prensas, esteiras e cursos de capacitação
+                        para reconstruir o que a enchente de 2024 destruiu.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
 </section>
  
 <!-- CMGC -->
-<section class="coop grain" id="cmgc">
-  <div class="wrap">
-    <div class="coop-head">
-      <div class="../img.cooperativa/mato_grande.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5-9 9"/></svg><span>Logo CMGC</span></div>
-      <div>
+<article class="coop" id="cmgc">
+    <div class="coop__topo">
+        <p class="etiqueta">Cooperativa</p>
         <h2>CMGC — Cooperativa Mato Grande Canoense</h2>
-        <p class="place">Bairro Harmonia (sede atual) / Bairro Mato Grande (área concedida), Canoas</p>
-        <span class="founded">Formalizada em 2021</span>
-      </div>
+        <span class="coop__local">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            Bairro Harmonia (sede atual) / Bairro Mato Grande (área concedida), Canoas
+        </span>
+        <span class="coop__selo">Formalizada em 2021</span>
     </div>
-    <div class="coop-body">
-      <div class="coop-story">
-        <p>A CMGC nasceu em 2019 do desmembramento de um grupo já existente e conquistou sua independência com a Permissão de Uso de uma área pública em 2022. Desde então, cerca de 30 cooperados e cooperadas se dedicam à coleta seletiva, à reciclagem e à educação ambiental em Canoas.</p>
-        <p>Em 2022 a cooperativa passou a integrar a Coleta Seletiva de Canoas e o projeto Canoas Recicla com a Gente. Hoje opera em um espaço alugado no bairro Harmonia, enquanto aguarda a construção de um galpão novo na área concedida pelo município, no bairro Mato Grande — o mesmo território onde sua história começou.</p>
-        <ul class="timeline">
-          <li><b>2019</b> desmembramento e início</li>
-          <li><b>2021</b> formalização da cooperativa</li>
-          <li><b>2022</b> Permissão de Uso da área pública</li>
-          <li><b>2025</b> novo galpão pelo Conexões Sustentáveis</li>
-        </ul>
-      </div>
-      <aside class="contact-card">
-        <h3>Contato</h3>
-        <dl>
-          <div><dt>Endereço</dt><dd>Rua Engenheiro Kindler, nº 1261, Bairro Harmonia, Canoas</dd></div>
-          <div><dt>E-mail</dt><dd><a href="mailto:cooperativamatograndecanoense@gmail.com">cooperativamatograndecanoense@gmail.com</a></dd></div>
-          <div><dt>Telefone</dt><dd>(51) 98214-9694</dd></div>
-          <div><dt>Instagram</dt><dd>@cmgc_oficial</dd></div>
-        </dl>
-      </aside>
+    <div class="coop__layout">
+        <div class="coop__lateral">
+            <div class="coop__logo">
+                <img src="../img.cooperativa/mato_grande.png" alt="Logo da CMGC">
+            </div>
+            <aside class="contato-card">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Rua Engenheiro Kindler, nº 1261, Bairro Harmonia, Canoas</span></li>
+                    <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><a href="mailto:cooperativamatograndecanoense@gmail.com">cooperativamatograndecanoense@gmail.com</a></span></li>
+                    <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span>(51) 98214-9694</span></li>
+                    <li><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>@cmgc_oficial</span></li>
+                </ul>
+            </aside>
+        </div>
+        <div class="coop__historia">
+            <p>A CMGC nasceu em 2019 do desmembramento de um grupo já existente e conquistou sua independência com a Permissão de Uso de uma área pública em 2022. Desde então, cerca de 30 cooperados e cooperadas se dedicam à coleta seletiva, à reciclagem e à educação ambiental em Canoas.</p>
+            <p>Em 2022 a cooperativa passou a integrar a Coleta Seletiva de Canoas e o projeto Canoas Recicla com a Gente. Hoje opera em um espaço alugado no bairro Harmonia, enquanto aguarda a construção de um galpão novo na área concedida pelo município, no bairro Mato Grande — o mesmo território onde sua história começou.</p>
+            <ul class="linha-tempo">
+                <li><b>2019</b> desmembramento e início</li>
+                <li><b>2021</b> formalização da cooperativa</li>
+                <li><b>2022</b> Permissão de Uso da área pública</li>
+                <li><b>2025</b> novo galpão pelo Conexões Sustentáveis</li>
+            </ul>
+        </div>
     </div>
-  </div>
-</section>
+</article>
  
 <!-- COOARLAS -->
-<section class="coop grain" id="cooarlas">
-  <div class="wrap">
-    <div class="coop-head">
-      <div class="#"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5-9 9"/></svg><span>Logo Cooarlas</span></div>
-      <div>
+<article class="coop" id="cooarlas">
+    <div class="coop__topo">
+        <p class="etiqueta">Cooperativa</p>
         <h2>Cooarlas — Amigas e Amigos Solidárias</h2>
-        <p class="place">Parque São José, Bairro Guajuviras, Canoas</p>
-        <span class="founded">Cooperativa desde 2009</span>
-      </div>
+        <span class="coop__local"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Parque São José, Bairro Guajuviras, Canoas</span>
+        <span class="coop__selo">Cooperativa desde 2009</span>
     </div>
-    <div class="coop-body">
-      <div class="coop-story">
-        <p>Tudo começou em 1999, quando um grupo ligado à Pastoral da Criança e da Juventude e ao Movimento de Mulheres de Canoas se preocupou em qualificar jovens para o trabalho. Sem adesão dos jovens, seis mulheres seguiram sozinhas e fundaram, em outubro de 2000, a ARLAS — a associação que deu origem à cooperativa.</p>
-        <p>No início, a triagem era feita em uma garagem de 9 m². Em 2002, a comunidade e parceiros conquistaram recursos do Orçamento Participativo Estadual e do FAT para erguer um galpão de 570 m². A Cooarlas se formalizou como cooperativa em 2009, com 20 sócias vindas da ARLAS, e no ano seguinte entrou para a coleta seletiva compartilhada de Canoas.</p>
-        <p>Mesmo sem ser diretamente inundada em 2024, trabalhou com superlotação de resíduos durante a enchente. Em seguida, o projeto Conexões Sustentáveis trouxe caminhão, prensa, esteira e mesas de triagem novas.</p>
-        <ul class="timeline">
-          <li><b>2000</b> fundação da ARLAS</li>
-          <li><b>2002</b> galpão de 570 m²</li>
-          <li><b>2009</b> formalização da Cooarlas</li>
-          <li><b>2010</b> entrada na coleta seletiva</li>
-        </ul>
-      </div>
-      <aside class="contact-card">
-        <h3>Contato</h3>
-        <dl>
-          <div><dt>Endereço</dt><dd>R. Bela Vista, 14, Guajuviras, Canoas</dd></div>
-          <div><dt>E-mail</dt><dd><a href="mailto:cooarlas2010@gmail.com">cooarlas2010@gmail.com</a></dd></div>
-          <div><dt>Telefone</dt><dd>(51) 3428-6896</dd></div>
-          <div><dt>Instagram</dt><dd>@cooarlas</dd></div>
-        </dl>
-      </aside>
+    <div class="coop__layout">
+        <div class="coop__lateral">
+            <div class="coop__logo"><img src="../img.cooperativa/cooarlas.png" alt="Logo da Cooarlas"></div>
+            <aside class="contato-card">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>R. Bela Vista, 14, Guajuviras, Canoas</span></li>
+                    <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><a href="mailto:cooarlas2010@gmail.com">cooarlas2010@gmail.com</a></span></li>
+                    <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span>(51) 3428-6896</span></li>
+                    <li><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>@cooarlas</span></li>
+                </ul>
+            </aside>
+        </div>
+        <div class="coop__historia">
+            <p>Tudo começou em 1999, quando um grupo ligado à Pastoral da Criança e da Juventude e ao Movimento de Mulheres de Canoas se preocupou em qualificar jovens para o trabalho. Sem adesão dos jovens, seis mulheres seguiram sozinhas e fundaram, em outubro de 2000, a ARLAS — a associação que deu origem à cooperativa.</p>
+            <p>No início, a triagem era feita em uma garagem de 9 m². Em 2002, a comunidade e parceiros conquistaram recursos do Orçamento Participativo Estadual e do FAT para erguer um galpão de 570 m². A Cooarlas se formalizou como cooperativa em 2009, com 20 sócias vindas da ARLAS, e no ano seguinte entrou para a coleta seletiva compartilhada de Canoas.</p>
+            <p>Mesmo sem ser diretamente inundada em 2024, trabalhou com superlotação de resíduos durante a enchente. Em seguida, o projeto Conexões Sustentáveis trouxe caminhão, prensa, esteira e mesas de triagem novas.</p>
+            <ul class="linha-tempo">
+                <li><b>2000</b> fundação da ARLAS</li>
+                <li><b>2002</b> galpão de 570 m²</li>
+                <li><b>2009</b> formalização da Cooarlas</li>
+                <li><b>2010</b> entrada na coleta seletiva</li>
+            </ul>
+        </div>
     </div>
-  </div>
-</section>
+</article>
  
 <!-- RENASCER -->
-<section class="coop grain" id="renascer">
-  <div class="wrap">
-    <div class="coop-head">
-      <div class="logo-slot"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5-9 9"/></svg><span>Logo Renascer</span></div>
-      <div>
+<article class="coop" id="renascer">
+    <div class="coop__topo">
+        <p class="etiqueta">Cooperativa</p>
         <h2>Renascer</h2>
-        <p class="place">Estrada do Nazário, Bairro Guajuviras, Canoas</p>
-        <span class="founded">A cooperativa mais antiga em atividade no município</span>
-      </div>
+        <span class="coop__local"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Estrada do Nazário, Bairro Guajuviras, Canoas</span>
+        <span class="coop__selo">A cooperativa mais antiga em atividade no município</span>
     </div>
-    <div class="coop-body">
-      <div class="coop-story">
-        <p>Entre 1976 e 2001, catadores trabalhavam de forma individual e informal no antigo lixão da cidade, na Fazenda Guajuviras, expostos ao sol, à poeira e ao lodo, disputando resíduos direto dos caminhões. Foram 25 anos sem qualquer infraestrutura.</p>
-        <p>A proibição nacional do trabalho a céu aberto em aterros, em 2005, levou a Prefeitura a remover o grupo do lixão e ceder um espaço coberto. A virada veio em 2009, com a incubação pela Unilasalle, e em 2010 nasceu oficialmente a Cooperativa de Reciclagem Renascer — nome que remete à ave Fênix estampada na fachada do galpão, símbolo de "renascer das cinzas".</p>
-        <p>Ao longo da década seguinte vieram o primeiro caminhão (2012), esteira e balança digital (Caminho das Águas), um galpão de madeira de 250 m² (2014) e o prêmio nacional Pró-Catador (2017). Hoje, sob autogestão e liderança majoritariamente feminina, a cooperativa faz a triagem mensal de 40 a 60 toneladas de resíduos e acolheu cooperados de outras cooperativas durante a enchente de 2024.</p>
-        <ul class="timeline">
-          <li><b>1976</b> início da catação no lixão</li>
-          <li><b>2005</b> fundação da Associação Renascer</li>
-          <li><b>2010</b> formalização da cooperativa</li>
-          <li><b>2017</b> prêmio Pró-Catador</li>
-          <li><b>2025</b> novo galpão pelo Conexões Sustentáveis</li>
-        </ul>
-      </div>
-      <aside class="contact-card">
-        <h3>Contato</h3>
-        <dl>
-          <div><dt>Endereço</dt><dd>Est. do Nazário, 3303, Guajuviras, Canoas</dd></div>
-          <div><dt>E-mail</dt><dd><a href="mailto:coop.renascer@gmail.com">coop.renascer@gmail.com</a></dd></div>
-          <div><dt>Telefone</dt><dd>(51) 98592-7518</dd></div>
-          <div><dt>Instagram</dt><dd>@cooperativa_renascer</dd></div>
-        </dl>
-      </aside>
+    <div class="coop__layout">
+        <div class="coop__lateral">
+            <div class="coop__logo"><img src="../img.cooperativa/renascer.png" alt="Logo da Renascer"></div>
+            <aside class="contato-card">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Est. do Nazário, 3303, Guajuviras, Canoas</span></li>
+                    <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><a href="mailto:coop.renascer@gmail.com">coop.renascer@gmail.com</a></span></li>
+                    <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span>(51) 98592-7518</span></li>
+                    <li><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>@cooperativa_renascer</span></li>
+                </ul>
+            </aside>
+        </div>
+        <div class="coop__historia">
+            <p>Entre 1976 e 2001, catadores trabalhavam de forma individual e informal no antigo lixão da cidade, na Fazenda Guajuviras, expostos ao sol, à poeira e ao lodo, disputando resíduos direto dos caminhões. Foram 25 anos sem qualquer infraestrutura.</p>
+            <p>A proibição nacional do trabalho a céu aberto em aterros, em 2005, levou a Prefeitura a remover o grupo do lixão e ceder um espaço coberto. A virada veio em 2009, com a incubação pela Unilasalle, e em 2010 nasceu oficialmente a Cooperativa de Reciclagem Renascer — nome que remete à ave Fênix estampada na fachada do galpão, símbolo de "renascer das cinzas".</p>
+            <p>Ao longo da década seguinte vieram o primeiro caminhão (2012), esteira e balança digital (Caminho das Águas), um galpão de madeira de 250 m² (2014) e o prêmio nacional Pró-Catador (2017). Hoje, sob autogestão e liderança majoritariamente feminina, a cooperativa faz a triagem mensal de 40 a 60 toneladas de resíduos e acolheu cooperados de outras cooperativas durante a enchente de 2024.</p>
+            <ul class="linha-tempo">
+                <li><b>1976</b> início da catação no lixão</li>
+                <li><b>2005</b> fundação da Associação Renascer</li>
+                <li><b>2010</b> formalização da cooperativa</li>
+                <li><b>2017</b> prêmio Pró-Catador</li>
+                <li><b>2025</b> novo galpão pelo Conexões Sustentáveis</li>
+            </ul>
+        </div>
     </div>
-  </div>
-</section>
+</article>
  
 <!-- COOPCAMATE -->
-<section class="coop grain" id="coopcamate">
-  <div class="wrap">
-    <div class="coop-head">
-      <div class="logo-slot"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5-9 9"/></svg><span>Logo Coopcamate</span></div>
-      <div>
+<article class="coop" id="coopcamate">
+    <div class="coop__topo">
+        <p class="etiqueta">Cooperativa</p>
         <h2>Coopcamate</h2>
-        <p class="place">Bairro Mathias Velho, Canoas</p>
-        <span class="founded">Atividade desde 1986</span>
-      </div>
+        <span class="coop__local"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Canoas, RS</span>
     </div>
-    <div class="coop-body">
-      <div class="coop-story">
-        <p>Fundada por cinco moradores do bairro Mathias Velho em 1986, formalizou-se como associação em 1995 e como cooperativa em 2003. Em 2010 entrou para a coleta seletiva de Canoas e para a incubadora de empreendimentos solidários da Unilasalle — mas o período também trouxe uma crise: em 2011, condutas irregulares na coordenação levaram à perda do contrato com a prefeitura em 2012.</p>
-        <p>Com nova diretoria, a cooperativa recuperou o contrato ainda em 2012 e seguiu investindo: caminhão próprio em 2013, ampliação da esteira em 2015, desvinculação de uma parceria financeira externa em 2017. Uma de suas frentes mais conhecidas é o Bikeco, projeto que substitui carroças puxadas por cavalos pela coleta com bicicletas ecológicas na área central da cidade.</p>
-        <p>Severamente afetada pela enchente de 2024, recebeu em 2025 reformas de galpão e cursos de capacitação pelo Conexões Sustentáveis.</p>
-        <ul class="timeline">
-          <li><b>1986</b> início da catação</li>
-          <li><b>2003</b> formalização como cooperativa</li>
-          <li><b>2012</b> recuperação do contrato municipal</li>
-          <li><b>Bikeco</b> coleta por bicicleta na região central</li>
-        </ul>
-      </div>
-      <aside class="contact-card">
-        <h3>Contato</h3>
-        <dl>
-          <div><dt>Endereço</dt><dd>Rua Dom Pedrito, 800, Bairro Mathias Velho, Canoas</dd></div>
-          <div><dt>E-mail</dt><dd><a href="mailto:coopcamate@gmail.com">coopcamate@gmail.com</a></dd></div>
-          <div><dt>Instagram</dt><dd>@cooperativa_coopcamate</dd></div>
-        </dl>
-      </aside>
+    <div class="coop__layout">
+        <div class="coop__lateral">
+            <div class="coop__logo"><img src="../img.cooperativa/coopcamate.png" alt="Logo da Coopcamate"></div>
+            <aside class="contato-card">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Canoas, RS</span></li>
+                </ul>
+            </aside>
+        </div>
+        <div class="coop__historia">
+            <p>A Coopcamate integra a rede de cooperativas de reciclagem de Canoas, atuando na triagem e no reaproveitamento de materiais recicláveis e na geração de trabalho e renda para seus cooperados.</p>
+            <ul class="linha-tempo">
+                <li><b>Atuação</b> coleta e triagem de recicláveis</li>
+                <li><b>Rede</b> participação na coleta seletiva de Canoas</li>
+            </ul>
+        </div>
     </div>
-  </div>
-</section>
+</article>
  
 <!-- COOPERMAG -->
-<section class="coop grain" id="coopermag">
-  <div class="wrap">
-    <div class="coop-head">
-      <div class="logo-slot"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5-9 9"/></svg><span>Logo Coopermag</span></div>
-      <div>
+<article class="coop" id="coopermag">
+    <div class="coop__topo">
+        <p class="etiqueta">Cooperativa</p>
         <h2>Coopermag</h2>
-        <p class="place">Bairro São Luís / atualmente Bairro Mato Grande, Canoas</p>
-        <span class="founded">Formalizada em 2010</span>
-      </div>
+        <span class="coop__local"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Canoas, RS</span>
     </div>
-    <div class="coop-body">
-      <div class="coop-story">
-        <p>Começou em 2002 dentro de uma igreja, como a Atremag — um clube de mães apoiado pelo Frei Miguel, criado para gerar renda com cursos de tricô e produção de pães. Foi a Cooarlas, já pioneira na reciclagem da cidade, quem ajudou o grupo a entender o trabalho com materiais recicláveis, quando a associação passou a receber caminhões de resíduos domiciliares para triagem.</p>
-        <p>Depois de anos tentando se legalizar, a cooperativa se formalizou em 2010 e passou a atuar na coleta seletiva do Bairro Estância Velha a partir de 2011. Em 2015, um temporal derrubou o telhado do galpão, obrigando o grupo a dividir espaço com a Coopcamate por nove meses.</p>
-        <p>Em 2024, a enchente inundou a cooperativa por 45 dias — os cooperados foram acolhidos pela Renascer enquanto máquinas e galpão ficavam inutilizáveis. O grupo se mudou para um espaço alugado no Bairro Mato Grande, onde deve receber um prédio novo pelo Conexões Sustentáveis.</p>
-        <ul class="timeline">
-          <li><b>2002</b> origem como clube de mães (Atremag)</li>
-          <li><b>2010</b> formalização da cooperativa</li>
-          <li><b>2015</b> temporal derruba o telhado</li>
-          <li><b>2024</b> 45 dias inundada pela enchente</li>
-        </ul>
-      </div>
-      <aside class="contact-card">
-        <h3>Contato</h3>
-        <dl>
-          <div><dt>Endereço</dt><dd>Rua Maria Elizabeth Finkler, 270, Bairro Mato Grande, Canoas</dd></div>
-          <div><dt>E-mail</dt><dd><a href="mailto:cooperativacoopermag@gmail.com">cooperativacoopermag@gmail.com</a></dd></div>
-          <div><dt>Telefone</dt><dd>(51) 99370-3877</dd></div>
-          <div><dt>Instagram</dt><dd>@cooperativacoopermag</dd></div>
-        </dl>
-      </aside>
+    <div class="coop__layout">
+        <div class="coop__lateral">
+            <div class="coop__logo"><img src="../img.cooperativa/coopermag.png" alt="Logo da Coopermag"></div>
+            <aside class="contato-card">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Canoas, RS</span></li>
+                </ul>
+            </aside>
+        </div>
+        <div class="coop__historia">
+            <p>A Coopermag faz parte da rede de reciclagem de Canoas, contribuindo para a coleta seletiva, a separação de resíduos e o fortalecimento da economia solidária.</p>
+            <ul class="linha-tempo">
+                <li><b>Atuação</b> triagem de materiais recicláveis</li>
+                <li><b>Rede</b> coleta seletiva municipal</li>
+            </ul>
+        </div>
     </div>
-  </div>
-</section>
+</article>
  
 <!-- MÃOS DADAS -->
-<section class="coop grain" id="maosdadas">
-  <div class="wrap">
-    <div class="coop-head">
-      <div class="logo-slot"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5-9 9"/></svg><span>Logo Mãos Dadas</span></div>
-      <div>
+<article class="coop" id="maosdadas">
+    <div class="coop__topo">
+        <p class="etiqueta">Cooperativa</p>
         <h2>Cooperativa Mãos Dadas</h2>
-        <p class="place">Bairro Fátima, Canoas</p>
-        <span class="founded">Origem em 2014</span>
-      </div>
+        <span class="coop__local">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            Bairro Fátima, Canoas
+        </span>
+        <span class="coop__selo">Origem em 2014</span>
     </div>
-    <div class="coop-body">
-      <div class="coop-story">
-        <p>Surgiu em 2014 a partir das obras da Rodovia do Parque (BR-448), quando moradores realocados do dique para casas de passagem no Lot Prata se uniram a catadores para fundar uma associação. Com apoio da Prefeitura e da Denit para o espaço e o pavilhão, a cooperativa foi fundada — mas por anos funcionou sem contrato com o município, vivendo apenas de doações de materiais recicláveis de outras cooperativas.</p>
-        <p>Uma nova coordenação, a partir de 2020, regularizou a documentação. Em 2022, junto com a CMGC, a Coopersol e a Coopertec, a Mãos Dadas assinou contrato com a Prefeitura para a coleta seletiva compartilhada e passou a receber capacitação pelo Canoas Recicla com a Gente.</p>
-        <p>Em 2024, ficou 28 dias submersa pela enchente. Hoje segue reconstruindo suas atividades por meio de parcerias e projetos.</p>
-        <ul class="timeline">
-          <li><b>2014</b> fundação, ligada às obras da BR-448</li>
-          <li><b>2020</b> regularização da cooperativa</li>
-          <li><b>2022</b> contrato de coleta seletiva compartilhada</li>
-          <li><b>2024</b> 28 dias submersa na enchente</li>
-        </ul>
-      </div>
-      <aside class="contact-card">
-        <h3>Contato</h3>
-        <dl>
-          <div><dt>Endereço</dt><dd>Rua Ney Lobos, 85, Bairro Fátima, Canoas</dd></div>
-          <div><dt>E-mail</dt><dd><a href="mailto:comaosdadas@gmail.com">comaosdadas@gmail.com</a></dd></div>
-          <div><dt>Telefone</dt><dd>(51) 99523-6830</dd></div>
-          <div><dt>Instagram</dt><dd>@maosdadas.coop</dd></div>
-        </dl>
-      </aside>
+    <div class="coop__layout">
+        <div class="coop__lateral">
+            <div class="coop__logo">
+                <img src="../img.cooperativa/maos_dadas.png" alt="Logo da Cooperativa Mãos Dadas">
+            </div>
+            <aside class="contato-card">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Rua Ney Lobos, 85, Bairro Fátima, Canoas</span></li>
+                    <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><a href="mailto:comaosdadas@gmail.com">comaosdadas@gmail.com</a></span></li>
+                    <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span>(51) 99523-6830</span></li>
+                    <li><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>@maosdadas.coop</span></li>
+                </ul>
+            </aside>
+        </div>
+        <div class="coop__historia">
+            <p>Surgiu em 2014 a partir das obras da Rodovia do Parque (BR-448), quando moradores realocados do dique para casas de passagem no Lot Prata se uniram a catadores para fundar uma associação. Com apoio da Prefeitura e da Denit para o espaço e o pavilhão, a cooperativa foi fundada — mas por anos funcionou sem contrato com o município, vivendo apenas de doações de materiais recicláveis de outras cooperativas.</p>
+            <p>Uma nova coordenação, a partir de 2020, regularizou a documentação. Em 2022, junto com a CMGC, a Coopersol e a Coopertec, a Mãos Dadas assinou contrato com a Prefeitura para a coleta seletiva compartilhada e passou a receber capacitação pelo Canoas Recicla com a Gente.</p>
+            <p>Em 2024, ficou 28 dias submersa pela enchente. Hoje segue reconstruindo suas atividades por meio de parcerias e projetos.</p>
+            <ul class="linha-tempo">
+                <li><b>2014</b> fundação, ligada às obras da BR-448</li>
+                <li><b>2020</b> regularização da cooperativa</li>
+                <li><b>2022</b> contrato de coleta seletiva compartilhada</li>
+                <li><b>2024</b> 28 dias submersa na enchente</li>
+            </ul>
+        </div>
     </div>
-  </div>
-</section>
+</article>
  
 <!-- COOPERSOL -->
-<section class="coop grain" id="coopersol">
-  <div class="wrap">
-    <div class="coop-head">
-      <div class="logo-slot"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5-9 9"/></svg><span>Logo Coopersol</span></div>
-      <div>
+<article class="coop" id="coopersol">
+    <div class="coop__topo">
+        <p class="etiqueta">Cooperativa</p>
         <h2>Coopersol</h2>
-        <p class="place">Bairro Niterói, Canoas</p>
-        <span class="founded">Cooperativa desde 2022</span>
-      </div>
+        <span class="coop__local">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            Bairro Niterói, Canoas
+        </span>
+        <span class="coop__selo">Cooperativa desde 2022</span>
     </div>
-    <div class="coop-body">
-      <div class="coop-story">
-        <p>Nasceu em 2003 como Associação Sol Nascente, no Parque Industrial Jorge Lanner, separando resíduos da construção civil. Entre 2009 e 2017 chegou a reunir mais de 40 cooperados, mas em 2018 precisou deixar o local quando uma licitação repassou a operação a uma empresa privada.</p>
-        <p>Depois de passar por galpões alugados e receber capacitação da Prefeitura, o grupo se formalizou como cooperativa em 2022, com 20 pessoas, e entrou para a coleta seletiva de resíduos sólidos do município com equipamentos alugados.</p>
-        <p>Após a enchente de 2024, os processos de gestão foram reforçados. Em 2026, o projeto Conexões Sustentáveis deve entregar paleteira, esteira, prensa, caminhão, mesa de triagem, carrinho de carga e balança, além de um novo galpão a partir da captação de projetos sociais.</p>
-        <ul class="timeline">
-          <li><b>2003</b> origem como Sol Nascente</li>
-          <li><b>2018</b> perda do espaço para licitação privada</li>
-          <li><b>2022</b> formalização da cooperativa</li>
-          <li><b>2026</b> novos equipamentos pelo Conexões Sustentáveis</li>
-        </ul>
-      </div>
-      <aside class="contact-card">
-        <h3>Contato</h3>
-        <dl>
-          <div><dt>Endereço</dt><dd>R. Ivanir José Pagliarini, 506, Niterói, Canoas</dd></div>
-          <div><dt>E-mail</dt><dd><a href="mailto:coopersolcanoas@gmail.com">coopersolcanoas@gmail.com</a></dd></div>
-          <div><dt>Telefone</dt><dd>(51) 99611-0057</dd></div>
-          <div><dt>Instagram</dt><dd>@ccoopersol</dd></div>
-        </dl>
-      </aside>
+    <div class="coop__layout">
+        <div class="coop__lateral">
+            <div class="coop__logo">
+                <img src="../img.cooperativa/coopersol.png" alt="Logo da Coopersol">
+            </div>
+            <aside class="contato-card">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>R. Ivanir José Pagliarini, 506, Niterói, Canoas</span></li>
+                    <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><a href="mailto:coopersolcanoas@gmail.com">coopersolcanoas@gmail.com</a></span></li>
+                    <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span>(51) 99611-0057</span></li>
+                    <li><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>@ccoopersol</span></li>
+                </ul>
+            </aside>
+        </div>
+        <div class="coop__historia">
+            <p>Nasceu em 2003 como Associação Sol Nascente, no Parque Industrial Jorge Lanner, separando resíduos da construção civil. Entre 2009 e 2017 chegou a reunir mais de 40 cooperados, mas em 2018 precisou deixar o local quando uma licitação repassou a operação a uma empresa privada.</p>
+            <p>Depois de passar por galpões alugados e receber capacitação da Prefeitura, o grupo se formalizou como cooperativa em 2022, com 20 pessoas, e entrou para a coleta seletiva de resíduos sólidos do município com equipamentos alugados.</p>
+            <p>Após a enchente de 2024, os processos de gestão foram reforçados. Em 2026, o projeto Conexões Sustentáveis deve entregar paleteira, esteira, prensa, caminhão, mesa de triagem, carrinho de carga e balança, além de um novo galpão a partir da captação de projetos sociais.</p>
+            <ul class="linha-tempo">
+                <li><b>2003</b> origem como Sol Nascente</li>
+                <li><b>2018</b> perda do espaço para licitação privada</li>
+                <li><b>2022</b> formalização da cooperativa</li>
+                <li><b>2026</b> novos equipamentos pelo Conexões Sustentáveis</li>
+            </ul>
+        </div>
     </div>
-  </div>
-</section>
+</article>
  
 <!-- COOPERTEC -->
-<section class="coop grain" id="coopertec">
-  <div class="wrap">
-    <div class="coop-head">
-      <div class="logo-slot"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5-9 9"/></svg><span>Logo Coopertec</span></div>
-      <div>
+<article class="coop" id="coopertec">
+    <div class="coop__topo">
+        <p class="etiqueta">Cooperativa</p>
         <h2>Coopertec — Reciclagem de Eletrônicos</h2>
-        <p class="place">Bairro Rio Branco, Canoas</p>
-        <span class="founded">Fundada em 2013</span>
-      </div>
+        <span class="coop__local">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            Bairro Rio Branco, Canoas
+        </span>
+        <span class="coop__selo">Fundada em 2013</span>
     </div>
-    <div class="coop-body">
-      <div class="coop-story">
-        <p>Nasceu em 2013 da constatação de que Canoas, cidade de cerca de 390 mil habitantes, não tinha alternativa adequada para o descarte de equipamentos eletroeletrônicos. Em 2014, a retirada de duas toneladas de lixo eletrônico de um terreno baldio deixou clara a urgência do problema.</p>
-        <p>Além da coleta, a cooperativa investiu em campanhas, palestras e até um pequeno museu de eletrônicos, mostrando a evolução tecnológica e reforçando a importância do descarte correto. Foi só a partir de 2020 que a Coopertec ganhou espaço e passou de 200 m² para 2.400 m², trocando um simples reboque por três veículos de grande porte.</p>
-        <p>Hoje reúne em média 11 cooperados — entre os fundadores, Rogério Demétrio Vieira e José Crispim Soares — e oferece coleta totalmente gratuita de eletroeletrônicos para pessoas físicas e jurídicas, agendada por telefone ou redes sociais.</p>
-        <ul class="timeline">
-          <li><b>2013</b> fundação da cooperativa</li>
-          <li><b>2014</b> retirada de 2 toneladas de lixo eletrônico</li>
-          <li><b>2020</b> expansão de 200 m² para 2.400 m²</li>
-          <li><b>2025</b> caminhão e triturador pelo Conexões Sustentáveis</li>
-        </ul>
-      </div>
-      <aside class="contact-card">
-        <h3>Contato</h3>
-        <dl>
-          <div><dt>Endereço</dt><dd>Rua Primavera, nº 198, Bairro Rio Branco, Canoas</dd></div>
-          <div><dt>E-mail</dt><dd><a href="mailto:coopertecreciclagem@gmail.com">coopertecreciclagem@gmail.com</a></dd></div>
-          <div><dt>Telefone</dt><dd>(51) 98416-9301</dd></div>
-          <div><dt>Instagram</dt><dd>@coopertecrs</dd></div>
-        </dl>
-      </aside>
+    <div class="coop__layout">
+        <div class="coop__lateral">
+            <div class="coop__logo">
+                <img src="../img.cooperativa/coopertec.png" alt="Logo da Coopertec">
+            </div>
+            <aside class="contato-card">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Rua Primavera, nº 198, Bairro Rio Branco, Canoas</span></li>
+                    <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><a href="mailto:coopertecreciclagem@gmail.com">coopertecreciclagem@gmail.com</a></span></li>
+                    <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span>(51) 98416-9301</span></li>
+                    <li><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>@coopertecrs</span></li>
+                </ul>
+            </aside>
+        </div>
+        <div class="coop__historia">
+            <p>Nasceu em 2013 da constatação de que Canoas, cidade de cerca de 390 mil habitantes, não tinha alternativa adequada para o descarte de equipamentos eletroeletrônicos. Em 2014, a retirada de duas toneladas de lixo eletrônico de um terreno baldio deixou clara a urgência do problema.</p>
+            <p>Além da coleta, a cooperativa investiu em campanhas, palestras e até um pequeno museu de eletrônicos, mostrando a evolução tecnológica e reforçando a importância do descarte correto. Foi só a partir de 2020 que a Coopertec ganhou espaço e passou de 200 m² para 2.400 m², trocando um simples reboque por três veículos de grande porte.</p>
+            <p>Hoje reúne em média 11 cooperados — entre os fundadores, Rogério Demétrio Vieira e José Crispim Soares — e oferece coleta totalmente gratuita de eletroeletrônicos para pessoas físicas e jurídicas, agendada por telefone ou redes sociais.</p>
+            <ul class="linha-tempo">
+                <li><b>2013</b> fundação da cooperativa</li>
+                <li><b>2014</b> retirada de 2 toneladas de lixo eletrônico</li>
+                <li><b>2020</b> expansão de 200 m² para 2.400 m²</li>
+                <li><b>2025</b> caminhão e triturador pelo Conexões Sustentáveis</li>
+            </ul>
+        </div>
     </div>
-  </div>
+</article>
+ 
+<!-- FECHAMENTO -->
+<section class="fechamento">
+    <div class="secao-titulo">
+        <p class="etiqueta">Em resumo</p>
+        <h2>Oito histórias, um mesmo rio</h2>
+        <p>
+            A enchente de 2024 atravessou quase todas essas trajetórias — e também as uniu na reconstrução.
+            Antes disso, foram décadas de trabalho manual, contratos conquistados e perdidos, temporais e incêndios,
+            até chegar aos apoios que hoje sustentam a coleta seletiva de Canoas.
+        </p>
+        <span class="linha-amarela"></span>
+    </div>
+    <div class="fechamento__grid">
+        <div class="fechamento-card">
+            <strong>8</strong>
+            <p>cooperativas ativas na coleta seletiva de Canoas</p>
+        </div>
+        <div class="fechamento-card">
+            <strong>1976</strong>
+            <p>ano de origem da cooperativa mais antiga, a Renascer</p>
+        </div>
+        <div class="fechamento-card">
+            <strong>2024</strong>
+            <p>ano da enchente que atingiu a maioria das cooperativas</p>
+        </div>
+        <div class="fechamento-card">
+            <strong>2025–26</strong>
+            <p>reconstrução em curso pelo projeto Conexões Sustentáveis</p>
+        </div>
+    </div>
 </section>
  
-<section class="closing grain">
-  <div class="wrap">
-    <h2>Oito histórias, um mesmo rio</h2>
-    <p style="max-width:60ch;color:var(--ink-soft);margin-top:14px;">
-      A enchente de 2024 atravessou quase todas essas trajetórias — e também as uniu na reconstrução.
-      Antes disso, foram décadas de trabalho manual, contratos conquistados e perdidos, temporais e incêndios,
-      até chegar aos apoios que hoje sustentam a coleta seletiva de Canoas.
-    </p>
-    <div class="closing-grid">
-      <div class="closing-card"><span class="num">8</span><p>cooperativas ativas na coleta seletiva de Canoas</p></div>
-      <div class="closing-card"><span class="num">1976</span><p>ano de origem da cooperativa mais antiga, a Renascer</p></div>
-      <div class="closing-card"><span class="num">2024</span><p>ano da enchente que atingiu a maioria das cooperativas</p></div>
-      <div class="closing-card"><span class="num">2025–26</span><p>reconstrução em curso pelo projeto Conexões Sustentáveis</p></div>
-    </div>
-  </div>
-</section>
+<!-- =========================
+     RODAPÉ
+========================= -->
+<footer class="site-footer">
  
-<footer>
-  <div class="wrap">Histórias das cooperativas de reciclagem de Canoas/RS.</div>
+    <div class="footer-container">
+ 
+        <!-- IDENTIDADE -->
+        <div class="footer-brand">
+ 
+            <div class="footer-logo">
+                <div class="footer-logo-icon">
+                    ♻
+                </div>
+ 
+                <div>
+                    <strong>HUB</strong>
+                    <span>Pró-Reciclagem</span>
+                </div>
+            </div>
+ 
+            <p>
+                Informação que transforma atitudes em ações
+                para um futuro mais sustentável.
+            </p>
+ 
+            <!-- REDES SOCIAIS -->
+            <div class="footer-social">
+ 
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+ 
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+ 
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+ 
+            </div>
+ 
+        </div>
+ 
+ 
+        <!-- NAVEGAÇÃO -->
+        <div class="footer-column">
+ 
+            <h3>Navegação</h3>
+ 
+            <ul>
+                <li><a href="1inicial.html">Início</a></li>
+                <li><a href="2reciclagem.html">Reciclagem</a></li>
+                <li><a href="4Cooperativas.html">Cooperativas</a></li>
+                <li><a href="5Mapa.html">Mapa da Coleta</a></li>
+                <li><a href="7noticias.html">Notícias</a></li>
+                <li><a href="8contato.html">Contato</a></li>
+            </ul>
+ 
+        </div>
+ 
+ 
+        <!-- RECURSOS -->
+        <div class="footer-column">
+ 
+            <h3>Recursos</h3>
+ 
+            <ul>
+                <li><a href="2reciclagem.html">O que posso reciclar?</a></li>
+                <li><a href="6calculadora.html">Calculadora da Reciclagem</a></li>
+                <li><a href="2reciclagem.html#materiais">Materiais recicláveis</a></li>
+                <li><a href="3educacao_ambiental.html">Educação ambiental</a></li>
+                <li><a href="3educacao_ambiental.html#cartilhas">Cartilhas</a></li>
+            </ul>
+ 
+        </div>
+ 
+ 
+        <!-- CONTATO -->
+        <div class="footer-column footer-contact">
+ 
+            <h3>Contato</h3>
+ 
+            <div class="contact-item">
+                <span class="contact-icon">📍</span>
+                <p>
+                    Canoas - RS<br>
+                    Brasil
+                </p>
+            </div>
+ 
+            <div class="contact-item">
+                <span class="contact-icon">✉</span>
+                <a href="mailto:hubproreciclagem@unilasalle.edu.br">
+                    hubproreciclagem@unilasalle.edu.br
+                </a>
+            </div>
+ 
+            <div class="contact-item">
+                <span class="contact-icon">☎</span>
+                <a href="tel:+555132345678">
+                    (51) 3234-5678
+                </a>
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+ 
+    <!-- LINHA INFERIOR -->
+    <div class="footer-bottom">
+ 
+        <div class="footer-bottom-container">
+ 
+            <p>
+                © 2026 HUB Pró-Reciclagem.
+                Todos os direitos reservados.
+            </p>
+ 
+            <div class="footer-bottom-links">
+ 
+                <a href="#">Política de Privacidade</a>
+ 
+                <span>•</span>
+ 
+                <a href="#">Acessibilidade</a>
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
 </footer>
  
 </body>
 </html>
+ 
+
