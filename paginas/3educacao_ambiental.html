@@ -428,9 +428,11 @@
  
 </main>
  
-<!-- =========================
-     RODAPÉ
-========================= -->
+<!-- =====================================================
+     RODAPÉ — substitui o <footer class="site-footer"> inteiro
+     (vai logo antes de <script src="../js/carousel.js">)
+===================================================== -->
+ 
 <footer class="site-footer">
  
     <div class="footer-container">
@@ -457,11 +459,17 @@
             <!-- REDES SOCIAIS -->
             <div class="footer-social">
  
-                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook">
+                    f
+                </a>
  
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram">
+                    ◎
+                </a>
  
-                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+                <a href="#" aria-label="YouTube">
+                    ▶
+                </a>
  
             </div>
  
@@ -474,12 +482,31 @@
             <h3>Navegação</h3>
  
             <ul>
-                <li><a href="1inicial.html">Início</a></li>
-                <li><a href="2reciclagem.html">Reciclagem</a></li>
-                <li><a href="4Cooperativas.html">Cooperativas</a></li>
-                <li><a href="5Mapa.html">Mapa da Coleta</a></li>
-                <li><a href="7noticias.html">Notícias</a></li>
-                <li><a href="8contato.html">Contato</a></li>
+ 
+                <li>
+                    <a href="1inicial.html">Início</a>
+                </li>
+ 
+                <li>
+                    <a href="2reciclagem.html">Reciclagem</a>
+                </li>
+ 
+                <li>
+                    <a href="4Cooperativas.html">Cooperativas</a>
+                </li>
+ 
+                <li>
+                    <a href="5Mapa.html">Mapa da Coleta</a>
+                </li>
+ 
+                <li>
+                    <a href="7noticias.html">Notícias</a>
+                </li>
+ 
+                <li>
+                    <a href="8contato.html">Contato</a>
+                </li>
+ 
             </ul>
  
         </div>
@@ -491,11 +518,37 @@
             <h3>Recursos</h3>
  
             <ul>
-                <li><a href="2reciclagem.html">O que posso reciclar?</a></li>
-                <li><a href="6calculadora.html">Calculadora da Reciclagem</a></li>
-                <li><a href="2reciclagem.html#materiais">Materiais recicláveis</a></li>
-                <li><a href="3educacao_ambiental.html">Educação ambiental</a></li>
-                <li><a href="3educacao_ambiental.html#cartilhas">Cartilhas</a></li>
+ 
+                <li>
+                    <a href="2reciclagem.html">
+                        O que posso reciclar?
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="6calculadora.html">
+                        Calculadora da Reciclagem
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="#">
+                        Materiais recicláveis
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="3educacao_ambiental.html">
+                        Educação ambiental
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="#">
+                        Dicas sustentáveis
+                    </a>
+                </li>
+ 
             </ul>
  
         </div>
@@ -507,25 +560,84 @@
             <h3>Contato</h3>
  
             <div class="contact-item">
-                <span class="contact-icon">📍</span>
+ 
+                <span class="contact-icon">
+                    📍
+                </span>
+ 
                 <p>
                     Canoas - RS<br>
                     Brasil
                 </p>
+ 
             </div>
  
+ 
             <div class="contact-item">
-                <span class="contact-icon">✉</span>
+ 
+                <span class="contact-icon">
+                    ✉
+                </span>
+ 
                 <a href="mailto:hubproreciclagem@unilasalle.edu.br">
                     hubproreciclagem@unilasalle.edu.br
                 </a>
+ 
             </div>
  
+ 
             <div class="contact-item">
-                <span class="contact-icon">☎</span>
+ 
+                <span class="contact-icon">
+                    ☎
+                </span>
+ 
                 <a href="tel:+555132345678">
                     (51) 3234-5678
                 </a>
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+ 
+    <!-- =================================================
+         FAIXA DE LOGOS (HUB + FAPERGS)
+    ================================================== -->
+    <div class="footer-logos">
+ 
+        <div class="footer-logos-container">
+ 
+            <span class="footer-logos-titulo">
+                Realização e Fomento
+            </span>
+ 
+            <div class="footer-logos-lista">
+ 
+                <!-- LOGO HUB PRÓ-RECICLAGEM -->
+                <a href="1inicial.html" class="footer-logo-box" aria-label="HUB Pró-Reciclagem">
+                    <img
+                        src="../imagens/logo.png"
+                        alt="HUB Pró-Reciclagem"
+                    >
+                </a>
+ 
+                <!-- LOGO FAPERGS -->
+                <a href="https://fapergs.rs.gov.br" target="_blank" rel="noopener" class="footer-logo-box" aria-label="FAPERGS">
+                    <img
+                        src="../imagens/logo_fapergs.png"
+                        alt="FAPERGS"
+                    >
+                </a>
+ 
+                <!--
+                    ESPAÇO PARA UMA NOVA LOGO:
+                    copie o bloco <a class="footer-logo-box"> acima
+                    e troque o src e o alt.
+                -->
+ 
             </div>
  
         </div>
@@ -534,6 +646,7 @@
  
  
     <!-- LINHA INFERIOR -->
+ 
     <div class="footer-bottom">
  
         <div class="footer-bottom-container">
@@ -545,11 +658,15 @@
  
             <div class="footer-bottom-links">
  
-                <a href="#">Política de Privacidade</a>
+                <a href="#">
+                    Política de Privacidade
+                </a>
  
                 <span>•</span>
  
-                <a href="#">Acessibilidade</a>
+                <a href="#">
+                    Acessibilidade
+                </a>
  
             </div>
  
@@ -559,61 +676,9 @@
  
 </footer>
  
- 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
- 
-    const paginas = document.querySelectorAll(".quadrinhos__pagina");
-    const pontos = document.querySelectorAll(".quadrinhos__pontos .ponto");
-    const setaAnterior = document.querySelector(".quadrinhos__seta--esq");
-    const setaProxima = document.querySelector(".quadrinhos__seta--dir");
- 
-    let paginaAtual = 0;
- 
-    function mostrarPagina(indice) {
-        if (indice < 0) {
-            indice = paginas.length - 1;
-        }
- 
-        if (indice >= paginas.length) {
-            indice = 0;
-        }
- 
-        paginas.forEach(function (pagina, i) {
-            pagina.classList.toggle("ativa", i === indice);
-        });
- 
-        pontos.forEach(function (ponto, i) {
-            ponto.classList.toggle("ativo", i === indice);
-        });
- 
-        paginaAtual = indice;
-    }
- 
-    if (setaAnterior) {
-        setaAnterior.addEventListener("click", function () {
-            mostrarPagina(paginaAtual - 1);
-        });
-    }
- 
-    if (setaProxima) {
-        setaProxima.addEventListener("click", function () {
-            mostrarPagina(paginaAtual + 1);
-        });
-    }
- 
-    pontos.forEach(function (ponto, indice) {
-        ponto.addEventListener("click", function () {
-            mostrarPagina(indice);
-        });
-    });
- 
-    mostrarPagina(0);
-});
-</script>
- 
-</body>
-</html>
- 
+
+
+
+
 
 

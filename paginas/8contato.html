@@ -518,78 +518,47 @@
  
  
     </section>
- 
- 
- 
-    
- 
- 
-<!-- =========================================
-     RODAPÉ
-========================================= -->
+ <!-- =====================================================
+     RODAPÉ — substitui o <footer class="site-footer"> inteiro
+     (vai logo antes de <script src="../js/carousel.js">)
+===================================================== -->
  
 <footer class="site-footer">
  
- 
     <div class="footer-container">
  
- 
         <!-- IDENTIDADE -->
- 
         <div class="footer-brand">
  
- 
             <div class="footer-logo">
- 
                 <div class="footer-logo-icon">
                     ♻
                 </div>
  
- 
                 <div>
- 
-                    <strong>
-                        HUB
-                    </strong>
- 
-                    <span>
-                        Pró-Reciclagem
-                    </span>
- 
+                    <strong>HUB</strong>
+                    <span>Pró-Reciclagem</span>
                 </div>
- 
             </div>
  
- 
             <p>
-                Informação que transforma atitudes
-                em ações para um futuro mais sustentável.
+                Informação que transforma atitudes em ações
+                para um futuro mais sustentável.
             </p>
  
- 
+            <!-- REDES SOCIAIS -->
             <div class="footer-social">
  
-                <a
-                    href="#"
-                    aria-label="Facebook"
-                >
-                    <i class="fa-brands fa-facebook-f"></i>
+                <a href="#" aria-label="Facebook">
+                    f
                 </a>
  
- 
-                <a
-                    href="#"
-                    aria-label="Instagram"
-                >
-                    <i class="fa-brands fa-instagram"></i>
+                <a href="#" aria-label="Instagram">
+                    ◎
                 </a>
  
- 
-                <a
-                    href="#"
-                    aria-label="YouTube"
-                >
-                    <i class="fa-brands fa-youtube"></i>
+                <a href="#" aria-label="YouTube">
+                    ▶
                 </a>
  
             </div>
@@ -597,39 +566,35 @@
         </div>
  
  
- 
         <!-- NAVEGAÇÃO -->
- 
         <div class="footer-column">
  
-            <h3>
-                Navegação
-            </h3>
+            <h3>Navegação</h3>
  
             <ul>
  
                 <li>
-                    <a href="1inicial.html">
-                        Início
-                    </a>
+                    <a href="1inicial.html">Início</a>
                 </li>
  
                 <li>
-                    <a href="2reciclagem.html">
-                        Reciclagem
-                    </a>
+                    <a href="2reciclagem.html">Reciclagem</a>
                 </li>
  
                 <li>
-                    <a href="4Cooperativas.html">
-                        Cooperativas
-                    </a>
+                    <a href="4Cooperativas.html">Cooperativas</a>
                 </li>
  
                 <li>
-                    <a href="5Mapa.html">
-                        Mapa da Coleta
-                    </a>
+                    <a href="5Mapa.html">Mapa da Coleta</a>
+                </li>
+ 
+                <li>
+                    <a href="7noticias.html">Notícias</a>
+                </li>
+ 
+                <li>
+                    <a href="8contato.html">Contato</a>
                 </li>
  
             </ul>
@@ -637,16 +602,18 @@
         </div>
  
  
- 
         <!-- RECURSOS -->
- 
         <div class="footer-column">
  
-            <h3>
-                Recursos
-            </h3>
+            <h3>Recursos</h3>
  
             <ul>
+ 
+                <li>
+                    <a href="2reciclagem.html">
+                        O que posso reciclar?
+                    </a>
+                </li>
  
                 <li>
                     <a href="6calculadora.html">
@@ -655,14 +622,20 @@
                 </li>
  
                 <li>
-                    <a href="3educacao_ambiental.html">
-                        Educação Ambiental
+                    <a href="#">
+                        Materiais recicláveis
                     </a>
                 </li>
  
                 <li>
-                    <a href="7noticias.html">
-                        Notícias
+                    <a href="3educacao_ambiental.html">
+                        Educação ambiental
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="#">
+                        Dicas sustentáveis
                     </a>
                 </li>
  
@@ -671,20 +644,15 @@
         </div>
  
  
- 
         <!-- CONTATO -->
- 
         <div class="footer-column footer-contact">
  
-            <h3>
-                Contato
-            </h3>
- 
+            <h3>Contato</h3>
  
             <div class="contact-item">
  
                 <span class="contact-icon">
-                    <i class="fa-solid fa-location-dot"></i>
+                    📍
                 </span>
  
                 <p>
@@ -698,39 +666,105 @@
             <div class="contact-item">
  
                 <span class="contact-icon">
-                    <i class="fa-solid fa-envelope"></i>
+                    ✉
                 </span>
  
-                <a
-                    href="mailto:hubproreciclagem@unilasalle.edu.br"
-                >
+                <a href="mailto:hubproreciclagem@unilasalle.edu.br">
                     hubproreciclagem@unilasalle.edu.br
                 </a>
  
             </div>
  
  
-        </div>
+            <div class="contact-item">
  
+                <span class="contact-icon">
+                    ☎
+                </span>
+ 
+                <a href="tel:+555132345678">
+                    (51) 3234-5678
+                </a>
+ 
+            </div>
+ 
+        </div>
  
     </div>
  
  
+    <!-- =================================================
+         FAIXA DE LOGOS (HUB + FAPERGS)
+    ================================================== -->
+    <div class="footer-logos">
  
-    <!-- RODAPÉ INFERIOR -->
+        <div class="footer-logos-container">
+ 
+            <span class="footer-logos-titulo">
+                Realização e Fomento
+            </span>
+ 
+            <div class="footer-logos-lista">
+ 
+                <!-- LOGO HUB PRÓ-RECICLAGEM -->
+                <a href="1inicial.html" class="footer-logo-box" aria-label="HUB Pró-Reciclagem">
+                    <img
+                        src="../imagens/logo.png"
+                        alt="HUB Pró-Reciclagem"
+                    >
+                </a>
+ 
+                <!-- LOGO FAPERGS -->
+                <a href="https://fapergs.rs.gov.br" target="_blank" rel="noopener" class="footer-logo-box" aria-label="FAPERGS">
+                    <img
+                        src="../imagens/logo_fapergs.png"
+                        alt="FAPERGS"
+                    >
+                </a>
+ 
+                <!--
+                    ESPAÇO PARA UMA NOVA LOGO:
+                    copie o bloco <a class="footer-logo-box"> acima
+                    e troque o src e o alt.
+                -->
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+ 
+    <!-- LINHA INFERIOR -->
  
     <div class="footer-bottom">
  
-        <p>
-            © 2026 HUB Pró-Reciclagem.
-            Todos os direitos reservados.
-        </p>
+        <div class="footer-bottom-container">
+ 
+            <p>
+                © 2026 HUB Pró-Reciclagem.
+                Todos os direitos reservados.
+            </p>
+ 
+            <div class="footer-bottom-links">
+ 
+                <a href="#">
+                    Política de Privacidade
+                </a>
+ 
+                <span>•</span>
+ 
+                <a href="#">
+                    Acessibilidade
+                </a>
+ 
+            </div>
+ 
+        </div>
  
     </div>
  
- 
 </footer>
- 
  
 </body>
  
