@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+ 
+<head>  <!-- Cabeçalho -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/3educacao.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<title>Educação Ambiental | HUB Pró-Reciclagem</title>
+</head>
+<body> <!--corpo da página -->
+ 
+<header>
+    <!-- CABEÇALHO PRINCIPAL -->
+    <nav class="menu" aria-label="Navegação principal">
+ 
+        <!-- LOGO -->
+        <div class="nav__logo">
+            <a href="1inicial.html" aria-label="Página inicial">
+                <img
+                    src="../imagens/logo.png"
+                    alt="HUB Pró-Reciclagem"
+                >
+            </a>
+        </div>
+ 
+        <!-- NAVEGAÇÃO -->
+        <div class="menu__nav">
+            <ul class="menu__lista">
+ 
+                <li>
+                    <a href="1inicial.html">
+                        <i class="fa-solid fa-house" aria-hidden="true"></i>
+                        <span>Início</span>
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="2reciclagem.html">
+                        <i class="fa-solid fa-recycle" aria-hidden="true"></i>
+                        <span>Reciclagem</span>
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="3educacao_ambiental.html" class="ativo">
+                        <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                        <span>Educação Ambiental</span>
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="4Cooperativas.html">
+                        <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+                        <span>Cooperativas</span>
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="5Mapa.html">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        <span>Mapa da Coleta</span>
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="6calculadora.html">
+                        <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+                        <span>Calculadora</span>
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="7noticias.html">
+                        <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
+                        <span>Notícias</span>
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="8contato.html">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span>Contato</span>
+                    </a>
+                </li>
+ 
+            </ul>
+        </div>
+ 
+        <!-- ACESSO ADMINISTRATIVO -->
+        <a href="adm.html" class="menu__admin">
+            <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+            <span>Acesso Administrativo</span>
+        </a>
+ 
+    </nav>
+</header>
+ 
+<main>
+ 
+<!-- ÁREA PRINCIPAL -->
+<section class="hero">
+ 
+    <!-- TEXTO -->
+    <div class="hero__texto">
+ 
+        <h1>
+            <span class="titulo-introducao">Educação Ambiental</span>
+            <span class="titulo-principal">Pequenas atitudes, grandes mudanças</span>
+        </h1>
+ 
+        <p>
+            Que pequenas atitudes do nosso dia a dia podem fazer uma grande diferença para o nosso planeta?
+            Educação Ambiental é o processo de aprender sobre o meio ambiente e entender como nossas escolhas
+            podem contribuir para cuidar dele. Ela nos ajuda a perceber que ações simples, como separar
+            corretamente os resíduos, reduzir o desperdício, reutilizar e reciclar materiais, fazem parte
+            da construção de um futuro mais sustentável.
+        </p>
+ 
+        <p class="hero__destaque">
+            E não precisa ser complicado!
+        </p>
+ 
+        <div class="hero__botoes">
+            <a href="#cartilhas" class="btn btn-primary">
+                Explorar materiais
+            </a>
+        </div>
+ 
+    </div>
+ 
+ 
+    <!-- IMAGEM NO FUNDO DIREITO (mesma estrutura do carrossel da página 1) -->
+    <div class="hero__carousel">
+ 
+        <div class="carousel__slides">
+ 
+            <div class="carousel__slide ativa">
+                <img
+                    src="../imagens/re_tartaruga.png"
+                    alt="Mascote Rê da reciclagem"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');"
+                >
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+</section>
+ 
+<!-- =====================================================
+     MASCOTES
+===================================================== -->
+<section class="mascotes">
+ 
+    <div class="secao-titulo">
+        <span>Personagens do HUB</span>
+        <h2>Conheça nossos mascotes</h2>
+        <div class="linha-amarela"></div>
+        <p>Personagens que ajudam a tornar a educação ambiental mais leve, visual e divertida.</p>
+    </div>
+ 
+    <div class="mascotes__grid">
+ 
+        <article class="mascote-card">
+            <div class="mascote-card__imagem">
+                <img src="../imagens/re.png" alt="Rê — mascote da reciclagem"
+                     onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                <span class="placeholder-label">RÊ</span>
+            </div>
+            <div class="mascote-card__texto">
+                <h3>Rê</h3>
+                <p>Reciclagem, separação e cuidado com o planeta.</p>
+            </div>
+        </article>
+ 
+        <article class="mascote-card">
+            <div class="mascote-card__imagem">
+                <img src="../imagens/nico.png" alt="Nico — mascote dos orgânicos"
+                     onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                <span class="placeholder-label">NICO</span>
+            </div>
+            <div class="mascote-card__texto">
+                <h3>Nico</h3>
+                <p>Orgânicos, compostagem e aproveitamento dos resíduos.</p>
+            </div>
+        </article>
+ 
+        <article class="mascote-card">
+            <div class="mascote-card__imagem">
+                <img src="../imagens/ci.png" alt="Ci — mascote do consumo consciente"
+                     onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                <span class="placeholder-label">CI</span>
+            </div>
+            <div class="mascote-card__texto">
+                <h3>Ci</h3>
+                <p>Consumo consciente, escolhas e atitudes sustentáveis.</p>
+            </div>
+        </article>
+ 
+        <article class="mascote-card">
+            <div class="mascote-card__imagem">
+                <img src="../imagens/edu.png" alt="Edu — mascote da educação ambiental"
+                     onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                <span class="placeholder-label">EDU</span>
+            </div>
+            <div class="mascote-card__texto">
+                <h3>Edu</h3>
+                <p>Educação ambiental, orientação e aprendizagem.</p>
+            </div>
+        </article>
+ 
+    </div>
+</section>
+ 
+ 
+<!-- =====================================================
+     RECICLABILIDADE
+===================================================== -->
+<section class="reciclabilidade">
+ 
+    <div class="secao-titulo">
+        <span>Antes do descarte</span>
+        <h2>A reciclabilidade começa antes do descarte</h2>
+        <div class="linha-amarela"></div>
+    </div>
+ 
+    <div class="reciclabilidade__conteudo">
+ 
+        <div class="reciclabilidade__bloco">
+            <p>
+                A forma como um produto é pensado e produzido também
+                influencia sua reciclabilidade. Produtos duráveis,
+                reutilizáveis e desenvolvidos para facilitar a separação
+                e o reaproveitamento de seus materiais têm maior
+                potencial de permanecer em circulação. Por isso, pensar
+                na reciclagem começa na escolha e no projeto do produto,
+                e não apenas no momento em que ele vira resíduo.
+            </p>
+        </div>
+ 
+        <div class="reciclabilidade__bloco reciclabilidade__bloco--destaque">
+            <span class="reciclabilidade__icone">🌎</span>
+            <h3>O que podemos fazer?</h3>
+            <p>
+                Para consumidores, escolas e empresas, conhecer a
+                reciclabilidade ajuda a fazer escolhas mais conscientes:
+                reduzir o consumo, priorizar produtos reutilizáveis e
+                duráveis, evitar embalagens desnecessariamente complexas
+                e separar corretamente os resíduos. Para fabricantes e
+                outros integrantes da cadeia, significa considerar o
+                destino dos produtos desde sua concepção e buscar
+                soluções que favoreçam a circularidade.
+            </p>
+        </div>
+ 
+    </div>
+ 
+</section>
+ 
+ 
+<!-- =====================================================
+     HISTÓRIA EM QUADRINHOS
+===================================================== -->
+<section class="quadrinhos">
+ 
+    <div class="secao-titulo">
+        <span>História em quadrinhos</span>
+        <h2>A reciclagem em uma história</h2>
+        <div class="linha-amarela"></div>
+        <p>Uma aventura educativa para descobrir como separar, encaminhar e valorizar os resíduos.</p>
+    </div>
+ 
+    <div class="quadrinhos__carrossel">
+        <button class="quadrinhos__seta quadrinhos__seta--esq" aria-label="Página anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+ 
+        <div class="quadrinhos__janela">
+            <div class="quadrinhos__paginas">
+                <div class="quadrinhos__pagina ativa">
+                    <img src="../img_historia/historia_p1.jpg" alt="História em quadrinhos — página 1"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+                <div class="quadrinhos__pagina">
+                    <img src="../img_historia/historia_p2.jpg" alt="História em quadrinhos — página 2"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+                <div class="quadrinhos__pagina">
+                    <img src="../img_historia/historia_p3.jpg" alt="História em quadrinhos — página 3"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+                <div class="quadrinhos__pagina">
+                    <img src="../img_historia/historia_p4.jpg" alt="História em quadrinhos — página 4"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+                <div class="quadrinhos__pagina">
+                    <img src="../img_historia/historia_p5.jpg" alt="História em quadrinhos — página 5"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+                <div class="quadrinhos__pagina">
+                    <img src="../img_historia/historia_p6.jpg" alt="História em quadrinhos — página 6"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+                <div class="quadrinhos__pagina">
+                    <img src="../img_historia/historia_p7.jpg" alt="História em quadrinhos — página 7"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+                <div class="quadrinhos__pagina">
+                    <img src="../img_historia/historia_8.jpg" alt="História em quadrinhos — página 8"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+                <div class="quadrinhos__pagina">
+                    <img src="../img_historia/historia_p9.jpg" alt="História em quadrinhos — página 9"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+                <div class="quadrinhos__pagina">
+                    <img src="../img_historia/historia_p10.jpg" alt="História em quadrinhos — página 10"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+                <div class="quadrinhos__pagina">
+                    <img src="../img_historia/historia_p11.jpg" alt="História em quadrinhos — página 11"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+                <div class="quadrinhos__pagina">
+                    <img src="../img_historia/historia_p12.jpg" alt="História em quadrinhos — página 12"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+                <div class="quadrinhos__pagina">
+                    <img src="../img_historia/historia_p13.png" alt="História em quadrinhos — página 13"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('imagem-pendente');">
+                </div>
+            </div>
+        </div>
+ 
+        <button class="quadrinhos__seta quadrinhos__seta--dir" aria-label="Próxima página">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+ 
+    <div class="quadrinhos__pontos">
+        <button class="ponto ativo" data-slide="1" aria-label="Ir para página 1"></button>
+        <button class="ponto" data-slide="2" aria-label="Ir para página 2"></button>
+        <button class="ponto" data-slide="3" aria-label="Ir para página 3"></button>
+        <button class="ponto" data-slide="4" aria-label="Ir para página 4"></button>
+        <button class="ponto" data-slide="5" aria-label="Ir para página 5"></button>
+        <button class="ponto" data-slide="6" aria-label="Ir para página 6"></button>
+        <button class="ponto" data-slide="7" aria-label="Ir para página 7"></button>
+        <button class="ponto" data-slide="8" aria-label="Ir para página 8"></button>
+        <button class="ponto" data-slide="9" aria-label="Ir para página 9"></button>
+        <button class="ponto" data-slide="10" aria-label="Ir para página 10"></button>
+        <button class="ponto" data-slide="11" aria-label="Ir para página 11"></button>
+        <button class="ponto" data-slide="12" aria-label="Ir para página 12"></button>
+        <button class="ponto" data-slide="13" aria-label="Ir para página 13"></button>
+    </div>
+ 
+</section>
+ 
+ 
+<!-- =====================================================
+     CARTILHAS DE EDUCAÇÃO AMBIENTAL
+===================================================== -->
+<section class="cartilhas" id="cartilhas">
+ 
+    <div class="secao-titulo">
+        <span>Para baixar e ler</span>
+        <h2>Cartilhas de Educação Ambiental</h2>
+        <div class="linha-amarela"></div>
+        <p>Materiais completos para aprofundar seu conhecimento sobre reciclagem e sustentabilidade.</p>
+    </div>
+ 
+    <div class="cartilhas__grid">
+ 
+        <article class="cartilha-card">
+            <div class="cartilha-card__imagem">
+                <img src="../imagens/cartilha-01.jpg" alt="Cartilha: Guia da Reciclagem">
+            </div>
+            <div class="cartilha-card__conteudo">
+                <span>CARTILHA</span>
+                <h3>Guia da Reciclagem</h3>
+                <p>Aprenda a separar corretamente os materiais recicláveis.</p>
+                <a href="../cartilhas/cartilha01.pdf"><i class="fa-solid fa-download"></i> Baixar cartilha</a>
+            </div>
+        </article>
+ 
+        <article class="cartilha-card">
+            <div class="cartilha-card__imagem">
+                <img src="../cartilhas/img_cartilha02.png" alt="Cartilha: Reciclabilidade, compostagem e entrega dos resíduos recicláveis">
+            </div>
+            <div class="cartilha-card__conteudo">
+                <span>CARTILHA</span>
+                <h3>Reciclabilidade, compostagem</h3>
+                <p>Dicas para reduzir o desperdício no dia a dia.</p>
+                <a href="../cartilhas/cartilha02.pdf"><i class="fa-solid fa-download"></i> Baixar cartilha</a>
+            </div>
+        </article>
+ 
+        <article class="cartilha-card">
+            <div class="cartilha-card__imagem">
+                <img src="../cartilhas/img_cartilha03.jpg" alt="Cartilha: Educação Ambiental e Gestão de resíduos">
+            </div>
+            <div class="cartilha-card__conteudo">
+                <span>CARTILHA</span>
+                <h3>Educação Ambiental e Gestão de resíduos</h3>
+                <p>Entenda o papel social das cooperativas de reciclagem.</p>
+                <a href="../cartilhas/cartilha03.pdf"><i class="fa-solid fa-download"></i> Baixar cartilha</a>
+            </div>
+        </article>
+ 
+        <article class="cartilha-card">
+            <div class="cartilha-card__imagem">
+                <img src="../cartilhas/img_cartilha04.jpg" alt="Cartilha: Educação Cooperativista">
+            </div>
+            <div class="cartilha-card__conteudo">
+                <span>CARTILHA</span>
+                <h3>Educação Cooperativista</h3>
+                <p>Descubra como a reciclagem começa antes do descarte.</p>
+                <a href="../cartilhas/cartilha04.pdf"><i class="fa-solid fa-download"></i> Baixar cartilha</a>
+            </div>
+        </article>
+ 
+    </div>
+ 
+</section>
+ 
+</main>
+ 
+<!-- =====================================================
+     RODAPÉ — substitui o <footer class="site-footer"> inteiro
+     (vai logo antes de <script src="../js/carousel.js">)
+===================================================== -->
+ 
+<footer class="site-footer">
+ 
+    <div class="footer-container">
+ 
+        <!-- IDENTIDADE -->
+        <div class="footer-brand">
+ 
+            <div class="footer-logo">
+                <div class="footer-logo-icon">
+                    ♻
+                </div>
+ 
+                <div>
+                    <strong>HUB</strong>
+                    <span>Pró-Reciclagem</span>
+                </div>
+            </div>
+ 
+            <p>
+                Informação que transforma atitudes em ações
+                para um futuro mais sustentável.
+            </p>
+ 
+            <!-- REDES SOCIAIS -->
+            <div class="footer-social">
+ 
+                <a href="#" aria-label="Facebook">
+                    f
+                </a>
+ 
+                <a href="#" aria-label="Instagram">
+                    ◎
+                </a>
+ 
+                <a href="#" aria-label="YouTube">
+                    ▶
+                </a>
+ 
+            </div>
+ 
+        </div>
+ 
+ 
+        <!-- NAVEGAÇÃO -->
+        <div class="footer-column">
+ 
+            <h3>Navegação</h3>
+ 
+            <ul>
+ 
+                <li>
+                    <a href="1inicial.html">Início</a>
+                </li>
+ 
+                <li>
+                    <a href="2reciclagem.html">Reciclagem</a>
+                </li>
+ 
+                <li>
+                    <a href="4Cooperativas.html">Cooperativas</a>
+                </li>
+ 
+                <li>
+                    <a href="5Mapa.html">Mapa da Coleta</a>
+                </li>
+ 
+                <li>
+                    <a href="7noticias.html">Notícias</a>
+                </li>
+ 
+                <li>
+                    <a href="8contato.html">Contato</a>
+                </li>
+ 
+            </ul>
+ 
+        </div>
+ 
+ 
+        <!-- RECURSOS -->
+        <div class="footer-column">
+ 
+            <h3>Recursos</h3>
+ 
+            <ul>
+ 
+                <li>
+                    <a href="2reciclagem.html">
+                        O que posso reciclar?
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="6calculadora.html">
+                        Calculadora da Reciclagem
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="#">
+                        Materiais recicláveis
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="3educacao_ambiental.html">
+                        Educação ambiental
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="#">
+                        Dicas sustentáveis
+                    </a>
+                </li>
+ 
+            </ul>
+ 
+        </div>
+ 
+ 
+        <!-- CONTATO -->
+        <div class="footer-column footer-contact">
+ 
+            <h3>Contato</h3>
+ 
+            <div class="contact-item">
+ 
+                <span class="contact-icon">
+                    📍
+                </span>
+ 
+                <p>
+                    Canoas - RS<br>
+                    Brasil
+                </p>
+ 
+            </div>
+ 
+ 
+            <div class="contact-item">
+ 
+                <span class="contact-icon">
+                    ✉
+                </span>
+ 
+                <a href="mailto:hubproreciclagem@unilasalle.edu.br">
+                    hubproreciclagem@unilasalle.edu.br
+                </a>
+ 
+            </div>
+ 
+ 
+            <div class="contact-item">
+ 
+                <span class="contact-icon">
+                    ☎
+                </span>
+ 
+                <a href="tel:+555132345678">
+                    (51) 3234-5678
+                </a>
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+ 
+    <!-- =================================================
+         FAIXA DE LOGOS (HUB + FAPERGS)
+    ================================================== -->
+    <div class="footer-logos">
+ 
+        <div class="footer-logos-container">
+ 
+            <span class="footer-logos-titulo">
+                Realização e Fomento
+            </span>
+ 
+            <div class="footer-logos-lista">
+ 
+                <!-- LOGO HUB PRÓ-RECICLAGEM -->
+                <a href="1inicial.html" class="footer-logo-box" aria-label="HUB Pró-Reciclagem">
+                    <img
+                        src="../imagens/logo.png"
+                        alt="HUB Pró-Reciclagem"
+                    >
+                </a>
+ 
+                <!-- LOGO FAPERGS -->
+                <a href="https://fapergs.rs.gov.br" target="_blank" rel="noopener" class="footer-logo-box" aria-label="FAPERGS">
+                    <img
+                        src="../imagens/logo_fapergs.png"
+                        alt="FAPERGS"
+                    >
+                </a>
+ 
+                <!--
+                    ESPAÇO PARA UMA NOVA LOGO:
+                    copie o bloco <a class="footer-logo-box"> acima
+                    e troque o src e o alt.
+                -->
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+ 
+    <!-- LINHA INFERIOR -->
+ 
+    <div class="footer-bottom">
+ 
+        <div class="footer-bottom-container">
+ 
+            <p>
+                © 2026 HUB Pró-Reciclagem.
+                Todos os direitos reservados.
+            </p>
+ 
+            <div class="footer-bottom-links">
+ 
+                <a href="#">
+                    Política de Privacidade
+                </a>
+ 
+                <span>•</span>
+ 
+                <a href="#">
+                    Acessibilidade
+                </a>
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+</footer>
+ 
+
+
+
+
+
+

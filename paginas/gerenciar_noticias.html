@@ -1,0 +1,1328 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Notícias | HUB Pró-Reciclagem</title>
+
+    <link rel="stylesheet" href="../css/1inicial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --verde-escuro: #075c32;
+            --verde: #087a42;
+            --verde-claro: #e8f5ec;
+            --fundo: #f2f8f4;
+            --amarelo: #f5c400;
+            --texto: #173f30;
+            --cinza: #60766a;
+            --borda: #dce9e0;
+            --branco: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--fundo);
+            color: var(--texto);
+            font-family: "Nunito", sans-serif;
+        }
+
+        button, input, textarea {
+            font: inherit;
+        }
+
+        /* CABEÇALHO */
+
+        .cabecalho-noticias {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            background: var(--branco);
+            box-shadow: 0 4px 18px rgba(20, 60, 40, 0.08);
+        }
+
+        .cabecalho-conteudo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            min-height: 70px;
+            padding: 10px 5.2%;
+        }
+
+        .logo-site {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-site img {
+            display: block;
+            width: 145px;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .botao-voltar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 42px;
+            padding: 0 18px;
+            border: 1px solid var(--verde-escuro);
+            border-radius: 30px;
+            background: var(--branco);
+            color: var(--verde-escuro);
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background .2s, color .2s;
+        }
+
+        .botao-voltar:hover {
+            background: var(--verde-escuro);
+            color: var(--branco);
+        }
+
+        /* CONTEÚDO */
+
+        .pagina {
+            width: min(1200px, 100%);
+            margin: 0 auto;
+            padding: 46px 28px 65px;
+        }
+
+        .pagina-topo {
+            margin-bottom: 28px;
+        }
+
+        .etiqueta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 30px;
+            background: #e2f3e7;
+            color: var(--verde-escuro);
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: .6px;
+            text-transform: uppercase;
+        }
+
+        .pagina-topo h1 {
+            margin: 15px 0 8px;
+            color: var(--verde-escuro);
+            font-size: clamp(30px, 4vw, 40px);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .pagina-topo h1 span {
+            color: #15964d;
+        }
+
+        .pagina-topo p {
+            max-width: 750px;
+            margin: 0;
+            color: var(--cinza);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .linha-amarela {
+            display: block;
+            width: 49px;
+            height: 3px;
+            margin-top: 19px;
+            border-radius: 10px;
+            background: var(--amarelo);
+        }
+
+        /* PAINEL DO FORMULÁRIO */
+
+        .painel {
+            overflow: hidden;
+            border: 1px solid var(--borda);
+            border-radius: 19px;
+            background: var(--branco);
+            box-shadow: 0 12px 35px rgba(22, 75, 47, .06);
+        }
+
+        .painel-cabecalho {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 22px 25px;
+            border-bottom: 1px solid var(--borda);
+            background: #fcfefc;
+        }
+
+        .painel-icone {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            background: var(--verde-claro);
+            color: var(--verde);
+            font-size: 19px;
+        }
+
+        .painel-cabecalho h2 {
+            margin: 0 0 4px;
+            color: var(--verde-escuro);
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+        .painel-cabecalho p {
+            margin: 0;
+            color: var(--cinza);
+            font-size: 12px;
+        }
+
+        .formulario {
+            padding: 26px;
+        }
+
+        .campos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px 20px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            min-width: 0;
+        }
+
+        .campo-completo {
+            grid-column: 1 / -1;
+        }
+
+        .campo label {
+            color: var(--texto);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .obrigatorio {
+            color: #c43d3d;
+        }
+
+        .campo input,
+        .campo textarea {
+            width: 100%;
+            border: 1px solid #d6e4da;
+            border-radius: 10px;
+            outline: none;
+            background: #fcfefc;
+            color: var(--texto);
+            font-size: 13px;
+            transition: border-color .2s, box-shadow .2s;
+        }
+
+        .campo input {
+            min-height: 42px;
+            padding: 10px 13px;
+        }
+
+        .campo textarea {
+            min-height: 210px;
+            padding: 13px;
+            line-height: 1.7;
+            resize: vertical;
+        }
+
+        .campo input:focus,
+        .campo textarea:focus {
+            border-color: var(--verde);
+            box-shadow: 0 0 0 3px rgba(8, 122, 66, .09);
+        }
+
+        .campo input::placeholder,
+        .campo textarea::placeholder {
+            color: #95a69b;
+        }
+
+        .ajuda {
+            color: #75877c;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .contador {
+            display: flex;
+            justify-content: flex-end;
+            color: #75877c;
+            font-size: 11px;
+        }
+
+        /* BOTÕES */
+
+        .acoes {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e7eee9;
+        }
+
+        .botao {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 43px;
+            padding: 0 19px;
+            border: 1px solid transparent;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 800;
+            transition: background .2s, transform .2s;
+        }
+
+        .botao:hover {
+            transform: translateY(-1px);
+        }
+
+        .botao-principal {
+            background: var(--verde-escuro);
+            color: var(--branco);
+        }
+
+        .botao-principal:hover {
+            background: #064725;
+        }
+
+        .botao-secundario {
+            border-color: #cbded0;
+            background: var(--branco);
+            color: var(--verde-escuro);
+        }
+
+        .botao-secundario:hover {
+            background: var(--verde-claro);
+        }
+
+        .botao-excluir {
+            border-color: #f0d2d2;
+            background: var(--branco);
+            color: #b33434;
+        }
+
+        .botao-excluir:hover {
+            background: #fff1f1;
+        }
+
+        /* MENSAGENS */
+
+        .mensagem {
+            display: none;
+            margin-bottom: 20px;
+            padding: 13px 16px;
+            border: 1px solid #b8dfc4;
+            border-radius: 10px;
+            background: #eaf8ee;
+            color: var(--verde-escuro);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .mensagem.visivel {
+            display: block;
+        }
+
+        /* PUBLICAÇÕES CADASTRADAS */
+
+        .lista-secao {
+            margin-top: 36px;
+        }
+
+        .lista-topo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 17px;
+        }
+
+        .lista-topo h2 {
+            margin: 0;
+            color: var(--verde-escuro);
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .quantidade {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 30px;
+            height: 29px;
+            padding: 0 10px;
+            border-radius: 20px;
+            background: #e0f2e5;
+            color: var(--verde-escuro);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .lista-noticias {
+            display: grid;
+            gap: 14px;
+        }
+
+        .estado-vazio {
+            padding: 38px 20px;
+            border: 1px dashed #cbded0;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, .7);
+            color: var(--cinza);
+            text-align: center;
+        }
+
+        .estado-vazio i {
+            display: block;
+            margin-bottom: 12px;
+            color: #8aaa96;
+            font-size: 30px;
+        }
+
+        .estado-vazio p {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .noticia-card {
+            padding: 22px;
+            border: 1px solid var(--borda);
+            border-radius: 15px;
+            background: var(--branco);
+            box-shadow: 0 5px 18px rgba(22, 75, 47, .04);
+        }
+
+        .noticia-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 11px;
+            color: var(--cinza);
+            font-size: 12px;
+        }
+
+        .noticia-cooperativa {
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: var(--verde-claro);
+            color: var(--verde-escuro);
+            font-weight: 800;
+        }
+
+        .noticia-card h3 {
+            margin: 0 0 10px;
+            color: var(--verde-escuro);
+            font-size: 19px;
+            overflow-wrap: anywhere;
+        }
+
+        .noticia-texto {
+            color: #526b60;
+            font-size: 13px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        .noticia-acoes {
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 17px;
+            padding-top: 15px;
+            border-top: 1px solid #edf2ee;
+        }
+
+        .botao-pequeno {
+            min-height: 35px;
+            padding: 0 13px;
+            font-size: 11px;
+        }
+
+        /* RODAPÉ */
+
+        .rodape {
+            padding: 18px 5.2%;
+            border-top: 1px solid #e0eae3;
+            background: var(--branco);
+            color: var(--cinza);
+            font-size: 11px;
+        }
+
+        .rodape-conteudo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .rodape strong {
+            color: var(--verde-escuro);
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 700px) {
+            .cabecalho-conteudo {
+                min-height: 65px;
+                padding: 10px 16px;
+            }
+
+            .logo-site img {
+                width: 125px;
+            }
+
+            .botao-voltar {
+                min-height: 38px;
+                padding: 0 12px;
+                font-size: 12px;
+            }
+
+            .pagina {
+                padding: 30px 14px 45px;
+            }
+
+            .pagina-topo h1 {
+                font-size: 30px;
+            }
+
+            .campos-grid {
+                grid-template-columns: 1fr;
+                gap: 19px;
+            }
+
+            .campo-completo {
+                grid-column: auto;
+            }
+
+            .painel-cabecalho {
+                padding: 18px;
+            }
+
+            .formulario {
+                padding: 18px;
+            }
+
+            .acoes {
+                align-items: stretch;
+            }
+
+            .acoes > .botao,
+            .acoes-direita,
+            .acoes-direita .botao {
+                flex: 1;
+            }
+
+            .acoes-direita {
+                display: flex;
+            }
+
+            .noticia-card {
+                padding: 17px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .logo-site img {
+                width: 105px;
+            }
+
+            .botao-voltar {
+                gap: 5px;
+                padding: 0 9px;
+                font-size: 11px;
+            }
+
+            .painel-cabecalho h2 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO: LOGO E BOTÃO VOLTAR AO SITE -->
+
+    <header class="cabecalho-noticias">
+        <div class="cabecalho-conteudo">
+
+            <a href="1inicial.html" class="logo-site" aria-label="Voltar à página inicial">
+                <img src="../imagens/logo.png" alt="HUB Pró-Reciclagem">
+            </a>
+
+            <a href="1inicial.html" class="botao-voltar">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                <span>Voltar ao site</span>
+            </a>
+
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="pagina">
+
+        <section class="pagina-topo">
+            <div class="etiqueta">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                Área administrativa
+            </div>
+
+            <h1>Gerenciar <span>notícias e avisos</span></h1>
+
+            <p>
+                Cadastre e organize comunicados, avisos e notícias
+                relacionados às cooperativas e à reciclagem.
+            </p>
+
+            <span class="linha-amarela"></span>
+        </section>
+
+        <div id="mensagem" class="mensagem" role="status" aria-live="polite"></div>
+
+        <!-- FORMULÁRIO -->
+
+        <section class="painel">
+
+            <div class="painel-cabecalho">
+                <div class="painel-icone">
+                    <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <h2 id="tituloFormulario">Cadastrar publicação</h2>
+                    <p>Preencha os campos para registrar uma nova publicação.</p>
+                </div>
+            </div>
+
+            <form class="formulario" id="formularioNoticia">
+
+                <input type="hidden" id="noticiaId">
+
+                <div class="campos-grid">
+
+                    <div class="campo campo-completo">
+                        <label for="titulo">
+                            Título da publicação <span class="obrigatorio">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="titulo"
+                            maxlength="150"
+                            placeholder="Digite o título"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="cooperativa">Nome da cooperativa</label>
+
+                        <input
+                            type="text"
+                            id="cooperativa"
+                            maxlength="120"
+                            placeholder="Digite o nome da cooperativa"
+                        >
+
+                        <span class="ajuda">
+                            Se o aviso não for específico de uma cooperativa,
+                            deixe este campo vazio.
+                        </span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="data">
+                            Data da publicação <span class="obrigatorio">*</span>
+                        </label>
+
+                        <input type="date" id="data" required>
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="texto">
+                            Texto da publicação <span class="obrigatorio">*</span>
+                        </label>
+
+                        <textarea
+                            id="texto"
+                            maxlength="10000"
+                            placeholder="Escreva o conteúdo completo do aviso ou da notícia..."
+                            required
+                        ></textarea>
+
+                        <div class="contador">
+                            <span id="contadorTexto">0</span>&nbsp;/ 10000 caracteres
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="acoes">
+
+                    <button type="button" class="botao botao-secundario" id="limparFormulario">
+                        <i class="fa-solid fa-eraser" aria-hidden="true"></i>
+                        Limpar campos
+                    </button>
+
+                    <div class="acoes-direita">
+                        <button type="submit" class="botao botao-principal">
+                            <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>
+                            <span id="textoBotaoSalvar">Salvar publicação</span>
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </section>
+
+        <!-- LISTA DE PUBLICAÇÕES -->
+
+        <section class="lista-secao">
+
+            <div class="lista-topo">
+                <h2>Publicações cadastradas</h2>
+                <span class="quantidade" id="quantidadeNoticias">0</span>
+            </div>
+
+            <div class="lista-noticias" id="listaNoticias">
+                <div class="estado-vazio">
+                    <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
+                    <p>Nenhuma publicação cadastrada neste navegador.</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+<!-- =====================================================
+     RODAPÉ — substitui o <footer class="site-footer"> inteiro
+     (vai logo antes de <script src="../js/carousel.js">)
+===================================================== -->
+ 
+<footer class="site-footer">
+ 
+    <div class="footer-container">
+ 
+        <!-- IDENTIDADE -->
+        <div class="footer-brand">
+ 
+            <div class="footer-logo">
+                <div class="footer-logo-icon">
+                    ♻
+                </div>
+ 
+                <div>
+                    <strong>HUB</strong>
+                    <span>Pró-Reciclagem</span>
+                </div>
+            </div>
+ 
+            <p>
+                Informação que transforma atitudes em ações
+                para um futuro mais sustentável.
+            </p>
+ 
+            <!-- REDES SOCIAIS -->
+            <div class="footer-social">
+ 
+                <a href="#" aria-label="Facebook">
+                    f
+                </a>
+ 
+                <a href="#" aria-label="Instagram">
+                    ◎
+                </a>
+ 
+                <a href="#" aria-label="YouTube">
+                    ▶
+                </a>
+ 
+            </div>
+ 
+        </div>
+ 
+ 
+        <!-- NAVEGAÇÃO -->
+        <div class="footer-column">
+ 
+            <h3>Navegação</h3>
+ 
+            <ul>
+ 
+                <li>
+                    <a href="1inicial.html">Início</a>
+                </li>
+ 
+                <li>
+                    <a href="2reciclagem.html">Reciclagem</a>
+                </li>
+ 
+                <li>
+                    <a href="4Cooperativas.html">Cooperativas</a>
+                </li>
+ 
+                <li>
+                    <a href="5Mapa.html">Mapa da Coleta</a>
+                </li>
+ 
+                <li>
+                    <a href="7noticias.html">Notícias</a>
+                </li>
+ 
+                <li>
+                    <a href="8contato.html">Contato</a>
+                </li>
+ 
+            </ul>
+ 
+        </div>
+ 
+ 
+        <!-- RECURSOS -->
+        <div class="footer-column">
+ 
+            <h3>Recursos</h3>
+ 
+            <ul>
+ 
+                <li>
+                    <a href="2reciclagem.html">
+                        O que posso reciclar?
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="6calculadora.html">
+                        Calculadora da Reciclagem
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="#">
+                        Materiais recicláveis
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="3educacao_ambiental.html">
+                        Educação ambiental
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="#">
+                        Dicas sustentáveis
+                    </a>
+                </li>
+ 
+            </ul>
+ 
+        </div>
+ 
+ 
+        <!-- CONTATO -->
+        <div class="footer-column footer-contact">
+ 
+            <h3>Contato</h3>
+ 
+            <div class="contact-item">
+ 
+                <span class="contact-icon">
+                    📍
+                </span>
+ 
+                <p>
+                    Canoas - RS<br>
+                    Brasil
+                </p>
+ 
+            </div>
+ 
+ 
+            <div class="contact-item">
+ 
+                <span class="contact-icon">
+                    ✉
+                </span>
+ 
+                <a href="mailto:hubproreciclagem@unilasalle.edu.br">
+                    hubproreciclagem@unilasalle.edu.br
+                </a>
+ 
+            </div>
+ 
+ 
+            <div class="contact-item">
+ 
+                <span class="contact-icon">
+                    ☎
+                </span>
+ 
+                <a href="tel:+555132345678">
+                    (51) 3234-5678
+                </a>
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+ 
+    <!-- =================================================
+         FAIXA DE LOGOS (HUB + FAPERGS)
+    ================================================== -->
+    <div class="footer-logos">
+ 
+        <div class="footer-logos-container">
+ 
+            <span class="footer-logos-titulo">
+                Realização e Fomento
+            </span>
+ 
+            <div class="footer-logos-lista">
+ 
+                <!-- LOGO HUB PRÓ-RECICLAGEM -->
+                <a href="1inicial.html" class="footer-logo-box" aria-label="HUB Pró-Reciclagem">
+                    <img
+                        src="../imagens/logo.png"
+                        alt="HUB Pró-Reciclagem"
+                    >
+                </a>
+ 
+                <!-- LOGO FAPERGS -->
+                <a href="https://fapergs.rs.gov.br" target="_blank" rel="noopener" class="footer-logo-box" aria-label="FAPERGS">
+                    <img
+                        src="../imagens/logo_fapergs.png"
+                        alt="FAPERGS"
+                    >
+                </a>
+ 
+                <!--
+                    ESPAÇO PARA UMA NOVA LOGO:
+                    copie o bloco <a class="footer-logo-box"> acima
+                    e troque o src e o alt.
+                -->
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+ 
+    <!-- LINHA INFERIOR -->
+ 
+    <div class="footer-bottom">
+ 
+        <div class="footer-bottom-container">
+ 
+            <p>
+                © 2026 HUB Pró-Reciclagem.
+                Todos os direitos reservados.
+            </p>
+ 
+            <div class="footer-bottom-links">
+ 
+                <a href="#">
+                    Política de Privacidade
+                </a>
+ 
+                <span>•</span>
+ 
+                <a href="#">
+                    Acessibilidade
+                </a>
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+</footer>
+ 
+
+    
+<script type="module">
+import { auth, db } from "../js/firebase-config.js";
+
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+import {
+    collection,
+    query,
+    where,
+    getDocs,
+    addDoc,
+    updateDoc,
+    deleteDoc,
+    doc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const formulario = document.getElementById("formularioNoticia");
+const campoId = document.getElementById("noticiaId");
+const campoTitulo = document.getElementById("titulo");
+const campoCooperativa = document.getElementById("cooperativa");
+const campoData = document.getElementById("data");
+const campoTexto = document.getElementById("texto");
+const contadorTexto = document.getElementById("contadorTexto");
+const listaNoticias = document.getElementById("listaNoticias");
+const quantidadeNoticias = document.getElementById("quantidadeNoticias");
+const mensagem = document.getElementById("mensagem");
+const tituloFormulario = document.getElementById("tituloFormulario");
+const textoBotaoSalvar = document.getElementById("textoBotaoSalvar");
+const botaoSalvar = formulario.querySelector('button[type="submit"]');
+
+let usuarioAtual = null;
+let noticias = [];
+
+function mostrarMensagem(texto, erro = false) {
+    mensagem.textContent = texto;
+    mensagem.classList.add("visivel");
+    mensagem.style.background = erro ? "#fff1f1" : "#eaf8ee";
+    mensagem.style.borderColor = erro ? "#efc4c4" : "#b8dfc4";
+    mensagem.style.color = erro ? "#a52c2c" : "#075c32";
+}
+
+function formatarData(data) {
+    if (!data) return "";
+
+    const partes = data.split("-");
+    if (partes.length !== 3) return data;
+
+    return `${partes[2]}/${partes[1]}/${partes[0]}`;
+}
+
+function criarElemento(tag, classe, texto) {
+    const elemento = document.createElement(tag);
+
+    if (classe) elemento.className = classe;
+    if (texto !== undefined) elemento.textContent = texto;
+
+    return elemento;
+}
+
+function limparFormulario() {
+    formulario.reset();
+    campoId.value = "";
+    contadorTexto.textContent = "0";
+    tituloFormulario.textContent = "Cadastrar publicação";
+    textoBotaoSalvar.textContent = "Salvar publicação";
+}
+
+async function carregarNoticias() {
+    if (!usuarioAtual) return;
+
+    listaNoticias.replaceChildren();
+    listaNoticias.appendChild(
+        criarElemento("div", "estado-vazio", "Carregando suas publicações...")
+    );
+
+    try {
+        const consulta = query(
+            collection(db, "noticias"),
+            where("autorId", "==", usuarioAtual.uid)
+        );
+
+        const resultado = await getDocs(consulta);
+
+        noticias = resultado.docs.map(documento => ({
+            id: documento.id,
+            ...documento.data()
+        }));
+
+        noticias.sort((a, b) =>
+            (b.data || "").localeCompare(a.data || "")
+        );
+
+        renderizarNoticias();
+    } catch (erro) {
+        console.error("Erro ao carregar publicações:", erro);
+
+        listaNoticias.replaceChildren();
+        listaNoticias.appendChild(
+            criarElemento(
+                "div",
+                "estado-vazio",
+                "Não foi possível carregar suas publicações. Verifique a conexão e as regras do Firestore."
+            )
+        );
+
+        mostrarMensagem("Erro ao carregar publicações.", true);
+    }
+}
+
+function renderizarNoticias() {
+    listaNoticias.replaceChildren();
+    quantidadeNoticias.textContent = noticias.length;
+
+    if (noticias.length === 0) {
+        const vazio = criarElemento("div", "estado-vazio");
+        const icone = criarElemento("i", "fa-regular fa-newspaper");
+        icone.setAttribute("aria-hidden", "true");
+
+        const texto = criarElemento(
+            "p",
+            "",
+            "Você ainda não possui publicações cadastradas."
+        );
+
+        vazio.append(icone, texto);
+        listaNoticias.appendChild(vazio);
+        return;
+    }
+
+    noticias.forEach(noticia => {
+        const card = criarElemento("article", "noticia-card");
+        const meta = criarElemento("div", "noticia-meta");
+
+        meta.appendChild(
+            criarElemento("span", "", "Data: " + formatarData(noticia.data))
+        );
+
+        if (noticia.cooperativa) {
+            meta.appendChild(
+                criarElemento(
+                    "span",
+                    "noticia-cooperativa",
+                    noticia.cooperativa
+                )
+            );
+        }
+
+        const titulo = criarElemento("h3", "", noticia.titulo || "");
+        const texto = criarElemento(
+            "div",
+            "noticia-texto",
+            noticia.conteudo || noticia.texto || ""
+        );
+
+        const acoes = criarElemento("div", "noticia-acoes");
+
+        const editar = criarElemento(
+            "button",
+            "botao botao-secundario botao-pequeno"
+        );
+
+        editar.type = "button";
+        editar.innerHTML = '<i class="fa-solid fa-pen"></i> Editar';
+        editar.addEventListener("click", () => editarNoticia(noticia.id));
+
+        const excluir = criarElemento(
+            "button",
+            "botao botao-excluir botao-pequeno"
+        );
+
+        excluir.type = "button";
+        excluir.innerHTML = '<i class="fa-solid fa-trash"></i> Excluir';
+        excluir.addEventListener("click", () => excluirNoticia(noticia.id));
+
+        acoes.append(editar, excluir);
+        card.append(meta, titulo, texto, acoes);
+        listaNoticias.appendChild(card);
+    });
+}
+
+function editarNoticia(id) {
+    const noticia = noticias.find(item => item.id === id);
+
+    if (!noticia || noticia.autorId !== usuarioAtual?.uid) return;
+
+    campoId.value = noticia.id;
+    campoTitulo.value = noticia.titulo || "";
+    campoCooperativa.value = noticia.cooperativa || "";
+    campoData.value = noticia.data || "";
+    campoTexto.value = noticia.conteudo || noticia.texto || "";
+
+    contadorTexto.textContent = campoTexto.value.length;
+    tituloFormulario.textContent = "Editar publicação";
+    textoBotaoSalvar.textContent = "Salvar alterações";
+
+    formulario.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    campoTitulo.focus();
+}
+
+formulario.addEventListener("submit", async evento => {
+    evento.preventDefault();
+
+    if (!usuarioAtual) {
+        mostrarMensagem("Entre com sua conta antes de publicar.", true);
+        return;
+    }
+
+    const titulo = campoTitulo.value.trim();
+    const cooperativa = campoCooperativa.value.trim();
+    const data = campoData.value;
+    const conteudo = campoTexto.value.trim();
+    const idExistente = campoId.value;
+
+    if (!titulo || !data || !conteudo) {
+        mostrarMensagem("Preencha todos os campos obrigatórios.", true);
+        return;
+    }
+
+    const resumo = conteudo.length > 180
+        ? conteudo.slice(0, 177) + "..."
+        : conteudo;
+
+    const dadosPublicacao = {
+        titulo,
+        cooperativa,
+        data,
+        conteudo,
+        texto: conteudo,
+        resumo,
+        categoria: cooperativa ? "Cooperativas" : "Sustentabilidade",
+        status: "publicada"
+    };
+
+    botaoSalvar.disabled = true;
+
+    try {
+        if (idExistente) {
+            const noticia = noticias.find(item => item.id === idExistente);
+
+            if (!noticia || noticia.autorId !== usuarioAtual.uid) {
+                mostrarMensagem(
+                    "Você só pode editar suas próprias publicações.",
+                    true
+                );
+                return;
+            }
+
+            await updateDoc(
+                doc(db, "noticias", idExistente),
+                dadosPublicacao
+            );
+
+            mostrarMensagem("Publicação atualizada com sucesso!");
+        } else {
+            await addDoc(collection(db, "noticias"), {
+                ...dadosPublicacao,
+                autorId: usuarioAtual.uid,
+                criadoEm: serverTimestamp()
+            });
+
+            mostrarMensagem("Publicação salva no Firebase com sucesso!");
+        }
+
+        limparFormulario();
+        await carregarNoticias();
+    } catch (erro) {
+        console.error("Erro ao salvar publicação:", erro);
+        mostrarMensagem(
+            "Não foi possível salvar. Verifique as regras do Firestore.",
+            true
+        );
+    } finally {
+        botaoSalvar.disabled = false;
+    }
+});
+
+async function excluirNoticia(id) {
+    const noticia = noticias.find(item => item.id === id);
+
+    if (!noticia || !usuarioAtual) return;
+
+    if (noticia.autorId !== usuarioAtual.uid) {
+        mostrarMensagem(
+            "Você só pode excluir suas próprias publicações.",
+            true
+        );
+        return;
+    }
+
+    if (!confirm("Deseja realmente excluir esta publicação?")) return;
+
+    try {
+        await deleteDoc(doc(db, "noticias", id));
+
+        if (campoId.value === id) {
+            limparFormulario();
+        }
+
+        await carregarNoticias();
+        mostrarMensagem("Publicação excluída com sucesso!");
+    } catch (erro) {
+        console.error("Erro ao excluir publicação:", erro);
+        mostrarMensagem("Não foi possível excluir a publicação.", true);
+    }
+}
+
+document.getElementById("limparFormulario").addEventListener("click", () => {
+    limparFormulario();
+    mensagem.classList.remove("visivel");
+});
+
+campoTexto.addEventListener("input", () => {
+    contadorTexto.textContent = campoTexto.value.length;
+});
+
+onAuthStateChanged(auth, async usuario => {
+    if (!usuario) {
+        mostrarMensagem(
+            "Você precisa entrar com sua conta. Redirecionando para o login...",
+            true
+        );
+
+        setTimeout(() => {
+            window.location.href = "adm.html";
+        }, 1800);
+
+        return;
+    }
+
+    usuarioAtual = usuario;
+    await carregarNoticias();
+});
+</script>
+
+
+</body>
+</html>

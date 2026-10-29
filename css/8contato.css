@@ -1,0 +1,1752 @@
+
+/* =========================================================
+   FONTE
+========================================================= */
+ 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+ 
+ 
+/* =========================================================
+   CONFIGURAÇÃO GERAL
+========================================================= */
+ 
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+ 
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+ 
+    background: #ffffff;
+    color: #173d2c;
+ 
+    font-family: "Nunito", sans-serif;
+}
+ 
+* {
+    box-sizing: border-box;
+}
+ 
+/* Botões e campos usam a mesma fonte das outras páginas */
+button,
+input,
+select,
+textarea {
+    font-family: "Nunito", sans-serif;
+}
+ 
+ 
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+ 
+.menu {
+    width: 100%;
+    height: 100px;
+ 
+    display: flex;
+    align-items: center;
+ 
+    background: #ffffff;
+ 
+    position: relative;
+    z-index: 100;
+ 
+    border-top: 8px solid #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+ 
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+ 
+    overflow: visible;
+}
+ 
+ 
+/* =========================================================
+   ÁREA DA LOGO
+========================================================= */
+ 
+.nav__logo {
+    width: 195px;
+    min-width: 195px;
+    height: 92px;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    padding: 5px 15px;
+ 
+    background: #ffffff;
+ 
+    position: relative;
+    z-index: 5;
+ 
+    border-right: 3px solid #e5e5e5;
+}
+ 
+ 
+/* =========================================================
+   IMAGEM DA LOGO
+========================================================= */
+ 
+.nav__logo img {
+    width: 165px;
+    max-width: 165%;
+    height: auto;
+    max-height: 200px;
+ 
+    object-fit: contain;
+ 
+    display: block;
+}
+ 
+ 
+/* =========================================================
+   NAVEGAÇÃO
+========================================================= */
+ 
+.menu__nav {
+    flex: 1;
+    min-width: 0;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+ 
+/* =========================================================
+   LISTA DO MENU
+========================================================= */
+ 
+.menu__lista {
+    width: auto;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    gap: 34px;
+ 
+    list-style: none;
+ 
+    margin: 0;
+    padding: 0;
+}
+ 
+ 
+/* =========================================================
+   ITEM DO MENU
+========================================================= */
+ 
+.menu__lista li {
+    margin: 0;
+    padding: 0;
+ 
+    flex-shrink: 0;
+}
+ 
+ 
+/* =========================================================
+   LINKS DO MENU
+========================================================= */
+ 
+.menu__lista a {
+    min-width: 78px;
+    min-height: 70px;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
+    gap: 5px;
+ 
+    position: relative;
+ 
+    padding: 7px 4px;
+ 
+    text-decoration: none;
+ 
+    color: #075c32;
+ 
+    font-family: "Nunito", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+ 
+    text-align: center;
+    line-height: 1.1;
+ 
+    white-space: nowrap;
+ 
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+ 
+ 
+/* =========================================================
+   ÍCONES DO MENU
+========================================================= */
+ 
+.menu__lista a i {
+    width: 28px;
+    height: 28px;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    font-size: 18px;
+ 
+    color: #075c32;
+ 
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+ 
+ 
+/* =========================================================
+   TEXTO DO MENU
+========================================================= */
+ 
+.menu__lista a span {
+    display: block;
+}
+ 
+ 
+/* =========================================================
+   HOVER
+========================================================= */
+ 
+.menu__lista a:hover {
+    color: #f5c400;
+    transform: translateY(-2px);
+}
+ 
+.menu__lista a:hover i {
+    color: #f5c400;
+}
+ 
+ 
+/* =========================================================
+   MENU ATIVO
+========================================================= */
+ 
+.menu__lista a.ativo {
+    color: #f5c400;
+}
+ 
+.menu__lista a.ativo i {
+    color: #f5c400;
+}
+ 
+ 
+/* =========================================================
+   LINHA DO MENU ATIVO
+========================================================= */
+ 
+.menu__lista a::after {
+    content: "";
+ 
+    position: absolute;
+ 
+    left: 50%;
+    bottom: 2px;
+ 
+    width: 0;
+    height: 3px;
+ 
+    background: #f5c400;
+ 
+    border-radius: 10px;
+ 
+    transform: translateX(-50%);
+ 
+    transition: width 0.25s ease;
+}
+ 
+.menu__lista a:hover::after,
+.menu__lista a.ativo::after {
+    width: 55%;
+}
+ 
+ 
+/* =========================================================
+   BOTÃO ADMINISTRATIVO
+========================================================= */
+ 
+.menu__admin {
+    align-self: center;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    gap: 9px;
+ 
+    min-width: 235px;
+ 
+    margin: 0 28px 0 25px;
+ 
+    padding: 13px 22px;
+ 
+    border: 1.5px solid #075c32;
+    border-radius: 28px;
+ 
+    background: #ffffff;
+    color: #075c32;
+ 
+    text-decoration: none;
+ 
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+ 
+    white-space: nowrap;
+ 
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+ 
+.menu__admin:hover {
+    background: #075c32;
+    color: #ffffff;
+ 
+    transform: translateY(-2px);
+ 
+    box-shadow: 0 6px 14px rgba(7, 92, 50, 0.18);
+}
+ 
+ 
+/* =========================================================
+   BOTÃO GENÉRICO
+========================================================= */
+ 
+.menu__botao {
+    background: none;
+    border: none;
+ 
+    font-size: 20px;
+ 
+    cursor: pointer;
+}
+ 
+/* =========================================
+   HERO
+========================================= */
+ 
+.contato__hero {
+    width: 100%;
+ 
+    padding: 65px 7% 55px;
+ 
+    text-align: center;
+}
+ 
+.contato__hero__conteudo {
+    max-width: 800px;
+ 
+    margin: 0 auto;
+}
+ 
+.hero__etiqueta {
+    color: #075c32;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 12px;
+ 
+    font-weight: 700;
+ 
+    letter-spacing: 1px;
+}
+ 
+.contato__hero h1 {
+    margin-top: 12px;
+ 
+    color: #075c32;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 46px;
+ 
+    font-weight: 800;
+ 
+    line-height: 1.12;
+}
+ 
+.linha_amarela {
+    width: 38px;
+    height: 4px;
+ 
+    margin: 15px auto 20px;
+ 
+    background: #f5c400;
+ 
+    border-radius: 10px;
+}
+ 
+.contato__hero p {
+    max-width: 680px;
+ 
+    margin: 0 auto;
+ 
+    color: #355f52;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 15px;
+ 
+    line-height: 1.6;
+}
+ 
+ 
+/* =========================================
+   ÁREA DE CONTATO
+========================================= */
+ 
+.contato__secao {
+    width: 100%;
+ 
+    padding: 55px 5% 70px;
+ 
+    background: white;
+ 
+    border-radius: 35px 35px 0 0;
+}
+ 
+.contato__container {
+    max-width: 1150px;
+ 
+    margin: 0 auto;
+ 
+    display: grid;
+ 
+    grid-template-columns: 0.9fr 1.1fr;
+ 
+    gap: 30px;
+}
+ 
+ 
+/* =========================================
+   INFORMAÇÕES
+========================================= */
+ 
+.contato__informacoes {
+    padding: 35px;
+ 
+    background: #075c32;
+ 
+    color: white;
+ 
+    border-radius: 25px;
+ 
+    position: relative;
+ 
+    overflow: hidden;
+ 
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.08);
+}
+ 
+.contato__informacoes::after {
+    content: "♻";
+ 
+    position: absolute;
+ 
+    right: -25px;
+    bottom: -45px;
+ 
+    color: rgba(255,255,255,0.06);
+ 
+    font-size: 190px;
+ 
+    transform: rotate(-15deg);
+}
+ 
+.contato__informacoes h2 {
+    position: relative;
+    z-index: 2;
+ 
+    margin-bottom: 10px;
+ 
+    color: white;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 28px;
+ 
+    font-weight: 800;
+}
+ 
+.contato__informacoes > p {
+    position: relative;
+    z-index: 2;
+ 
+    margin-bottom: 30px;
+ 
+    color: rgba(255, 255, 255, 0.78);
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 13px;
+ 
+    line-height: 1.7;
+}
+ 
+ 
+/* =========================================
+   ITEM DE CONTATO
+========================================= */
+ 
+.contato__item {
+    position: relative;
+    z-index: 2;
+ 
+    display: flex;
+ 
+    align-items: flex-start;
+ 
+    gap: 14px;
+ 
+    margin-bottom: 22px;
+}
+ 
+.contato__icone {
+    width: 45px;
+    height: 45px;
+ 
+    flex-shrink: 0;
+ 
+    display: flex;
+ 
+    align-items: center;
+    justify-content: center;
+ 
+    border-radius: 50%;
+ 
+    background: rgba(255,255,255,0.12);
+ 
+    color: #f5c400;
+ 
+    font-size: 17px;
+}
+ 
+.contato__item h3 {
+    margin-bottom: 5px;
+ 
+    color: white;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 13px;
+ 
+    font-weight: 700;
+}
+ 
+.contato__item p,
+.contato__item a {
+    color: rgba(255, 255, 255, 0.78);
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 12px;
+ 
+    line-height: 1.5;
+ 
+    text-decoration: none;
+}
+ 
+.contato__item a:hover {
+    color: #f5c400;
+}
+ 
+ 
+/* =========================================
+   REDES SOCIAIS
+========================================= */
+ 
+.contato__redes {
+    position: relative;
+    z-index: 2;
+ 
+    margin-top: 30px;
+ 
+    padding-top: 22px;
+ 
+    border-top:
+        1px solid rgba(255,255,255,0.15);
+}
+ 
+.contato__redes h3 {
+    margin-bottom: 12px;
+ 
+    color: white;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 13px;
+ 
+    font-weight: 700;
+}
+ 
+.contato__redes__links {
+    display: flex;
+ 
+    gap: 10px;
+}
+ 
+.contato__redes a {
+    width: 38px;
+    height: 38px;
+ 
+    display: flex;
+ 
+    align-items: center;
+    justify-content: center;
+ 
+    border:
+        1px solid rgba(255,255,255,0.35);
+ 
+    border-radius: 50%;
+ 
+    color: white;
+ 
+    text-decoration: none;
+ 
+    transition: 0.2s;
+}
+ 
+.contato__redes a:hover {
+    background: white;
+ 
+    color: #075c32;
+ 
+    transform: translateY(-3px);
+}
+ 
+ 
+/* =========================================
+   FORMULÁRIO
+========================================= */
+ 
+.contato__formulario {
+    padding: 35px;
+ 
+    background: white;
+ 
+    border: 1px solid #dfe8d2;
+ 
+    border-radius: 25px;
+ 
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.06);
+}
+ 
+.contato__formulario h2 {
+    margin-bottom: 8px;
+ 
+    color: #075c32;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 28px;
+ 
+    font-weight: 800;
+}
+ 
+.contato__formulario > p {
+    margin-bottom: 25px;
+ 
+    color: #355f52;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 13px;
+ 
+    line-height: 1.6;
+}
+ 
+ 
+/* =========================================
+   CAMPOS
+========================================= */
+ 
+.campo {
+    margin-bottom: 17px;
+}
+ 
+.campo label {
+    display: block;
+ 
+    margin-bottom: 7px;
+ 
+    color: #075c32;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 12px;
+ 
+    font-weight: 700;
+}
+ 
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+ 
+    padding: 12px 14px;
+ 
+    border: 1px solid #dfe5db;
+ 
+    border-radius: 8px;
+ 
+    background: white;
+ 
+    color: #355f52;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 12px;
+ 
+    outline: none;
+ 
+    transition: 0.2s;
+}
+ 
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #075c32;
+ 
+    box-shadow:
+        0 0 0 2px rgba(7,92,50,0.08);
+}
+ 
+.campo textarea {
+    min-height: 130px;
+ 
+    resize: vertical;
+}
+ 
+ 
+/* =========================================
+   LINHA DE CAMPOS
+========================================= */
+ 
+.campo__linha {
+    display: grid;
+ 
+    grid-template-columns: 1fr 1fr;
+ 
+    gap: 15px;
+}
+ 
+ 
+/* =========================================
+   BOTÃO ENVIAR
+========================================= */
+ 
+.btn__enviar {
+    width: 100%;
+ 
+    margin-top: 5px;
+ 
+    padding: 14px 20px;
+ 
+    border: none;
+ 
+    border-radius: 28px;
+ 
+    background: #075c32;
+ 
+    color: white;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 13px;
+ 
+    font-weight: 700;
+ 
+    cursor: pointer;
+ 
+    transition: 0.2s;
+}
+ 
+.btn__enviar:hover {
+    background: #08752f;
+ 
+    transform: translateY(-2px);
+}
+ 
+.btn__enviar i {
+    margin-right: 7px;
+}
+ 
+ 
+/* =========================================
+   AVISO
+========================================= */
+ 
+.contato__aviso {
+    max-width: 1150px;
+ 
+    margin: 30px auto 0;
+ 
+    padding: 20px 25px;
+ 
+    display: flex;
+ 
+    align-items: flex-start;
+ 
+    gap: 13px;
+ 
+    background: #edf4e5;
+ 
+    border-radius: 17px;
+}
+ 
+.contato__aviso i {
+    color: #075c32;
+ 
+    font-size: 20px;
+}
+ 
+.contato__aviso p {
+    color: #355f52;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 11px;
+ 
+    line-height: 1.6;
+}
+ 
+ 
+/* =========================================
+   MAPA / LOCALIZAÇÃO
+========================================= */
+ 
+.contato__localizacao {
+    width: 100%;
+ 
+    padding: 60px 5%;
+ 
+    background:
+        linear-gradient(
+            135deg,
+            #f4f8ee,
+            #ffffff
+        );
+}
+ 
+.contato__localizacao__titulo {
+    text-align: center;
+ 
+    margin-bottom: 30px;
+}
+ 
+.contato__localizacao__titulo span {
+    color: #075c32;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 10px;
+ 
+    font-weight: 700;
+ 
+    letter-spacing: 1px;
+}
+ 
+.contato__localizacao__titulo h2 {
+    margin-top: 8px;
+ 
+    color: #075c32;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 30px;
+ 
+    font-weight: 800;
+}
+ 
+.contato__mapa {
+    max-width: 1100px;
+ 
+    height: 350px;
+ 
+    margin: 0 auto;
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+ 
+    border-radius: 22px;
+ 
+    border: 1px solid #dfe8d2;
+ 
+    background:
+        linear-gradient(
+            30deg,
+            transparent 47%,
+            #d7e1d8 48%,
+            #d7e1d8 51%,
+            transparent 52%
+        ),
+        #edf4e9;
+ 
+    overflow: hidden;
+ 
+    box-shadow:
+        0 7px 20px rgba(0,0,0,0.06);
+}
+ 
+.contato__mapa__mensagem {
+    padding: 25px;
+ 
+    text-align: center;
+ 
+    background: white;
+ 
+    border-radius: 15px;
+ 
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
+}
+ 
+.contato__mapa__mensagem i {
+    color: #075c32;
+ 
+    font-size: 30px;
+ 
+    margin-bottom: 10px;
+}
+ 
+.contato__mapa__mensagem h3 {
+    color: #075c32;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 18px;
+ 
+    font-weight: 800;
+ 
+    margin-bottom: 6px;
+}
+ 
+.contato__mapa__mensagem p {
+    color: #355f52;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 12px;
+}
+ 
+ 
+/* =========================================
+   RODAPÉ
+========================================= */
+ 
+.site-footer {
+    width: 100%;
+ 
+    background: #075b35;
+ 
+    color: white;
+}
+ 
+.footer-container {
+    max-width: 1180px;
+ 
+    margin: 0 auto;
+ 
+    padding: 55px 30px;
+ 
+    display: grid;
+ 
+    grid-template-columns:
+        2fr
+        1fr
+        1.4fr
+        1.5fr;
+ 
+    gap: 50px;
+}
+ 
+ 
+/* LOGO */
+ 
+.footer-logo {
+    display: flex;
+ 
+    align-items: center;
+ 
+    gap: 12px;
+ 
+    margin-bottom: 18px;
+}
+ 
+.footer-logo-icon {
+    width: 50px;
+    height: 50px;
+ 
+    border-radius: 50%;
+ 
+    background: white;
+ 
+    color: #08783f;
+ 
+    display: flex;
+ 
+    align-items: center;
+    justify-content: center;
+ 
+    font-size: 25px;
+}
+ 
+.footer-logo strong {
+    display: block;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 25px;
+ 
+    line-height: 20px;
+}
+ 
+.footer-logo span {
+    display: block;
+ 
+    color: rgba(255, 255, 255, 0.78);
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 12px;
+ 
+    font-weight: 600;
+}
+ 
+.footer-brand > p {
+    max-width: 300px;
+ 
+    color: rgba(255, 255, 255, 0.78);
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 13px;
+ 
+    line-height: 1.7;
+ 
+    margin-bottom: 25px;
+}
+ 
+ 
+/* REDES SOCIAIS */
+ 
+.footer-social {
+    display: flex;
+ 
+    gap: 10px;
+}
+ 
+.footer-social a {
+    width: 38px;
+    height: 38px;
+ 
+    border:
+        1px solid rgba(255,255,255,0.35);
+ 
+    border-radius: 50%;
+ 
+    display: flex;
+ 
+    align-items: center;
+    justify-content: center;
+ 
+    color: white;
+ 
+    text-decoration: none;
+ 
+    transition: 0.3s;
+}
+ 
+.footer-social a:hover {
+    background: white;
+ 
+    color: #075b35;
+ 
+    transform: translateY(-3px);
+}
+ 
+ 
+/* COLUNAS */
+ 
+.footer-column h3 {
+    margin: 0 0 20px;
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 16px;
+ 
+    color: white;
+}
+ 
+.footer-column ul {
+    list-style: none;
+ 
+    padding: 0;
+ 
+    margin: 0;
+}
+ 
+.footer-column li {
+    margin-bottom: 11px;
+}
+ 
+.footer-column li a {
+    color: rgba(255, 255, 255, 0.78);
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    text-decoration: none;
+ 
+    font-size: 13px;
+ 
+    transition: 0.3s;
+}
+ 
+.footer-column li a:hover {
+    color: #ffffff;
+ 
+    padding-left: 4px;
+}
+ 
+ 
+/* CONTATO */
+ 
+.contact-item {
+    display: flex;
+ 
+    align-items: flex-start;
+ 
+    gap: 10px;
+ 
+    margin-bottom: 17px;
+}
+ 
+.contact-icon {
+    width: 28px;
+    height: 28px;
+ 
+    border-radius: 50%;
+ 
+    background: rgba(255,255,255,0.12);
+ 
+    display: flex;
+ 
+    align-items: center;
+    justify-content: center;
+ 
+    flex-shrink: 0;
+ 
+    font-size: 13px;
+}
+ 
+.contact-item p {
+    margin: 0;
+ 
+    color: rgba(255, 255, 255, 0.78);
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 13px;
+ 
+    line-height: 1.5;
+}
+ 
+.contact-item a {
+    color: rgba(255, 255, 255, 0.78);
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    text-decoration: none;
+ 
+    font-size: 13px;
+ 
+    line-height: 1.5;
+ 
+    word-break: break-word;
+}
+ 
+.contact-item a:hover {
+    color: #ffffff;
+}
+ 
+ 
+/* RODAPÉ INFERIOR */
+ 
+.footer-bottom {
+    border-top:
+        1px solid rgba(255,255,255,0.15);
+}
+ 
+.footer-bottom p {
+    margin: 0;
+ 
+    padding: 20px 30px;
+ 
+    text-align: center;
+ 
+    color: rgba(255, 255, 255, 0.65);
+ 
+    font-family: "Nunito", sans-serif;
+ 
+    font-size: 11px;
+}
+ 
+ 
+/* =========================================
+   RESPONSIVO
+========================================= */
+ 
+@media (max-width: 1100px) {
+ 
+    .menu__lista {
+        gap: 15px;
+    }
+ 
+    .menu__lista a {
+        font-size: 12px;
+    }
+ 
+    .contato__container {
+        grid-template-columns: 1fr;
+    }
+ 
+    .contato__informacoes {
+        min-height: auto;
+    }
+}
+ 
+ 
+@media (max-width: 800px) {
+ 
+    .menu {
+        height: 75px;
+    }
+ 
+    .menu__lista {
+        display: none;
+    }
+ 
+    .menu__admin {
+        margin-left: auto;
+    }
+ 
+    .contato__hero {
+        padding-top: 60px;
+    }
+ 
+    .contato__hero h1 {
+        font-size: 40px;
+    }
+ 
+    .contato__secao {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+ 
+    .contato__localizacao {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+ 
+    .footer-container {
+        grid-template-columns:
+            1fr 1fr;
+    }
+}
+ 
+ 
+@media (max-width: 550px) {
+ 
+    .nav__logo {
+        width: 125px;
+    }
+ 
+    .menu__admin {
+        padding: 10px 12px;
+ 
+        font-size: 10px;
+    }
+ 
+    .contato__hero {
+        padding: 50px 25px;
+    }
+ 
+    .contato__hero h1 {
+        font-size: 34px;
+    }
+ 
+    .contato__informacoes,
+    .contato__formulario {
+        padding: 25px;
+    }
+ 
+    .campo__linha {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+ 
+    .contato__mapa {
+        height: 280px;
+    }
+ 
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+ 
+/* =====================================
+   RESPONSIVIDADE - SOMENTE CELULAR
+===================================== */
+ 
+@media (max-width: 768px) {
+ 
+    /* HERO */
+ 
+    .hero {
+        flex-direction: column;
+        width: 100%;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+ 
+    .hero__texto {
+        width: 100%;
+    }
+ 
+    .hero__texto h1 {
+        font-size: 36px;
+    }
+ 
+    .hero__carousel {
+        width: 100%;
+        height: 300px;
+    }
+ 
+ 
+    /* CARDS */
+ 
+    .hub-grid {
+        grid-template-columns: 1fr;
+    }
+ 
+ 
+    /* MATERIAIS */
+ 
+    .materials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ 
+ 
+    /* FOOTER */
+ 
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+ 
+}
+ 
+/* =========================================================
+   AJUSTES EXCLUSIVOS PARA CELULAR
+   Cole este bloco no FINAL do CSS atual.
+   Fora de telas de até 700px, o visual desktop permanece igual.
+========================================================= */
+ 
+@media (max-width: 700px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+ 
+  img {
+    max-width: 100%;
+  }
+ 
+  /* Cabeçalho: remove a largura fixa de desktop no celular */
+  .menu {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 72px;
+    padding: 8px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+ 
+  .nav__logo {
+    width: auto;
+    min-width: 0;
+    max-width: 42%;
+    height: 58px;
+    padding: 4px;
+    border-right: 0;
+    justify-content: flex-start;
+  }
+ 
+  .nav__logo img {
+    width: auto;
+    max-width: 100%;
+    max-height: 52px;
+    object-fit: contain;
+  }
+ 
+  .menu__nav {
+    flex: 1 1 55%;
+    min-width: 0;
+    justify-content: flex-end;
+  }
+ 
+  .menu__lista {
+    width: 100%;
+    gap: 4px 8px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+ 
+  .menu__lista li {
+    flex-shrink: 1;
+  }
+ 
+  .menu__lista a {
+    min-width: 0;
+    min-height: 34px;
+    padding: 4px 2px;
+    gap: 2px;
+    font-size: 11px;
+    white-space: normal;
+    line-height: 1.15;
+  }
+ 
+  .menu__lista a i {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+  }
+ 
+  .menu__lista a::after {
+    bottom: 0;
+  }
+ 
+  .menu__admin {
+    display: none;
+  }
+ 
+  /* Hero: texto e botões ficam acima da imagem */
+  .hero {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 30px 18px 22px;
+ 
+  }
+}
+ 
+/* =====================================================
+   FAIXA DE LOGOS (HUB + FAPERGS)
+===================================================== */
+ 
+.footer-logos {
+    width: 100%;
+ 
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+ 
+    background: rgba(0, 0, 0, 0.06);
+}
+ 
+.footer-logos-container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+ 
+    padding: 28px 0;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+    gap: 30px;
+}
+ 
+.footer-logos-titulo {
+    font-family: "Nunito", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+ 
+    letter-spacing: 2px;
+    text-transform: uppercase;
+ 
+    color: rgba(255, 255, 255, 0.78);
+ 
+    white-space: nowrap;
+}
+ 
+.footer-logos-titulo::after {
+    content: "";
+ 
+    display: block;
+ 
+    width: 34px;
+    height: 3px;
+ 
+    margin-top: 8px;
+ 
+    border-radius: 5px;
+ 
+    background: #f5c400;
+}
+ 
+.footer-logos-lista {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+ 
+    gap: 20px;
+}
+ 
+ 
+/* ESPAÇO (CAIXA BRANCA) DE CADA LOGO */
+ 
+.footer-logo-box {
+    width: 230px;
+    height: 100px;
+ 
+    padding: 12px 20px;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    background: #ffffff;
+ 
+    border-radius: 16px;
+ 
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+ 
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+ 
+.footer-logo-box:hover {
+    transform: translateY(-3px);
+ 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+}
+ 
+.footer-logo-box img {
+    width: 100%;
+    height: 100%;
+ 
+    display: block;
+ 
+    object-fit: contain;
+}
+ 
+ 
+/* =====================================================
+   PARTE INFERIOR
+===================================================== */
+ 
+.footer-bottom {
+    width: 100%;
+ 
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+ 
+.footer-bottom-container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+ 
+    min-height: 70px;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+    gap: 20px;
+}
+ 
+.footer-bottom p {
+    margin: 0;
+ 
+    font-family: "Nunito", sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+ 
+    color: rgba(255, 255, 255, 0.65);
+}
+ 
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+ 
+.footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.65);
+ 
+    text-decoration: none;
+ 
+    font-family: "Nunito", sans-serif;
+    font-size: 13px;
+ 
+    transition: color 0.2s ease;
+}
+ 
+.footer-bottom-links a:hover {
+    color: #ffffff;
+}
+ 
+.footer-bottom-links span {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 12px;
+}
+ 
+ 
+/* =====================================================
+   RESPONSIVIDADE — TABLET
+===================================================== */
+ 
+@media (max-width: 1000px) {
+ 
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+ 
+    .footer-brand {
+        grid-column: span 2;
+    }
+ 
+    .footer-logos-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+ 
+    .footer-logos-lista {
+        justify-content: flex-start;
+    }
+}
+ 
+ 
+/* =====================================================
+   RESPONSIVIDADE — CELULAR
+===================================================== */
+ 
+@media (max-width: 650px) {
+ 
+    .footer-container {
+        width: 88%;
+ 
+        grid-template-columns: 1fr;
+ 
+        gap: 35px;
+ 
+        padding: 45px 0 35px;
+    }
+ 
+    .footer-brand {
+        grid-column: auto;
+    }
+ 
+    .footer-brand > p {
+        max-width: 100%;
+    }
+ 
+    .footer-logos-container {
+        width: 88%;
+    }
+ 
+    .footer-logos-lista {
+        width: 100%;
+ 
+        flex-direction: column;
+        align-items: stretch;
+    }
+ 
+    .footer-logo-box {
+        width: 100%;
+        height: 90px;
+    }
+ 
+    .footer-bottom-container {
+        width: 88%;
+ 
+        min-height: auto;
+ 
+        padding: 20px 0;
+ 
+        flex-direction: column;
+ 
+        align-items: flex-start;
+ 
+        gap: 12px;
+    }
+ 
+    .footer-bottom-links {
+        flex-wrap: wrap;
+    }
+}
+ 
+ 
+/* =====================================================
+   RESPONSIVIDADE — CELULARES PEQUENOS
+===================================================== */
+ 
+@media (max-width: 400px) {
+ 
+    .footer-container {
+        width: 90%;
+    }
+ 
+    .footer-logos-container,
+    .footer-bottom-container {
+        width: 90%;
+    }
+ 
+    .footer-logo strong {
+        font-size: 20px;
+    }
+ 
+    .footer-social a {
+        width: 36px;
+        height: 36px;
+    }
+}
+ 
+
+
+
+
